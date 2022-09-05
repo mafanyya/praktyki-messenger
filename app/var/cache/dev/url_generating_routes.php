@@ -22,5 +22,5 @@ return [
     'root' => [[], ['_controller' => 'App\\Controller\\RootController::index'], [], [['text', '/']], [], [], []],
     'success' => [[], ['_controller' => 'App\\Controller\\RootController::success'], [], [['text', '/success']], [], [], []],
     'test' => [['id'], ['_controller' => 'App\\Controller\\RootController::test'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/test']], [], [], []],
-    'allUsers' => [[], ['_controller' => 'App\\Controller\\UsersController::allUsers'], [], [['text', '/users']], [], [], []],
+    'allUsers' => [['hobbyId'], ['_controller' => 'App\\Controller\\UsersController::usersByHobby'], [], [['variable', '/', '[^/]++', 'hobbyId', true], ['text', '/users']], [], [], []],
 ];

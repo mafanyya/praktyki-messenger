@@ -47,5 +47,31 @@ class UsersController extends AbstractController
             ]);
     }
 
+    #[Route('/users/{hobbyId}', name: 'allUsers')]
+    public function usersByHobby($hobbyId): Response
+    {
+        $users = $this->userRepository->findUserByHobby($hobbyId);
+
+        $user = $this->getUser();
+        $userId = null;
+        if($user)
+        {
+            $id = $this->requestStack->getSession()->get('filter');
+            $currentLoggedUser = $this->userRepository->find($id['loggedUserId']);
+            $currentLoggedUserId = $currentLoggedUser->getId();
+            $currentLoggedUserUsername = $currentLoggedUser->getUsername();
+            $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+        }
+        return $this->render('root/users.html.twig',
+        [
+            'name' => 'Users',
+            'users' => $users,
+            'id' => $userId,
+            'currentId' => $currentLoggedUserId,
+            'currentUsername' => $currentLoggedUserUsername,
+            'currentAvatar' => $currentLoggedUserAvatar,
+        ]);
+    }
+
 
 }

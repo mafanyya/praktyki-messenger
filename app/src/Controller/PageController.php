@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +13,13 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class PageController extends AbstractController
 {
     private UserRepository $userRepository;
+    private HobbyRepository $hobbyRepository;
     private $requestStack;
 
-    public function __construct(UserRepository $userRepository, RequestStack $requestStack) {
+    public function __construct(UserRepository $userRepository, RequestStack $requestStack, HobbyRepository $hobbyRepository) {
         $this->userRepository = $userRepository;
+        $this->hobbyRepository = $hobbyRepository;
+
         $this->requestStack = $requestStack;
     }
 
@@ -33,6 +37,8 @@ class PageController extends AbstractController
         $country = $user->getEmail();
         $email = $user->getCountry();
         $avatar = $user->getAvatar();
+        $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
+
 
             if($user == null)
             {
@@ -51,7 +57,10 @@ class PageController extends AbstractController
             'avatar' => $avatar,
             'username' => $username,
             'country' => $country,
-            'email' => $email
+            'email' => $email,
+            'hobbies' => $hobbies,
+            'id' => $id
+
 
 
         ]);

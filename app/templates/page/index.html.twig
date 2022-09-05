@@ -27,6 +27,17 @@
                 <div class="country">
                     <p><i class="bi bi-globe"></i> {{ country }}</p>
                 </div>
+                <div class="country">
+                    <p><i class="bi bi-globe"></i> {{ id }}</p>
+                </div>
+                <div class="country">
+                    {% for hobby in hobbies %}
+                    <p><i class="bi bi-check2"></i> {{ hobby.name }}</p>
+                        <p><i class="bi bi-check2"></i> {{ hobby.id }}</p>
+                    {% endfor %}
+                </div>
+
+
 
                 <div class="friends">
                     <a href="/users">Users</a>

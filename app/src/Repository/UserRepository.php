@@ -74,6 +74,32 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getResult();
     }
 
+//    public function findHobbiesByUser($userId)
+//    {
+//        return $this->createQueryBuilder('hobbies')
+//            ->select('hobbies','users')
+//            ->leftJoin('hobbies.users','users')
+//            ->andWhere('users = :userId')
+//            ->setParameter('userId',$userId)
+//            ->getQuery()
+//            ->getArrayResult();
+//    }
+
+    public function findUserByHobby($hobbyId)
+    {
+        return $this->createQueryBuilder('users')
+            ->select('users','hobbies')
+            ->leftJoin('users.hobbies','hobbies')
+            ->andWhere('hobbies = :hobbies')
+            ->setParameter('hobbies',$hobbyId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+
+
+
+
 
 //    /**
 //     * @return User[] Returns an array of User objects

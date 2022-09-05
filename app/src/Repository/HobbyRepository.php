@@ -39,6 +39,17 @@ class HobbyRepository extends ServiceEntityRepository
         }
     }
 
+    public function findHobbiesByUser($userId)
+    {
+        return $this->createQueryBuilder('hobbies')
+            ->select('hobbies','users')
+            ->leftJoin('hobbies.users','users')
+            ->andWhere('users = :userId')
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
 //    /**
 //     * @return Hobby[] Returns an array of Hobby objects
 //     */
