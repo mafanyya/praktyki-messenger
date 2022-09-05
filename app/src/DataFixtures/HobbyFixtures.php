@@ -5,14 +5,36 @@ use App\Entity\Hobby;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
+
 class HobbyFixtures extends Fixture
 {
+    public const ART = 'art';
+    public const BAKING = 'baking';
+    public const BEER_TASTING = 'beer_tasting';
+    public const CANDY_MAKING = 'candy_making';
+    public const CHESS = 'chess';
+    public const PROGRAMMING = 'programming';
+    public const CROSS_STITCH = 'cross_stitch';
+    public const DANCE = 'dance';
+    public const GAMING = 'gaming';
+    public const HACKING = 'hacking';
+    public const HOMING_PIGEONS = 'homing_pigeons';
+    public const MUSIC = 'music';
+    public const SINGING = 'singing';
+    public const SOAP_MAKING = 'soap_making';
+    public const TELLING_JOKES = 'telling_jokes';
+    public const YOGA = 'yoga';
+
+
+
     public function load(ObjectManager $manager): void
     {
         $hobby1 = new Hobby();
         $hobby1->setName('Art');
         $hobby1->setImg('');
         $manager->persist($hobby1);
+
+
 
         $hobby2 = new Hobby();
         $hobby2->setName('Baking');
@@ -91,5 +113,28 @@ class HobbyFixtures extends Fixture
 
 
         $manager->flush();
+
+//        $this->addReference(self::ART,$hobby1);
+//        $this->addReference(self::BAKING,$hobby2);
+//        $this->addReference(self::BEER_TASTING,$hobby3);
+//        $this->addReference(self::CANDY_MAKING,$hobby4);
+//        $this->addReference(self::CHESS,$hobby5);
+//        $this->addReference(self::PROGRAMMING,$hobby6);
+//        $this->addReference(self::CROSS_STITCH,$hobby7);
+//        $this->addReference(self::DANCE,$hobby8);
+//        $this->addReference(self::GAMING,$hobby9);
+//        $this->addReference(self::HACKING,$hobby10);
+//        $this->addReference(self::HOMING_PIGEONS,$hobby11);
+//        $this->addReference(self::MUSIC,$hobby12);
+//        $this->addReference(self::SINGING,$hobby13);
+//        $this->addReference(self::SOAP_MAKING,$hobby14);
+//        $this->addReference(self::TELLING_JOKES,$hobby15);
+//        $this->addReference(self::YOGA,$hobby16);
+//
+
+
+
+
+
     }
 }

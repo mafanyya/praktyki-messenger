@@ -2,10 +2,14 @@
 
 namespace App\DataFixtures;
 
+use App\DataFixtures\HobbyFixtures;
+use App\Entity\Hobby;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
+
 
 class UserFixtures extends Fixture
 {
@@ -15,8 +19,94 @@ class UserFixtures extends Fixture
         $this->passwordHasher = $passwordHasher;
     }
 
+
+
     public function load(ObjectManager $manager): void
     {
+        $hobby1 = new Hobby();
+        $hobby1->setName('Art');
+        $hobby1->setImg('');
+        $manager->persist($hobby1);
+
+
+
+        $hobby2 = new Hobby();
+        $hobby2->setName('Baking');
+        $hobby2->setImg('');
+        $manager->persist($hobby2);
+
+        $hobby3 = new Hobby();
+        $hobby3->setName('Beer tasting');
+        $hobby3->setImg('');
+        $manager->persist($hobby3);
+
+        $hobby4 = new Hobby();
+        $hobby4->setName('Candy making');
+        $hobby4->setImg('');
+        $manager->persist($hobby4);
+
+        $hobby5 = new Hobby();
+        $hobby5->setName('Chess');
+        $hobby5->setImg('');
+        $manager->persist($hobby5);
+
+        $hobby6 = new Hobby();
+        $hobby6->setName('Programming');
+        $hobby6->setImg('');
+        $manager->persist($hobby6);
+
+        $hobby7 = new Hobby();
+        $hobby7->setName('Cross stitch');
+        $hobby7->setImg('');
+        $manager->persist($hobby7);
+
+        $hobby8 = new Hobby();
+        $hobby8->setName('Dance');
+        $hobby8->setImg('');
+        $manager->persist($hobby8);
+
+        $hobby9 = new Hobby();
+        $hobby9->setName('Gaming');
+        $hobby9->setImg('');
+        $manager->persist($hobby9);
+
+        $hobby10 = new Hobby();
+        $hobby10->setName('Hacking');
+        $hobby10->setImg('');
+        $manager->persist($hobby10);
+
+        $hobby11 = new Hobby();
+        $hobby11->setName('Homing pigeons');
+        $hobby11->setImg('');
+        $manager->persist($hobby11);
+
+        $hobby12= new Hobby();
+        $hobby12->setName('Music');
+        $hobby12->setImg('');
+        $manager->persist($hobby12);
+
+        $hobby13= new Hobby();
+        $hobby13->setName('Singing');
+        $hobby13->setImg('');
+        $manager->persist($hobby13);
+
+        $hobby14= new Hobby();
+        $hobby14->setName('Soap making');
+        $hobby14->setImg('');
+        $manager->persist($hobby14);
+
+        $hobby15= new Hobby();
+        $hobby15->setName('Telling jokes');
+        $hobby15->setImg('');
+        $manager->persist($hobby15);
+
+        $hobby16= new Hobby();
+        $hobby16->setName('Yoga');
+        $hobby16->setImg('');
+        $manager->persist($hobby16);
+
+
+        $manager->flush();
 
         $admin = new User();
         $admin->setUsername('admin');
@@ -26,6 +116,7 @@ class UserFixtures extends Fixture
         $admin->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-300x300.jpg');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBirthdate('30 February');
+        $admin->addHobby($hobby10);
 
         $manager->persist($admin);
 
@@ -37,6 +128,8 @@ class UserFixtures extends Fixture
         $user->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/robert-godwin-cdksyTqEXzo-300x300.jpg');
         $user->setRoles(['ROLE_USER']);
         $user->setBirthdate('1 January');
+        $admin->addHobby($hobby1);
+
         $manager->persist($user);
 
 
@@ -48,6 +141,7 @@ class UserFixtures extends Fixture
         $user2->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/philipe-cavalcante-xe68QiMaDrQ-2-300x300.jpg');
         $user2->setRoles(['ROLE_USER']);
         $user2->setBirthdate('15 March');
+        $admin->addHobby($hobby4);
         $manager->persist($user2);
 
         $user3 = new User();
@@ -58,6 +152,7 @@ class UserFixtures extends Fixture
         $user3->setAvatar('https://userstock.io/data/wp-content/uploads/2020/05/warren-wong-VVEwJJRRHgk-300x300.jpg');
         $user3->setRoles(['ROLE_USER']);
         $user3->setBirthdate('12 November');
+        $admin->addHobby($hobby7);
         $manager->persist($user3);
 
 
@@ -69,6 +164,7 @@ class UserFixtures extends Fixture
         $user4->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/nick-karvounis-75432-300x300.jpg');
         $user4->setRoles(['ROLE_USER']);
         $user4->setBirthdate('7 July');
+        $admin->addHobby($hobby5);
         $manager->persist($user4);
 
         $user = new User();
@@ -79,6 +175,7 @@ class UserFixtures extends Fixture
         $user->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/ilaya-raja-280339-300x300.jpg');
         $user->setRoles(['ROLE_USER']);
         $user->setBirthdate('2 September');
+        $admin->addHobby($hobby15);
         $manager->persist($user);
 
         $user5 = new User();
@@ -89,6 +186,7 @@ class UserFixtures extends Fixture
         $user5->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/lesly-b-juarez-276953-300x300.jpg');
         $user5->setRoles(['ROLE_USER']);
         $user5->setBirthdate('19 March');
+        $admin->addHobby($hobby3);
         $manager->persist($user5);
 
         $user6 = new User();
@@ -99,6 +197,7 @@ class UserFixtures extends Fixture
         $user6->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/tamarcus-brown-266128-300x300.jpg');
         $user6->setRoles(['ROLE_USER']);
         $user6->setBirthdate('16 December');
+        $admin->addHobby($hobby6);
         $manager->persist($user6);
 
         $user7 = new User();
@@ -109,6 +208,7 @@ class UserFixtures extends Fixture
         $user7->setAvatar('https://userstock.io/data/wp-content/uploads/2020/05/eye-for-ebony-OeXcIHFwtsM-unsplash-300x300.jpg');
         $user7->setRoles(['ROLE_USER']);
         $user7->setBirthdate('1 April');
+        $admin->addHobby($hobby16);
         $manager->persist($user7);
 
         $user8 = new User();
@@ -119,6 +219,7 @@ class UserFixtures extends Fixture
         $user8->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/zi-jian-lim-218410-300x300.jpg');
         $user8->setRoles(['ROLE_USER']);
         $user8->setBirthdate('30 May');
+        $admin->addHobby($hobby12);
         $manager->persist($user8);
 
         $user9 = new User();
@@ -129,6 +230,7 @@ class UserFixtures extends Fixture
         $user9->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-26939-1-300x300.jpg');
         $user9->setRoles(['ROLE_USER']);
         $user9->setBirthdate('20 June');
+        $admin->addHobby($hobby14);
         $manager->persist($user9);
 
         $user10 = new User();
@@ -139,6 +241,7 @@ class UserFixtures extends Fixture
         $user10->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/yegide-matthews-60888-300x300.jpg');
         $user10->setRoles(['ROLE_USER']);
         $user10->setBirthdate('12 August');
+        $admin->addHobby($hobby1);
         $manager->persist($user10);
 
         $user11 = new User();
@@ -149,6 +252,7 @@ class UserFixtures extends Fixture
         $user11->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/yegide-matthews-60888-300x300.jpg');
         $user11->setRoles(['ROLE_USER']);
         $user11->setBirthdate('13 August');
+        $admin->addHobby($hobby3);
         $manager->persist($user11);
 
 
