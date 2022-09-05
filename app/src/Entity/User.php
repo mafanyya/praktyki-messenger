@@ -46,10 +46,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'friends', targetEntity: Friendship::class)]
     private $friendsWithme;
 
+    #[ORM\ManyToMany(targetEntity: Hobby::class, inversedBy: 'users')]
+    private $hobbies;
+
     public function __construct()
     {
         $this->friends = new ArrayCollection();
         $this->friendsWithme = new ArrayCollection();
+        $this->hobbies = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -226,6 +230,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $friendsWithme->setFriends(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Hobby>
+     */
+    public function getHobbies(): Collection
+    {
+        return $this->hobbies;
+    }
+
+    public function addHobby(Hobby $hobby): self
+    {
+        if (!$this->hobbies->contains($hobby)) {
+            $this->hobbies[] = $hobby;
+        }
+
+        return $this;
+    }
+
+    public function removeHobby(Hobby $hobby): self
+    {
+        $this->hobbies->removeElement($hobby);
 
         return $this;
     }

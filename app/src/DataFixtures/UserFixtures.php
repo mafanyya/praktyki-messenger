@@ -26,6 +26,7 @@ class UserFixtures extends Fixture
         $admin->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-300x300.jpg');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBirthdate('30 February');
+
         $manager->persist($admin);
 
         $user = new User();

@@ -14,3 +14,5 @@ d27709,172.20.0.1,GET,http://localhost:8080/success,1662399665,,302
 5f4f40,172.20.0.1,GET,http://localhost:8080/,1662399873,,200
 86cc09,172.20.0.1,GET,http://localhost:8080/page/103,1662399874,,200
 f5c577,172.20.0.1,GET,http://localhost:8080/users,1662399876,,200
+118186,172.20.0.1,GET,http://localhost:8080/users,1662400716,,200
+df56c5,172.20.0.1,GET,http://localhost:8080/page/104,1662400718,,200
