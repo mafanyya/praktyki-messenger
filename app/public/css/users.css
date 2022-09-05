@@ -1,12 +1,16 @@
 .users_wrapper{
+    border:2px solid black;
+    width: 70%;
+    height: 200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    color:skyblue;
 
 }
-.user{
-    margin-left: 1em;
+.sorting_wrapper{
+    border: 2px solid red;
+    width:30%;
+    height: 200px;
 }
-.user img{
-    width: 19em;
-}
+

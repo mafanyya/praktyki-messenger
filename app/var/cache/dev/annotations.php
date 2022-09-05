@@ -66,6 +66,8 @@ return [[
 '[C]App%5CController%5CPageController%23index' => 1,
 'App%5CController%5CPageController%24userRepository' => 0,
 '[C]App%5CController%5CPageController%24userRepository' => 1,
+'App%5CController%5CPageController%24hobbyRepository' => 0,
+'[C]App%5CController%5CPageController%24hobbyRepository' => 1,
 'App%5CController%5CPageController%24requestStack' => 0,
 '[C]App%5CController%5CPageController%24requestStack' => 1,
 'App%5CController%5CRegistrationController' => 0,
@@ -136,6 +138,12 @@ return [[
 '[C]App%5CEntity%5CUser%23addFriendsWithme' => 1,
 'App%5CEntity%5CUser%23removeFriendsWithme' => 0,
 '[C]App%5CEntity%5CUser%23removeFriendsWithme' => 1,
+'App%5CEntity%5CUser%23getHobbies' => 0,
+'[C]App%5CEntity%5CUser%23getHobbies' => 1,
+'App%5CEntity%5CUser%23addHobby' => 0,
+'[C]App%5CEntity%5CUser%23addHobby' => 1,
+'App%5CEntity%5CUser%23removeHobby' => 0,
+'[C]App%5CEntity%5CUser%23removeHobby' => 1,
 'App%5CEntity%5CUser%24id' => 0,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24username' => 0,
@@ -156,6 +164,8 @@ return [[
 '[C]App%5CEntity%5CUser%24friends' => 1,
 'App%5CEntity%5CUser%24friendsWithme' => 0,
 '[C]App%5CEntity%5CUser%24friendsWithme' => 1,
+'App%5CEntity%5CUser%24hobbies' => 0,
+'[C]App%5CEntity%5CUser%24hobbies' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -704,6 +714,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1662399500,
+1 => 1662412605,
 
 ]];

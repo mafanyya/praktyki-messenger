@@ -339,6 +339,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\UserRepository"/>
       <argument type="service" id="request_stack"/>
+      <argument type="service" id="App\Repository\HobbyRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\UsersController"/>
       </call>

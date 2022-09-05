@@ -96,56 +96,13 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         echo "    <body>
     <div class=\"container\">
         <div class=\"users_wrapper\">
-          ";
-        // line 10
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 10, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 11
-            echo "              <div class=\"user\">
-                  <p>";
-            // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 12), "html", null, true);
-            echo "</p>
-                  <a href=\"/page/";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 13), "html", null, true);
-            echo "\"><img class = \"user_img\" src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 13), "html", null, true);
-            echo "\"></a>
-                  <p>";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 14), "html", null, true);
-            echo "</p>
-                  ";
-            // line 15
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-                // line 16
-                echo "                      <form action=\"post\">
-                          <input type=\"hidden\" id = \"userid\" name = \"userid\" value = ";
-                // line 17
-                echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 17, $this->source); })()), "html", null, true);
-                echo ">
-                          <input type=\"hidden\" id = \"friendid\" name = \"friendid\" value = \"";
-                // line 18
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 18), "html", null, true);
-                echo "\">
-                          <input type=\"submit\" value = \"Add\">
-                      </form>
-                  ";
-            }
-            // line 22
-            echo "
-              </div>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "        </div>
-    </div>
+            <h1>hello</h1>
+        </div>
+        <div class=\"sorting_wrapper\">
 
+        </div>
+
+    </div>
     </body>
 
 ";
@@ -169,7 +126,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
 
     public function getDebugInfo()
     {
-        return array (  146 => 25,  138 => 22,  131 => 18,  127 => 17,  124 => 16,  122 => 15,  118 => 14,  112 => 13,  108 => 12,  105 => 11,  101 => 10,  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,24 +140,13 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
     <body>
     <div class=\"container\">
         <div class=\"users_wrapper\">
-          {% for user in users %}
-              <div class=\"user\">
-                  <p>{{ user.id }}</p>
-                  <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
-                  <p>{{ user.username }}</p>
-                  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                      <form action=\"post\">
-                          <input type=\"hidden\" id = \"userid\" name = \"userid\" value = {{ id }}>
-                          <input type=\"hidden\" id = \"friendid\" name = \"friendid\" value = \"{{ user.id }}\">
-                          <input type=\"submit\" value = \"Add\">
-                      </form>
-                  {% endif %}
-
-              </div>
-            {% endfor %}
+            <h1>hello</h1>
         </div>
-    </div>
+        <div class=\"sorting_wrapper\">
 
+        </div>
+
+    </div>
     </body>
 
 {% endblock %}

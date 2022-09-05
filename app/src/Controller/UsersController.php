@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +13,12 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class UsersController extends AbstractController
 {
     private UserRepository $userRepository;
+    private HobbyRepository $hobbyRepository;
     private $requestStack;
 
-    public function __construct(UserRepository $userRepository, RequestStack $requestStack) {
+    public function __construct(UserRepository $userRepository, RequestStack $requestStack, HobbyRepository $hobbyRepository) {
         $this->userRepository = $userRepository;
+        $this->hobbyRepository = $hobbyRepository;
         $this->requestStack = $requestStack;
     }
 
@@ -25,6 +28,7 @@ class UsersController extends AbstractController
         $users = $this->userRepository->findAll();
 
         $user = $this->getUser();
+        $hobbies = $this->hobbyRepository->findAll();
         $userId = null;
         if($user)
         {
@@ -44,16 +48,18 @@ class UsersController extends AbstractController
                 'currentId' => $currentLoggedUserId,
                 'currentUsername' => $currentLoggedUserUsername,
                 'currentAvatar' => $currentLoggedUserAvatar,
+                'hobbies' => $hobbies
             ]);
     }
 
-    #[Route('/users/{hobbyId}', name: 'allUsers')]
+    #[Route('/users/{hobbyId}', name: 'usersByHobby')]
     public function usersByHobby($hobbyId): Response
     {
         $users = $this->userRepository->findUserByHobby($hobbyId);
-
         $user = $this->getUser();
+        $hobbies = $this->hobbyRepository->findAll();
         $userId = null;
+
         if($user)
         {
             $id = $this->requestStack->getSession()->get('filter');
@@ -70,6 +76,7 @@ class UsersController extends AbstractController
             'currentId' => $currentLoggedUserId,
             'currentUsername' => $currentLoggedUserUsername,
             'currentAvatar' => $currentLoggedUserAvatar,
+            'hobbies' => $hobbies
         ]);
     }
 

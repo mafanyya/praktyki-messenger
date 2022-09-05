@@ -7,24 +7,13 @@
     <body>
     <div class="container">
         <div class="users_wrapper">
-          {% for user in users %}
-              <div class="user">
-                  <p>{{ user.id }}</p>
-                  <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
-                  <p>{{ user.username }}</p>
-                  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                      <form action="post">
-                          <input type="hidden" id = "userid" name = "userid" value = {{ id }}>
-                          <input type="hidden" id = "friendid" name = "friendid" value = "{{ user.id }}">
-                          <input type="submit" value = "Add">
-                      </form>
-                  {% endif %}
-
-              </div>
-            {% endfor %}
+            <h1>hello</h1>
         </div>
-    </div>
+        <div class="sorting_wrapper">
 
+        </div>
+
+    </div>
     </body>
 
 {% endblock %}
