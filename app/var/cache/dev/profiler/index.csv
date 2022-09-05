@@ -7,3 +7,10 @@ d27709,172.20.0.1,GET,http://localhost:8080/success,1662399665,,302
 2e6483,172.20.0.1,GET,http://localhost:8080/,1662399665,,200
 3052c8,172.20.0.1,GET,http://localhost:8080/page/90,1662399667,,200
 684712,172.20.0.1,GET,http://localhost:8080/users,1662399668,,200
+2e0425,172.20.0.1,GET,http://localhost:8080/,1662399866,,200
+31184a,172.20.0.1,GET,http://localhost:8080/login,1662399867,,200
+149e78,172.20.0.1,POST,http://localhost:8080/login,1662399873,,302
+53ed53,172.20.0.1,GET,http://localhost:8080/success,1662399873,,302
+5f4f40,172.20.0.1,GET,http://localhost:8080/,1662399873,,200
+86cc09,172.20.0.1,GET,http://localhost:8080/page/103,1662399874,,200
+f5c577,172.20.0.1,GET,http://localhost:8080/users,1662399876,,200
