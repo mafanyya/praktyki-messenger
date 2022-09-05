@@ -1,0 +1,32 @@
+{% extends 'root/index.html.twig' %}
+{% block header %}
+    <link href="{{ asset('css/users.css') }}" rel="stylesheet"/>
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <body>
+    <div class="container">
+        <div class="users_wrapper">
+          {% for user in users %}
+              <div class="user">
+                  <p>{{ user.id }}</p>
+                  <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
+                  <p>{{ user.username }}</p>
+                  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                      <form action="post">
+                          <input type="hidden" id = "userid" name = "userid" value = {{ id }}>
+                          <input type="hidden" id = "friendid" name = "friendid" value = "{{ user.id }}">
+                          <input type="submit" value = "Add">
+                      </form>
+                  {% endif %}
+
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    </body>
+
+{% endblock %}
+
+

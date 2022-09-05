@@ -1,0 +1,12 @@
+.users_wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.user{
+    margin-left: 1em;
+}
+.user img{
+    width: 19em;
+}

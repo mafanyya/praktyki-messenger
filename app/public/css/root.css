@@ -1,0 +1,102 @@
+body{
+    margin:0;
+    font-size:20px;
+    line-height:1.6;
+    color:#333;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:before,
+:after{
+    box-sizing:border-box;
+}
+h1,h2,h3,h4.h5,h6,p{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #333;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    /*border: solid black 2px;*/
+    border-bottom: solid #a8a8a8 2px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+/*______LOGO_____*/
+.logo{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+.logo_img{
+    font-size: 2em;
+}
+.logo_name{
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+/*_____LOGIN PANEL______*/
+
+.panel{
+
+    display: flex;
+    justify-content: space-between;
+}
+.user_credentials{
+    display: flex;
+    padding-right: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.login_panel{
+    /*border: solid black 2px;*/
+    display:flex;
+    width:15%;
+
+    justify-content: end;
+
+}
+.panel_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.5em;
+}
+.panel_link{
+
+    font-size: 1em;
+    font-weight: 700;
+    color: #333;
+}
+
+.avatar{
+    display: flex;
+    max-width: 10%;
+    padding: 0;
+    align-items: center;
+
+}
+.avatar_content{
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.username{
+    padding-left: 0.5em;
+}
+

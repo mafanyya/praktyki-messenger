@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+
+  database:
+    container_name: database_sunflower
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: sunflower
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+    ports:
+      - '4304:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+
+  php:
+    container_name: php_sunflower
+    build:
+      context: ./php
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./app:/var/www/sunflower
+    depends_on:
+      - database
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma_sunflower
+    links:
+      - database
+    environment:
+      PMA_HOST: database
+      PMA_PASSWORD: symfony
+      PMA_USER: symfony
+      PMA_PORT: 3310
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8084:80
+    depends_on:
+      - database
+
+  nginx:
+    container_name: nginx_sunflower
+    image: nginx:stable-alpine
+    ports:
+      - '8080:80'
+    volumes:
+      - ./app:/var/www/sunflower
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - database
+

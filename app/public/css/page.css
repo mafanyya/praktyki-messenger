@@ -1,0 +1,34 @@
+.main_inf{
+
+    display: flex;
+    margin-top:1em;
+}
+.avatar_inf{
+
+    display: flex;
+    flex-direction: column;
+}
+.avatar_content_page{
+
+}
+.add_avatar{
+    display: flex;
+    justify-content: center;
+
+}
+.add_avatar a{
+    padding:0.05em;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #949494;
+}
+.user_inf{
+    padding-top: 1em;
+    padding-left: 2.5em;
+    display: flex;
+    flex-direction: column;
+}
+.username_page p{
+    font-size: 1.5em;
+    font-weight: 700;
+}
