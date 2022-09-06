@@ -34,17 +34,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $avatar;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $country;
+
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $birthdate;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Friendship::class)]
-    private $friends;
-
-    #[ORM\OneToMany(mappedBy: 'friends', targetEntity: Friendship::class)]
-    private $friendsWithme;
 
     #[ORM\ManyToMany(targetEntity: Hobby::class, inversedBy: 'users')]
     private $hobbies;
@@ -150,17 +144,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
 
-    public function setCountry(?string $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
 
     public function getBirthdate(): ?string
     {
@@ -174,65 +158,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Friendship>
-     */
-    public function getFriends(): Collection
-    {
-        return $this->friends;
-    }
 
-    public function addFriend(Friendship $friend): self
-    {
-        if (!$this->friends->contains($friend)) {
-            $this->friends[] = $friend;
-            $friend->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFriend(Friendship $friend): self
-    {
-        if ($this->friends->removeElement($friend)) {
-            // set the owning side to null (unless already changed)
-            if ($friend->getUser() === $this) {
-                $friend->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Friendship>
-     */
-    public function getFriendsWithme(): Collection
-    {
-        return $this->friendsWithme;
-    }
-
-    public function addFriendsWithme(Friendship $friendsWithme): self
-    {
-        if (!$this->friendsWithme->contains($friendsWithme)) {
-            $this->friendsWithme[] = $friendsWithme;
-            $friendsWithme->setFriends($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFriendsWithme(Friendship $friendsWithme): self
-    {
-        if ($this->friendsWithme->removeElement($friendsWithme)) {
-            // set the owning side to null (unless already changed)
-            if ($friendsWithme->getFriends() === $this) {
-                $friendsWithme->setFriends(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Hobby>

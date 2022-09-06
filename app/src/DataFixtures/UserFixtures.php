@@ -112,7 +112,6 @@ class UserFixtures extends Fixture
         $admin->setUsername('admin');
         $admin->setEmail('admin@admin.com');
         $admin->setPassword($this->passwordHasher->hashPassword($admin,'admin'));
-        $admin->setCountry('USA');
         $admin->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-300x300.jpg');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBirthdate('30 February');
@@ -127,7 +126,6 @@ class UserFixtures extends Fixture
         $user->setUsername('user');
         $user->setEmail('user@user.com');
         $user->setPassword($this->passwordHasher->hashPassword($user,'user'));
-        $user->setCountry('USA');
         $user->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/robert-godwin-cdksyTqEXzo-300x300.jpg');
         $user->setRoles(['ROLE_USER']);
         $user->setBirthdate('1 January');
@@ -141,7 +139,6 @@ class UserFixtures extends Fixture
         $user2->setUsername('garry');
         $user2->setEmail('garry@user.com');
         $user2->setPassword($this->passwordHasher->hashPassword($user,'garry'));
-        $user2->setCountry('Japan');
         $user2->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/philipe-cavalcante-xe68QiMaDrQ-2-300x300.jpg');
         $user2->setRoles(['ROLE_USER']);
         $user2->setBirthdate('15 March');
@@ -153,7 +150,6 @@ class UserFixtures extends Fixture
         $user3->setUsername('redshock');
         $user3->setEmail('redshock@user.com');
         $user3->setPassword($this->passwordHasher->hashPassword($user,'redshock'));
-        $user3->setCountry('Bolivia');
         $user3->setAvatar('https://userstock.io/data/wp-content/uploads/2020/05/warren-wong-VVEwJJRRHgk-300x300.jpg');
         $user3->setRoles(['ROLE_USER']);
         $user3->setBirthdate('12 November');
@@ -167,7 +163,6 @@ class UserFixtures extends Fixture
         $user4->setUsername('maradonner');
         $user4->setEmail('maradonner@user.com');
         $user4->setPassword($this->passwordHasher->hashPassword($user,'maradonner'));
-        $user4->setCountry('Canada');
         $user4->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/nick-karvounis-75432-300x300.jpg');
         $user4->setRoles(['ROLE_USER']);
         $user4->setBirthdate('7 July');
@@ -179,7 +174,6 @@ class UserFixtures extends Fixture
         $user55->setUsername('ouster');
         $user55->setEmail('ouster@user.com');
         $user55->setPassword($this->passwordHasher->hashPassword($user,'ouster'));
-        $user55->setCountry('Bulgaria');
         $user55->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/ilaya-raja-280339-300x300.jpg');
         $user55->setRoles(['ROLE_USER']);
         $user55->setBirthdate('2 September');
@@ -192,7 +186,6 @@ class UserFixtures extends Fixture
         $user5->setUsername('impplant');
         $user5->setEmail('impplant@user.com');
         $user5->setPassword($this->passwordHasher->hashPassword($user,'impplant'));
-        $user5->setCountry('Brazil');
         $user5->setAvatar('https://userstock.io/data/wp-content/uploads/2017/09/lesly-b-juarez-276953-300x300.jpg');
         $user5->setRoles(['ROLE_USER']);
         $user5->setBirthdate('19 March');
@@ -206,7 +199,6 @@ class UserFixtures extends Fixture
         $user6->setUsername('marcantony');
         $user6->setEmail('marcantony@user.com');
         $user6->setPassword($this->passwordHasher->hashPassword($user,'marcantony'));
-        $user6->setCountry('Iceland');
         $user6->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/tamarcus-brown-266128-300x300.jpg');
         $user6->setRoles(['ROLE_USER']);
         $user6->setBirthdate('16 December');
@@ -219,7 +211,6 @@ class UserFixtures extends Fixture
         $user7->setUsername('treecher');
         $user7->setEmail('treecher@user.com');
         $user7->setPassword($this->passwordHasher->hashPassword($user,'treecher'));
-        $user7->setCountry('Russia');
         $user7->setAvatar('https://userstock.io/data/wp-content/uploads/2020/05/eye-for-ebony-OeXcIHFwtsM-unsplash-300x300.jpg');
         $user7->setRoles(['ROLE_USER']);
         $user7->setBirthdate('1 April');
@@ -230,7 +221,6 @@ class UserFixtures extends Fixture
         $user8->setUsername('endocryne');
         $user8->setEmail('endocryne@user.com');
         $user8->setPassword($this->passwordHasher->hashPassword($user,'endocryne'));
-        $user8->setCountry('Israel');
         $user8->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/zi-jian-lim-218410-300x300.jpg');
         $user8->setRoles(['ROLE_USER']);
         $user8->setBirthdate('30 May');
@@ -241,7 +231,6 @@ class UserFixtures extends Fixture
         $user9->setUsername('prysm');
         $user9->setEmail('prysm@user.com');
         $user9->setPassword($this->passwordHasher->hashPassword($user,'prysm'));
-        $user9->setCountry('Italy');
         $user9->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-26939-1-300x300.jpg');
         $user9->setRoles(['ROLE_USER']);
         $user9->setBirthdate('20 June');
@@ -252,7 +241,6 @@ class UserFixtures extends Fixture
         $user10->setUsername('bibliokiller');
         $user10->setEmail('bibliokiller@user.com');
         $user10->setPassword($this->passwordHasher->hashPassword($user,'bibliokiller'));
-        $user10->setCountry('Poland');
         $user10->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/yegide-matthews-60888-300x300.jpg');
         $user10->setRoles(['ROLE_USER']);
         $user10->setBirthdate('12 August');
@@ -263,7 +251,6 @@ class UserFixtures extends Fixture
         $user11->setUsername('vuvuka');
         $user11->setEmail('vuvuka@user.com');
         $user11->setPassword($this->passwordHasher->hashPassword($user,'vuvuka'));
-        $user11->setCountry('Poland');
         $user11->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-300122-300x300.jpeg');
         $user11->setRoles(['ROLE_USER']);
         $user11->setBirthdate('13 August');
