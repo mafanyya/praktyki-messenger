@@ -347,9 +347,6 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
-    <service id="App\DataFixtures\HobbyFixtures" class="App\DataFixtures\HobbyFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
     <service id="App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_hasher"/>
@@ -2729,10 +2726,6 @@
             <argument key="groups" type="collection"/>
           </argument>
           <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\HobbyFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-          <argument type="collection">
             <argument key="fixture" type="service" id="App\DataFixtures\UserFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
@@ -4186,8 +4179,6 @@
     <service id=".abstract.instanceof.App\Controller\UsersController" class="App\Controller\UsersController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\HobbyFixtures" class="App\DataFixtures\HobbyFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\HobbyFixtures" class="App\DataFixtures\HobbyFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>

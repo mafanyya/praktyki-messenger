@@ -1,16 +1,43 @@
+.users{
+    display: flex;
+    flex-direction: row;
+}
 .users_wrapper{
-    border:2px solid black;
-    width: 70%;
-    height: 200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    color:skyblue;
+    width: 70%;
+
 
 }
+.user{
+    margin-left: 1em;
+}
+.user img{
+    width: 12em;
+}
+
 .sorting_wrapper{
-    border: 2px solid red;
-    width:30%;
-    height: 200px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5em;
+
+}
+.sorting_wrapper p{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.sorting_wrapper a{
+    font-size: 1em;
+    font-weight: 600;
+}
+.sorting_wrapper a:link{
+    text-decoration: none;
+    color: #949494;
+}
+.sorting_wrapper a:visited{
+    text-decoration: none;
+    color: #949494;
 }
 
