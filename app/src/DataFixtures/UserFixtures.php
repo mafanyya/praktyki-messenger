@@ -264,7 +264,7 @@ class UserFixtures extends Fixture
         $user11->setEmail('vuvuka@user.com');
         $user11->setPassword($this->passwordHasher->hashPassword($user,'vuvuka'));
         $user11->setCountry('Poland');
-        $user11->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/yegide-matthews-60888-300x300.jpg');
+        $user11->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-300122-300x300.jpeg');
         $user11->setRoles(['ROLE_USER']);
         $user11->setBirthdate('13 August');
         $user11->addHobby($hobby3);

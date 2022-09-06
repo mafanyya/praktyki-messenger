@@ -130,32 +130,24 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
         echo twig_escape_filter($this->env, (isset($context["country"]) || array_key_exists("country", $context) ? $context["country"] : (function () { throw new RuntimeError('Variable "country" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "</p>
                 </div>
-                <div class=\"country\">
-                    <p><i class=\"bi bi-globe\"></i> ";
-        // line 31
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 31, $this->source); })()), "html", null, true);
-        echo "</p>
-                </div>
-                <div class=\"country\">
+
+                <div class=\"hobbies\">
                     ";
-        // line 34
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 34, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 32, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["hobby"]) {
-            // line 35
+            // line 33
             echo "                    <p><i class=\"bi bi-check2\"></i> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 33), "html", null, true);
             echo "</p>
-                        <p><i class=\"bi bi-check2\"></i> ";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 36), "html", null, true);
-            echo "</p>
+
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 36
         echo "                </div>
 
 
@@ -193,7 +185,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
 
     public function getDebugInfo()
     {
-        return array (  159 => 38,  151 => 36,  146 => 35,  142 => 34,  136 => 31,  130 => 28,  124 => 25,  118 => 22,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  151 => 36,  141 => 33,  137 => 32,  130 => 28,  124 => 25,  118 => 22,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -227,13 +219,11 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                 <div class=\"country\">
                     <p><i class=\"bi bi-globe\"></i> {{ country }}</p>
                 </div>
-                <div class=\"country\">
-                    <p><i class=\"bi bi-globe\"></i> {{ id }}</p>
-                </div>
-                <div class=\"country\">
+
+                <div class=\"hobbies\">
                     {% for hobby in hobbies %}
                     <p><i class=\"bi bi-check2\"></i> {{ hobby.name }}</p>
-                        <p><i class=\"bi bi-check2\"></i> {{ hobby.id }}</p>
+
                     {% endfor %}
                 </div>
 

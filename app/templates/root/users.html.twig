@@ -25,10 +25,12 @@
             {% endfor %}
         </div>
             <div class="sorting_wrapper">
-                <p class = "sorting_list">By hobbies</p>
+                <p class = "sorting_list_name">by hobby</p>
                 {% for hobby in hobbies %}
                 <a  class = "sorting_list" href="/users/{{ hobby.id }}">{{ hobby.name }}</a>
                 {% endfor %}
+                <a  class = "sorting_list" href="/users"><i class="bi bi-arrow-return-left"></i></a>
+
 
             </div>
         </div>

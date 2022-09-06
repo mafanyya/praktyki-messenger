@@ -146,7 +146,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         // line 26
         echo "        </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list\">By hobbies</p>
+                <p class = \"sorting_list_name\">by hobby</p>
                 ";
         // line 29
         $context['_parent'] = $context;
@@ -164,7 +164,9 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 32
-        echo "
+        echo "                <a  class = \"sorting_list\" href=\"/users\"><i class=\"bi bi-arrow-return-left\"></i></a>
+
+
             </div>
         </div>
     </div>
@@ -224,10 +226,12 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
             {% endfor %}
         </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list\">By hobbies</p>
+                <p class = \"sorting_list_name\">by hobby</p>
                 {% for hobby in hobbies %}
                 <a  class = \"sorting_list\" href=\"/users/{{ hobby.id }}\">{{ hobby.name }}</a>
                 {% endfor %}
+                <a  class = \"sorting_list\" href=\"/users\"><i class=\"bi bi-arrow-return-left\"></i></a>
+
 
             </div>
         </div>
