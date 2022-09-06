@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\DataFixtures\HobbyFixtures;
+use App\Entity\Country;
 use App\Entity\Hobby;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -108,6 +109,112 @@ class UserFixtures extends Fixture
 
         $manager->flush();
 
+        $country1 = new Country();
+        $country1->setName('Afghanistan');
+        $country1->setContinent('Asia');
+        $manager->persist($country1);
+
+        $country2 = new Country();
+        $country2->setName('Malaysia');
+        $country2->setContinent('Asia');
+        $manager->persist($country2);
+
+        $country3 = new Country();
+        $country3->setName('North Korea');
+        $country3->setContinent('Asia');
+        $manager->persist($country3);
+
+        $country4 = new Country();
+        $country4->setName('Afghanistan');
+        $country4->setContinent('Asia');
+        $manager->persist($country4);
+
+        $country5 = new Country();
+        $country5->setName('Congo');
+        $country5->setContinent('Africa');
+        $manager->persist($country5);
+
+        $country6 = new Country();
+        $country6->setName('Uganda');
+        $country6->setContinent('Africa');
+        $manager->persist($country6);
+
+        $country7 = new Country();
+        $country7->setName('Mozambique');
+        $country7->setContinent('Africa');
+        $manager->persist($country7);
+
+        $country8 = new Country();
+        $country8->setName('Germany');
+        $country8->setContinent('Europe');
+        $manager->persist($country8);
+
+        $country9 = new Country();
+        $country9->setName('Ireland');
+        $country9->setContinent('Europe');
+        $manager->persist($country9);
+
+        $country10 = new Country();
+        $country10->setName('Poland');
+        $country10->setContinent('Europe');
+        $manager->persist($country10);
+
+        $country11 = new Country();
+        $country11->setName('Russia');
+        $country11->setContinent('Europe');
+        $manager->persist($country11);
+
+        $country12 = new Country();
+        $country12->setName('USA');
+        $country12->setContinent('North America');
+        $manager->persist($country12);
+
+        $country13 = new Country();
+        $country13->setName('Canada');
+        $country13->setContinent('North America');
+        $manager->persist($country13);
+
+        $country14 = new Country();
+        $country14->setName('Mexico');
+        $country14->setContinent('North America');
+        $manager->persist($country14);
+
+        $country15 = new Country();
+        $country15->setName('Cuba');
+        $country15->setContinent('North America');
+        $manager->persist($country15);
+
+        $country16 = new Country();
+        $country16->setName('Brazil');
+        $country16->setContinent('South America');
+        $manager->persist($country16);
+
+        $country17 = new Country();
+        $country17->setName('Peru');
+        $country17->setContinent('South America');
+        $manager->persist($country17);
+
+        $country18 = new Country();
+        $country18->setName('Chile');
+        $country18->setContinent('South America');
+        $manager->persist($country18);
+
+        $country19 = new Country();
+        $country19->setName('Australia');
+        $country19->setContinent('Australia/Oceania');
+        $manager->persist($country19);
+
+        $country20 = new Country();
+        $country20->setName('Papua New Guinea');
+        $country20->setContinent('Australia/Oceania');
+        $manager->persist($country20);
+
+        $manager->flush();
+
+
+
+
+
         $admin = new User();
         $admin->setUsername('admin');
         $admin->setEmail('admin@admin.com');
@@ -117,6 +224,7 @@ class UserFixtures extends Fixture
         $admin->setBirthdate('30 February');
         $admin->addHobby($hobby1);
         $admin->addHobby($hobby7);
+
 
 
 
