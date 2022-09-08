@@ -34,8 +34,7 @@ class PageController extends AbstractController
         $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
         $user = $this->userRepository->find($id);
         $username = $user->getUsername();
-        $country = $user->getEmail();
-        $email = $user->getCountry();
+        $email = $user->getEmail();
         $avatar = $user->getAvatar();
         $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
 
@@ -56,7 +55,7 @@ class PageController extends AbstractController
             'currentAvatar' => $currentLoggedUserAvatar,
             'avatar' => $avatar,
             'username' => $username,
-            'country' => $country,
+
             'email' => $email,
             'hobbies' => $hobbies,
             'id' => $id
