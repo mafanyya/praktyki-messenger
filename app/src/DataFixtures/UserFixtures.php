@@ -125,7 +125,7 @@ class UserFixtures extends Fixture
         $manager->persist($country3);
 
         $country4 = new Country();
-        $country4->setName('Afghanistan');
+        $country4->setName('China');
         $country4->setContinent('Asia');
         $manager->persist($country4);
 
@@ -222,10 +222,9 @@ class UserFixtures extends Fixture
         $admin->setAvatar('https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-300x300.jpg');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBirthdate('30 February');
-        $admin->addHobby($hobby1);
-        $admin->addHobby($hobby7);
-
-
+        $admin->addHobby($hobby3);
+        $admin->addHobby($hobby6);
+        $admin->setCountry($country1);
 
 
         $manager->persist($admin);
@@ -238,6 +237,7 @@ class UserFixtures extends Fixture
         $user->setRoles(['ROLE_USER']);
         $user->setBirthdate('1 January');
         $user->addHobby($hobby16);
+        $user->setCountry($country3);
 
 
         $manager->persist($user);
@@ -251,6 +251,7 @@ class UserFixtures extends Fixture
         $user2->setRoles(['ROLE_USER']);
         $user2->setBirthdate('15 March');
         $user2->addHobby($hobby3);
+        $user2->setCountry($country4);
 
         $manager->persist($user2);
 
@@ -263,6 +264,7 @@ class UserFixtures extends Fixture
         $user3->setBirthdate('12 November');
         $user3->addHobby($hobby6);
         $user3->addHobby($hobby14);
+        $user3->setCountry($country6);
 
         $manager->persist($user3);
 
@@ -275,6 +277,7 @@ class UserFixtures extends Fixture
         $user4->setRoles(['ROLE_USER']);
         $user4->setBirthdate('7 July');
         $user4->addHobby($hobby5);
+        $user4->setCountry($country4);
 
         $manager->persist($user4);
 
@@ -286,6 +289,7 @@ class UserFixtures extends Fixture
         $user55->setRoles(['ROLE_USER']);
         $user55->setBirthdate('2 September');
         $user55->addHobby($hobby2);
+        $user55->setCountry($country7);
 
 
         $manager->persist($user55);
@@ -300,6 +304,7 @@ class UserFixtures extends Fixture
         $user5->addHobby($hobby7);
         $user5->addHobby($hobby9);
         $user5->addHobby($hobby11);
+        $user5->setCountry($country8);
 
         $manager->persist($user5);
 
@@ -311,6 +316,7 @@ class UserFixtures extends Fixture
         $user6->setRoles(['ROLE_USER']);
         $user6->setBirthdate('16 December');
         $user6->addHobby($hobby8);
+        $user6->setCountry($country11);
 
 
         $manager->persist($user6);
@@ -324,6 +330,7 @@ class UserFixtures extends Fixture
         $user7->setBirthdate('1 April');
         $user7->addHobby($hobby16);
         $manager->persist($user7);
+        $user7->setCountry($country12);
 
         $user8 = new User();
         $user8->setUsername('endocryne');
@@ -333,6 +340,7 @@ class UserFixtures extends Fixture
         $user8->setRoles(['ROLE_USER']);
         $user8->setBirthdate('30 May');
         $user8->addHobby($hobby12);
+        $user8->setCountry($country15);
         $manager->persist($user8);
 
         $user9 = new User();
@@ -343,6 +351,7 @@ class UserFixtures extends Fixture
         $user9->setRoles(['ROLE_USER']);
         $user9->setBirthdate('20 June');
         $user9->addHobby($hobby14);
+        $user9->setCountry($country17);
         $manager->persist($user9);
 
         $user10 = new User();
@@ -353,17 +362,111 @@ class UserFixtures extends Fixture
         $user10->setRoles(['ROLE_USER']);
         $user10->setBirthdate('12 August');
         $user10->addHobby($hobby1);
+        $user10->setCountry($country9);
         $manager->persist($user10);
 
-        $user11 = new User();
-        $user11->setUsername('vuvuka');
-        $user11->setEmail('vuvuka@user.com');
-        $user11->setPassword($this->passwordHasher->hashPassword($user,'vuvuka'));
-        $user11->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-300122-300x300.jpeg');
-        $user11->setRoles(['ROLE_USER']);
-        $user11->setBirthdate('13 August');
-        $user11->addHobby($hobby3);
-        $manager->persist($user11);
+        $user12 = new User();
+        $user12->setUsername('mateusz');
+        $user12->setEmail('mateusz@user.com');
+        $user12->setPassword($this->passwordHasher->hashPassword($user,'mateusz'));
+        $user12->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/cristian-newman-281239-300x300.jpg');
+        $user12->setRoles(['ROLE_USER']);
+        $user12->setBirthdate('23 September');
+        $user12->addHobby($hobby4);
+        $user12->setCountry($country19);
+        $manager->persist($user12);
+
+        $user13 = new User();
+        $user13->setUsername('robotik');
+        $user13->setEmail('robotik@user.com');
+        $user13->setPassword($this->passwordHasher->hashPassword($user,'robotik'));
+        $user13->setAvatar('https://userstock.io/data/wp-content/uploads/2017/06/child-children-girl-happy-300x300.jpg');
+        $user13->setRoles(['ROLE_USER']);
+        $user13->setBirthdate('30 May');
+        $user13->addHobby($hobby12);
+        $user13->setCountry($country14);
+        $manager->persist($user8);
+
+        $user14 = new User();
+        $user14->setUsername('prince');
+        $user14->setEmail('prince@user.com');
+        $user14->setPassword($this->passwordHasher->hashPassword($user,'prince'));
+        $user14->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-247917-300x300.jpg');
+        $user14->setRoles(['ROLE_USER']);
+        $user14->setBirthdate('August 12');
+        $user14->addHobby($hobby7);
+        $user14->setCountry($country15);
+        $manager->persist($user14);
+
+        $user15 = new User();
+        $user15->setUsername('ack');
+        $user15->setEmail('ack@user.com');
+        $user15->setPassword($this->passwordHasher->hashPassword($user,'ack'));
+        $user15->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/lotte-meijer-142573-300x300.jpg');
+        $user15->setRoles(['ROLE_USER']);
+        $user15->setBirthdate('December 27');
+        $user15->addHobby($hobby2);
+        $user15->setCountry($country15);
+        $manager->persist($user14);
+
+        $user16 = new User();
+        $user16->setUsername('playmoe');
+        $user16->setEmail('playmoe@user.com');
+        $user16->setPassword($this->passwordHasher->hashPassword($user,'playmoe'));
+        $user16->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/pexels-photo-1-300x300.jpg');
+        $user16->setRoles(['ROLE_USER']);
+        $user16->setBirthdate('January 15');
+        $user16->addHobby($hobby10);
+        $user16->setCountry($country12);
+        $manager->persist($user12);
+
+        $user17 = new User();
+        $user17->setUsername('planto');
+        $user17->setEmail('planto@user.com');
+        $user17->setPassword($this->passwordHasher->hashPassword($user,'planto'));
+        $user17->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/andre-hunter-111247-300x300.jpg');
+        $user17->setRoles(['ROLE_USER']);
+        $user17->setBirthdate('October 3');
+        $user17->addHobby($hobby16);
+        $user17->setCountry($country19);
+        $manager->persist($user10);
+
+        $user18 = new User();
+        $user18->setUsername('panic');
+        $user18->setEmail('panic@user.com');
+        $user18->setPassword($this->passwordHasher->hashPassword($user,'panic'));
+        $user18->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/chelsea-ferenando-172284-300x300.jpg');
+        $user18->setRoles(['ROLE_USER']);
+        $user18->setBirthdate('March 25');
+        $user18->addHobby($hobby13);
+        $user18->addHobby($hobby15);
+        $user18->setCountry($country11);
+        $manager->persist($user18);
+
+        $user19 = new User();
+        $user19->setUsername('azudeon');
+        $user19->setEmail('azudeon@user.com');
+        $user19->setPassword($this->passwordHasher->hashPassword($user,'azudeon'));
+        $user19->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/man-holiday-people-face-300x300.jpg');
+        $user19->setRoles(['ROLE_USER']);
+        $user19->setBirthdate('February 24');
+        $user19->addHobby($hobby16);
+        $user19->setCountry($country6);
+        $manager->persist($user19);
+
+        $user20 = new User();
+        $user20->setUsername('fielerini');
+        $user20->setEmail('fielerini@user.com');
+        $user20->setPassword($this->passwordHasher->hashPassword($user,'fielerini'));
+        $user20->setAvatar('https://userstock.io/data/wp-content/uploads/2017/07/filipe-almeida-191584-300x300.jpg');
+        $user20->setRoles(['ROLE_USER']);
+        $user20->setBirthdate('November 30');
+        $user20->addHobby($hobby10);
+        $user20->setCountry($country4);
+        $manager->persist($user20);
+
+
+
 
 
         $manager->flush();

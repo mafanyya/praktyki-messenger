@@ -43,6 +43,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Hobby::class, inversedBy: 'users')]
     private $hobbies;
 
+    #[ORM\ManyToOne(targetEntity: Country::class, inversedBy: 'users')]
+    private $country;
+
     public function __construct()
     {
         $this->friends = new ArrayCollection();
@@ -180,6 +183,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeHobby(Hobby $hobby): self
     {
         $this->hobbies->removeElement($hobby);
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?Country $country): self
+    {
+        $this->country = $country;
 
         return $this;
     }

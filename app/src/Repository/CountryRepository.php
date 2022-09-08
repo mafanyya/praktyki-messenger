@@ -39,6 +39,17 @@ class CountryRepository extends ServiceEntityRepository
         }
     }
 
+    public function findCountryByUser($userId)
+    {
+        return $this->createQueryBuilder('country')
+            ->select('country','users')
+            ->leftJoin('country.users','users')
+            ->andWhere('users = :userId')
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
 //    /**
 //     * @return Country[] Returns an array of Country objects
 //     */

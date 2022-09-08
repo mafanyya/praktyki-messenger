@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\CountryRepository;
 use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,11 +15,13 @@ class UsersController extends AbstractController
 {
     private UserRepository $userRepository;
     private HobbyRepository $hobbyRepository;
+    private CountryRepository $countryRepository;
     private $requestStack;
 
-    public function __construct(UserRepository $userRepository, RequestStack $requestStack, HobbyRepository $hobbyRepository) {
+    public function __construct(UserRepository $userRepository, RequestStack $requestStack, HobbyRepository $hobbyRepository, CountryRepository $countryRepository) {
         $this->userRepository = $userRepository;
         $this->hobbyRepository = $hobbyRepository;
+        $this->countryRepository = $countryRepository;
         $this->requestStack = $requestStack;
     }
 
@@ -58,6 +61,7 @@ class UsersController extends AbstractController
         $users = $this->userRepository->findUserByHobby($hobbyId);
         $user = $this->getUser();
         $hobbies = $this->hobbyRepository->findAll();
+
         $userId = null;
 
         if($user)
