@@ -125,7 +125,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
         echo "</p>
                 </div>
                 <div class=\"country\">
-                    <p><i class=\"bi bi-envelope\"></i> ";
+                    <p><i class=\"bi bi-globe\"></i> ";
         // line 28
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["country"]) || array_key_exists("country", $context) ? $context["country"] : (function () { throw new RuntimeError('Variable "country" does not exist.', 28, $this->source); })()), "name", [], "any", false, false, false, 28), "html", null, true);
         echo "</p>
@@ -218,7 +218,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     <p><i class=\"bi bi-envelope\"></i> {{ email}}</p>
                 </div>
                 <div class=\"country\">
-                    <p><i class=\"bi bi-envelope\"></i> {{ country.name }}</p>
+                    <p><i class=\"bi bi-globe\"></i> {{ country.name }}</p>
                 </div>
 
 

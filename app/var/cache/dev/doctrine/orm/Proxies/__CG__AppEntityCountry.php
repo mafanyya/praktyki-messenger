@@ -67,10 +67,10 @@ class Country extends \App\Entity\Country implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'continent', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'users'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'continent', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'img'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'continent', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'users'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'continent', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'users', '' . "\0" . 'App\\Entity\\Country' . "\0" . 'img'];
     }
 
     /**
@@ -267,6 +267,28 @@ class Country extends \App\Entity\Country implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUser', [$user]);
 
         return parent::removeUser($user);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImg(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImg', []);
+
+        return parent::getImg();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImg(string $img): \App\Entity\Country
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImg', [$img]);
+
+        return parent::setImg($img);
     }
 
 }

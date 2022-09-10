@@ -24,6 +24,9 @@ class Country
     #[ORM\OneToMany(mappedBy: 'country', targetEntity: User::class)]
     private $users;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $img;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -84,6 +87,18 @@ class Country
                 $user->setCountry(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }

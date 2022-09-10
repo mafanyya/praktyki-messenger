@@ -49,9 +49,9 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
     ";
         // line 22
         $this->displayBlock('header', $context, $blocks);
-        // line 62
+        // line 63
         $this->displayBlock('body', $context, $blocks);
-        // line 92
+        // line 93
         echo "
 
 
@@ -170,6 +170,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         }
         // line 56
         echo "
+
                 </div>
                 </div>
             </div>
@@ -183,7 +184,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     }
 
-    // line 62
+    // line 63
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,14 +194,14 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 63
+        // line 64
         echo "    <body>
     <div class=\"container\">
         <div class=\"main_content\">
             ";
-        // line 66
+        // line 67
         if ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 67
+            // line 68
             echo "            <div class=\"main_img\">
             <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
             </div>
@@ -212,7 +213,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
             </div>
                 ";
         } else {
-            // line 77
+            // line 78
             echo "                    <div class=\"main_img\">
                         <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
                     </div>
@@ -223,7 +224,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     </div>
             ";
         }
-        // line 86
+        // line 87
         echo "
         </div>
     </div>
@@ -245,7 +246,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     public function getDebugInfo()
     {
-        return array (  227 => 86,  216 => 77,  204 => 67,  202 => 66,  197 => 63,  187 => 62,  172 => 56,  162 => 48,  155 => 43,  153 => 42,  144 => 38,  138 => 35,  122 => 23,  112 => 22,  99 => 18,  94 => 16,  78 => 2,  68 => 1,  55 => 92,  53 => 62,  51 => 22,  48 => 21,  46 => 1,);
+        return array (  228 => 87,  217 => 78,  205 => 68,  203 => 67,  198 => 64,  188 => 63,  172 => 56,  162 => 48,  155 => 43,  153 => 42,  144 => 38,  138 => 35,  122 => 23,  112 => 22,  99 => 18,  94 => 16,  78 => 2,  68 => 1,  55 => 93,  53 => 63,  51 => 22,  48 => 21,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -305,6 +306,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                            <a class = \"panel_link\" href=\"/login\">Sign In</a>
                         </div>
                     {% endif %}
+
 
                 </div>
                 </div>
