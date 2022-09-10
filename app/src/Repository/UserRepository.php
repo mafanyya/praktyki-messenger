@@ -96,6 +96,21 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getArrayResult();
     }
 
+    public function findUserByHobbyExceptCurrentUser($hobbyId, $userId)
+    {
+        return $this->createQueryBuilder('users')
+            ->select('users','hobbies')
+            ->leftJoin('users.hobbies','hobbies')
+            ->andWhere('hobbies = :hobbies')
+            ->andWhere('users.id != :userId')
+            ->setParameter('hobbies',$hobbyId)
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+
+
 
 
 

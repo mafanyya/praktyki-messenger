@@ -36,15 +36,32 @@
                     {% endfor %}
                 </div>
 
-
-
                 <div class="friends">
                     <a href="/users">Users</a>
                     <a href="/friends/{id}">Friends</a>
                 </div>
             </div>
 
+
+
         </div>
+
+        <div class="users_by_hobby">
+            {% if usersByHobby %}
+            {% if id == currentId %}
+            <p>Are you intersted in {{ findByHobby.name }}? These are other users who are interested in {{ findByHobby.name }}:</p>
+                {% else %}
+                <p>{{ username }} is interested in {{ findByHobby.name }}. These are other users who are interested in {{ findByHobby.name }}:</p>
+
+            {% endif %}
+
+            {% for user in usersByHobby %}
+                {{ user.username }}
+                <img src="{{ user.avatar }}">
+            {% endfor %}
+            {% endif %}
+        </div>
+
 
 
     </div>

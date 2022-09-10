@@ -42,16 +42,8 @@ class PageController extends AbstractController
         $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
         $country = $this->countryRepository->findCountryByUser($id);
         $country = $country[0];
-
-
-            if($user == null)
-            {
-                $avatar = "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png";
-            }
-            if($user == null)
-            {
-                $email = "Email unknown";
-            }
+        $findByHobby = $hobbies[0];
+        $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
 
         return $this->render('page/index.html.twig', [
             'name' => $currentLoggedUserUsername,
@@ -64,8 +56,11 @@ class PageController extends AbstractController
             'email' => $email,
             'hobbies' => $hobbies,
             'country' => $country,
+            'findByHobby' => $findByHobby,
+            'usersByHobby' => $usersByHobby,
 
             'id' => $id
+
 
 
 

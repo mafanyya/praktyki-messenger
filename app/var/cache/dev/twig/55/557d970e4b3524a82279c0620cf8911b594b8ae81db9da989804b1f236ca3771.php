@@ -151,15 +151,68 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
         // line 37
         echo "                </div>
 
-
-
                 <div class=\"friends\">
                     <a href=\"/users\">Users</a>
                     <a href=\"/friends/{id}\">Friends</a>
                 </div>
             </div>
 
+
+
         </div>
+
+        <div class=\"users_by_hobby\">
+            ";
+        // line 50
+        if ((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 50, $this->source); })())) {
+            // line 51
+            echo "            ";
+            if (((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 51, $this->source); })()) == (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 51, $this->source); })()))) {
+                // line 52
+                echo "            <p>Are you intersted in ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 52, $this->source); })()), "name", [], "any", false, false, false, 52), "html", null, true);
+                echo "? These are other users who are interested in ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 52, $this->source); })()), "name", [], "any", false, false, false, 52), "html", null, true);
+                echo ":</p>
+                ";
+            } else {
+                // line 54
+                echo "                <p>";
+                echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 54, $this->source); })()), "html", null, true);
+                echo " is interested in ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 54, $this->source); })()), "name", [], "any", false, false, false, 54), "html", null, true);
+                echo ". These are other users who are interested in ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 54, $this->source); })()), "name", [], "any", false, false, false, 54), "html", null, true);
+                echo ":</p>
+
+            ";
+            }
+            // line 57
+            echo "
+            ";
+            // line 58
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 58, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+                // line 59
+                echo "                ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 59), "html", null, true);
+                echo "
+                <img src=\"";
+                // line 60
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 60), "html", null, true);
+                echo "\">
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 62
+            echo "            ";
+        }
+        // line 63
+        echo "        </div>
+
 
 
     </div>
@@ -186,7 +239,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
 
     public function getDebugInfo()
     {
-        return array (  152 => 37,  142 => 34,  138 => 33,  130 => 28,  124 => 25,  118 => 22,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  214 => 63,  211 => 62,  203 => 60,  198 => 59,  194 => 58,  191 => 57,  180 => 54,  172 => 52,  169 => 51,  167 => 50,  152 => 37,  142 => 34,  138 => 33,  130 => 28,  124 => 25,  118 => 22,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -229,15 +282,32 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     {% endfor %}
                 </div>
 
-
-
                 <div class=\"friends\">
                     <a href=\"/users\">Users</a>
                     <a href=\"/friends/{id}\">Friends</a>
                 </div>
             </div>
 
+
+
         </div>
+
+        <div class=\"users_by_hobby\">
+            {% if usersByHobby %}
+            {% if id == currentId %}
+            <p>Are you intersted in {{ findByHobby.name }}? These are other users who are interested in {{ findByHobby.name }}:</p>
+                {% else %}
+                <p>{{ username }} is interested in {{ findByHobby.name }}. These are other users who are interested in {{ findByHobby.name }}:</p>
+
+            {% endif %}
+
+            {% for user in usersByHobby %}
+                {{ user.username }}
+                <img src=\"{{ user.avatar }}\">
+            {% endfor %}
+            {% endif %}
+        </div>
+
 
 
     </div>
