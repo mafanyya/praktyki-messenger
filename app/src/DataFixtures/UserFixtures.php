@@ -20,8 +20,6 @@ class UserFixtures extends Fixture
         $this->passwordHasher = $passwordHasher;
     }
 
-
-
     public function load(ObjectManager $manager): void
     {
         $hobby1 = new Hobby();
@@ -29,11 +27,9 @@ class UserFixtures extends Fixture
         $hobby1->setImg('bi bi-palette');
         $manager->persist($hobby1);
 
-
-
         $hobby2 = new Hobby();
         $hobby2->setName('Baking');
-        $hobby2->setImg('<bi bi-egg-fried<');
+        $hobby2->setImg('bi bi-egg-fried');
         $manager->persist($hobby2);
 
         $hobby3 = new Hobby();

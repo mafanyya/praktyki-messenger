@@ -13,17 +13,13 @@
                 <div class="avatar_page">
                     <img class = "avatar_content_page" src="{{ avatar }}">
                 </div>
-                <div class="add_avatar">
-                    <a href="#">Change avatar</a>
                 </div>
-            </div>
-
 
             <div class="user_inf">
                 <div class="username_page">
                     <p>{{ username }}</p>
                 </div>
-                <a href="/page/change/{{ id }}">Change</a>
+
 
 
                 {% if (isShowCredentials  == true) or (id == currentId) %}
@@ -44,11 +40,16 @@
                     {% endfor %}
                 </div>
                 {% endif %}
+
+                {% if id == currentId %}
+                <div class="change_credentials">
+                    <a href="/page/change/{{ id }}">Change account information</a>
+                </div>
+                {% endif %}
             </div>
-
-
-
         </div>
+
+
 
         <div class="users_by_hobby">
 
@@ -56,8 +57,9 @@
             {% if id == currentId %}
             <p>Are you intersted in {{ findByHobby.name }}? These are other users who are interested in {{ findByHobby.name }}:</p>
                 {% else %}
-                <p>{{ username }} is interested in {{ findByHobby.name }}. These are other users who are interested in {{ findByHobby.name }}:</p>
-
+                    <div class="header_hobby">
+                <p class = "hobby_username">{{ username }} </p><p>is interested in {{ findByHobby.name }}. These are other users who are interested in {{ findByHobby.name }}:</p>
+                    </div>
             {% endif %}
                 <div class="users">
             {% for user in usersByHobby %}
@@ -73,6 +75,8 @@
         <p>This is a private profile.</p>
 
         {% endif %}
+
+
 
 
 

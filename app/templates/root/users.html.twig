@@ -17,7 +17,7 @@
             {% endfor %}
         </div>
             <div class="sorting_wrapper">
-                <p class = "sorting_list_name">sort by hobby</p>
+                <p class = "sorting_list_name">by hobby</p>
                 {% for hobby in hobbies %}
                 <a  class = "sorting_list" href="/users/{{ hobby.id }}">{{ hobby.name }}</a>
                 {% endfor %}

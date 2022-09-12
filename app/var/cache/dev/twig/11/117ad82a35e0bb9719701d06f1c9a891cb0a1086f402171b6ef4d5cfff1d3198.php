@@ -124,7 +124,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         // line 18
         echo "        </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list_name\">sort by hobby</p>
+                <p class = \"sorting_list_name\">by hobby</p>
                 ";
         // line 21
         $context['_parent'] = $context;
@@ -196,7 +196,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
             {% endfor %}
         </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list_name\">sort by hobby</p>
+                <p class = \"sorting_list_name\">by hobby</p>
                 {% for hobby in hobbies %}
                 <a  class = \"sorting_list\" href=\"/users/{{ hobby.id }}\">{{ hobby.name }}</a>
                 {% endfor %}
