@@ -35,7 +35,6 @@ class RootController extends AbstractController
             $currentLoggedUser = $this->userRepository->find($id['loggedUserId']);
             $currentLoggedUserId = $currentLoggedUser->getId();
             $currentLoggedUserUsername = $currentLoggedUser->getUsername();
-
             $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
         }
 

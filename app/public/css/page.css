@@ -10,6 +10,7 @@
     flex-direction: column;
 }
 .avatar_content_page{
+    width: 16em;
 
 }
 .add_avatar{

@@ -21,9 +21,9 @@ class UserFormType extends AbstractType
             ->add('email', EmailType::class)
             ->add('avatar')
             ->add('birthdate')
-            ->add('isShowCredentials', CheckboxType::class)
-
-
+            ->add('isShowCredentials', CheckboxType::class, [
+                'required' => false
+            ])
             ->add('Submit', SubmitType::class)
         ;
     }

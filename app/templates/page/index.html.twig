@@ -23,6 +23,7 @@
                 <div class="username_page">
                     <p>{{ username }}</p>
                 </div>
+                <a href="/page/change/{{ id }}">Change</a>
 
 
                 {% if (isShowCredentials  == true) or (id == currentId) %}
@@ -47,7 +48,7 @@
                 <div class="friends">
                     <a href="/users">Users</a>
                     <a href="/friends/{id}">Friends</a>
-                    <a href="/page/change/{{ id }}">Change</a>
+
                 </div>
             </div>
 
