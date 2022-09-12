@@ -353,6 +353,9 @@
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_hasher"/>
     </service>
+    <service id="App\Form\CountryFormType" class="App\Form\CountryFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\HobbyType" class="App\Form\HobbyType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -902,6 +905,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CountryFormType</argument>
         <argument>App\Form\HobbyType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\UserFormType</argument>
@@ -1955,7 +1959,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.swYOtMo"/>
+      <argument type="service" id=".service_locator.DK_YvXK"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4191,6 +4195,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CountryFormType" class="App\Form\CountryFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CountryFormType" class="App\Form\CountryFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HobbyType" class="App\Form\HobbyType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HobbyType" class="App\Form\HobbyType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -4550,11 +4556,12 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.Xj99cYf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.eEL5pXP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController::change" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\PageController::countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController::hobbiesForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -4565,6 +4572,7 @@
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController:change" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\PageController:countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController:hobbiesForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -4631,9 +4639,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.swYOtMo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.DK_YvXK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CountryFormType" type="service_closure" id="App\Form\CountryFormType"/>
         <argument key="App\Form\HobbyType" type="service_closure" id="App\Form\HobbyType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\UserFormType" type="service_closure" id="App\Form\UserFormType"/>
@@ -4980,12 +4989,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Xj99cYf"/>
+      <argument type="service" id=".service_locator.eEL5pXP"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Xj99cYf"/>
+      <argument type="service" id=".service_locator.eEL5pXP"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5723,7 +5732,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Xj99cYf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.eEL5pXP"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -5738,9 +5747,9 @@
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.nRr0p9k" alias=".service_locator.Xj99cYf"/>
+    <service id=".service_locator.DFAtyEJ" alias=".service_locator.eEL5pXP"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.eKmks_L" alias=".service_locator.swYOtMo"/>
+    <service id=".service_locator.2ErHV7p" alias=".service_locator.DK_YvXK"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
     <service id=".service_locator.jkb6XQV" alias=".service_locator.l1ae.Qz"/>
     <service id="validator" alias="debug.validator"/>

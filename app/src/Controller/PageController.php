@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\CountryFormType;
 use App\Form\HobbyType;
 use App\Form\UserFormType;
 use App\Repository\CountryRepository;
@@ -110,6 +111,7 @@ class PageController extends AbstractController
                 'currentId' => $currentLoggedUserId,
                 'currentUsername' => $currentLoggedUserUsername,
                 'currentAvatar' => $currentLoggedUserAvatar,
+                'id' => $id,
                 'user_form' => $form->createView()
             ]);
     }
@@ -142,6 +144,37 @@ class PageController extends AbstractController
                 'currentUsername' => $currentLoggedUserUsername,
                 'currentAvatar' => $currentLoggedUserAvatar,
                 'hobby_form' => $form->createView()
+            ]);
+    }
+
+    #[Route('/page/country/{id}', name: 'country/{id}')]
+    public function countryForm($id, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $currentId = $this->requestStack->getSession()->get('filter');
+        $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
+        $currentLoggedUserId = $currentLoggedUser->getId();
+        $currentLoggedUserUsername = $currentLoggedUser->getUsername();
+        $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+
+
+        $user = $this->userRepository->find($id);
+        $form = $this->createForm(CountryFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('{id}', ['id' => $id]);
+        }
+
+        return $this->render('page/countryForm.html.twig',
+            [
+                'name' => 'change',
+                'currentId' => $currentLoggedUserId,
+                'currentUsername' => $currentLoggedUserUsername,
+                'currentAvatar' => $currentLoggedUserAvatar,
+                'country_form' => $form->createView()
             ]);
     }
 

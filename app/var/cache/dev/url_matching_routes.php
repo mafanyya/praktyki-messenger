@@ -39,11 +39,14 @@ return [
                 .')'
                 .'|/page/(?'
                     .'|([^/]++)(*:186)'
-                    .'|change/([^/]++)(*:209)'
-                    .'|hobbies/([^/]++)(*:233)'
+                    .'|c(?'
+                        .'|hange/([^/]++)(*:212)'
+                        .'|ountry/([^/]++)(*:235)'
+                    .')'
+                    .'|hobbies/([^/]++)(*:260)'
                 .')'
-                .'|/test/([^/]++)(*:256)'
-                .'|/users/([^/]++)(*:279)'
+                .'|/test/([^/]++)(*:283)'
+                .'|/users/([^/]++)(*:306)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -55,10 +58,11 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         186 => [[['_route' => '{id}', '_controller' => 'App\\Controller\\PageController::index'], ['id'], null, null, false, true, null]],
-        209 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
-        233 => [[['_route' => 'hobbies/{id}', '_controller' => 'App\\Controller\\PageController::hobbiesForm'], ['id'], null, null, false, true, null]],
-        256 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
-        279 => [
+        212 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
+        235 => [[['_route' => 'country/{id}', '_controller' => 'App\\Controller\\PageController::countryForm'], ['id'], null, null, false, true, null]],
+        260 => [[['_route' => 'hobbies/{id}', '_controller' => 'App\\Controller\\PageController::hobbiesForm'], ['id'], null, null, false, true, null]],
+        283 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
+        306 => [
             [['_route' => 'usersByHobby', '_controller' => 'App\\Controller\\UsersController::usersByHobby'], ['hobbyId'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

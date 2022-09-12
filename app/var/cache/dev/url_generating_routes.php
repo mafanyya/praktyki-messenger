@@ -20,6 +20,7 @@ return [
     '{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page']], [], [], []],
     'change/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::change'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/change']], [], [], []],
     'hobbies/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::hobbiesForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/hobbies']], [], [], []],
+    'country/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::countryForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/country']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'root' => [[], ['_controller' => 'App\\Controller\\RootController::index'], [], [['text', '/']], [], [], []],
     'success' => [[], ['_controller' => 'App\\Controller\\RootController::success'], [], [['text', '/success']], [], [], []],

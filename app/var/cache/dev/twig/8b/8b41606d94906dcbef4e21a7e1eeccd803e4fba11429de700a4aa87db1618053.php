@@ -105,6 +105,17 @@ class __TwigTemplate_dee38024ace78d92588c9a0dcdaa4b35cabba40d3712b36a174cb161f44
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["user_form"]) || array_key_exists("user_form", $context) ? $context["user_form"] : (function () { throw new RuntimeError('Variable "user_form" does not exist.', 12, $this->source); })()), 'form');
         echo "
         </div>
+
+        <div class=\"change_credentials\">
+            <a href=\"/page/hobbies/";
+        // line 16
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 16, $this->source); })()), "html", null, true);
+        echo "\">Change hobbies</a>
+            <a href=\"/page/country/";
+        // line 17
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 17, $this->source); })()), "html", null, true);
+        echo "\">Change country</a>
+        </div>
     </div>
     </body>
 ";
@@ -128,7 +139,7 @@ class __TwigTemplate_dee38024ace78d92588c9a0dcdaa4b35cabba40d3712b36a174cb161f44
 
     public function getDebugInfo()
     {
-        return array (  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  116 => 17,  112 => 16,  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,6 +156,11 @@ class __TwigTemplate_dee38024ace78d92588c9a0dcdaa4b35cabba40d3712b36a174cb161f44
     <div class=\"container\">
         <div class=\"form\">
             {{ form(user_form) }}
+        </div>
+
+        <div class=\"change_credentials\">
+            <a href=\"/page/hobbies/{{ id }}\">Change hobbies</a>
+            <a href=\"/page/country/{{ id }}\">Change country</a>
         </div>
     </div>
     </body>
