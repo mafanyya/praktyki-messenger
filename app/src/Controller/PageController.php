@@ -49,7 +49,9 @@ class PageController extends AbstractController
         $hobbies = $this->hobbyRepository->findHobbiesByUser($id);
 
         if ($hobbies != null) {
-            $findByHobby = $hobbies[0];
+            $a = count($hobbies);
+            $b = rand(0, $a-1);
+            $findByHobby = $hobbies[$b];
             $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
         } else {
             $findByHobby = null;
