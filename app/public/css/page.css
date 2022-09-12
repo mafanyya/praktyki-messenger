@@ -43,6 +43,8 @@
     font-weight: 700;
 }
 .change_credentials{
+    display: flex;
+    flex-direction: column;
     margin-top: 2em;
     font-size: 0.8em;
 

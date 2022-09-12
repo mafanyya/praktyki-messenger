@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\HobbyType;
 use App\Form\UserFormType;
 use App\Repository\CountryRepository;
 use App\Repository\HobbyRepository;
@@ -108,6 +109,37 @@ class PageController extends AbstractController
                 'currentUsername' => $currentLoggedUserUsername,
                 'currentAvatar' => $currentLoggedUserAvatar,
                 'user_form' => $form->createView()
+            ]);
+    }
+
+    #[Route('/page/hobbies/{id}', name: 'hobbies/{id}')]
+    public function hobbiesForm($id, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $currentId = $this->requestStack->getSession()->get('filter');
+        $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
+        $currentLoggedUserId = $currentLoggedUser->getId();
+        $currentLoggedUserUsername = $currentLoggedUser->getUsername();
+        $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+
+
+        $user = $this->userRepository->find($id);
+        $form = $this->createForm(HobbyType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('{id}', ['id' => $id]);
+        }
+
+        return $this->render('page/hobbyForm.html.twig',
+            [
+                'name' => 'change',
+                'currentId' => $currentLoggedUserId,
+                'currentUsername' => $currentLoggedUserUsername,
+                'currentAvatar' => $currentLoggedUserAvatar,
+                'hobby_form' => $form->createView()
             ]);
     }
 
