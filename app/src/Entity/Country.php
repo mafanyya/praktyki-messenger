@@ -24,7 +24,7 @@ class Country
     #[ORM\OneToMany(mappedBy: 'country', targetEntity: User::class)]
     private $users;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $img;
 
     public function __construct()

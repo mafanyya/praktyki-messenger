@@ -46,6 +46,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(targetEntity: Country::class, inversedBy: 'users')]
     private $country;
 
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private $isShowCredentials;
+
     public function __construct()
     {
         $this->friends = new ArrayCollection();
@@ -195,6 +198,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function isIsShowCredentials(): ?bool
+    {
+        return $this->isShowCredentials;
+    }
+
+    public function setIsShowCredentials(bool $isShowCredentials): self
+    {
+        $this->isShowCredentials = $isShowCredentials;
 
         return $this;
     }

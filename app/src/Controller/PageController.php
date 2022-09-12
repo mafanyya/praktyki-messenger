@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserFormType;
 use App\Repository\CountryRepository;
 use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
@@ -39,11 +40,14 @@ class PageController extends AbstractController
         $username = $user->getUsername();
         $email = $user->getEmail();
         $avatar = $user->getAvatar();
+        $isShowCredentials = $user->isIsShowCredentials();
         $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
         $country = $this->countryRepository->findCountryByUser($id);
         $country = $country[0];
         $findByHobby = $hobbies[0];
         $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
+
+
 
         return $this->render('page/index.html.twig', [
             'name' => $currentLoggedUserUsername,
@@ -56,16 +60,19 @@ class PageController extends AbstractController
             'email' => $email,
             'hobbies' => $hobbies,
             'country' => $country,
+            'isShowCredentials' => $isShowCredentials,
             'findByHobby' => $findByHobby,
             'usersByHobby' => $usersByHobby,
 
             'id' => $id
 
-
-
-
         ]);
-    }
 
+}
+    #[Route('/page/change/{id}', name: 'change/{id}')]
+    public function change($id): Response
+    {
+        $user = new User;
+    }
 
 }

@@ -21,6 +21,8 @@
                 <div class="username_page">
                     <p>{{ username }}</p>
                 </div>
+
+                {% if (isShowCredentials  == true) or (id == currentId) %}
                 <div class="email">
                     <p><i class="bi bi-envelope"></i> {{ email}}</p>
                 </div>
@@ -65,6 +67,10 @@
                 </div>
             {% endif %}
         </div>
+        {% else %}
+        <p>This is a private profile.</p>
+
+        {% endif %}
 
 
 

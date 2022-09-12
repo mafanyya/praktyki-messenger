@@ -3,12 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="a0785175-3e7a-4489-9e47-550043f53e04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Entity/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Form/UserFormType.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/page/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/doctrine/orm/Proxies/__CG__AppEntityCountry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/doctrine/orm/Proxies/__CG__AppEntityCountry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/cache/dev/twig/55/557d970e4b3524a82279c0620cf8911b594b8ae81db9da989804b1f236ca3771.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/twig/55/557d970e4b3524a82279c0620cf8911b594b8ae81db9da989804b1f236ca3771.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/url_generating_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/url_generating_routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/url_generating_routes.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/url_generating_routes.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/url_matching_routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/url_matching_routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/url_matching_routes.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/url_matching_routes.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/log/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/#ib_16384_1.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/#ib_16384_1.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/sunflower/country.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/sunflower/country.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/sunflower/doctrine_migration_versions.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/sunflower/doctrine_migration_versions.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/sunflower/hobby.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/sunflower/hobby.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/sunflower/user.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/sunflower/user.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/sunflower/user_hobby.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/sunflower/user_hobby.ibd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/app/.env.local" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/docker-compose.override.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/migrations/Version20220912120314.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/public/css/page.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/public/css/root.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/public/css/users.css" root0="FORCE_HIGHLIGHTING" />
@@ -39,7 +53,6 @@
     <setting file="file://$PROJECT_DIR$/app/src/Entity/Hobby.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/Entity/User.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/Form/RegistrationFormType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/src/Form/UserFormType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/Repository/CountryRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/Repository/HobbyRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/Repository/UserRepository.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
