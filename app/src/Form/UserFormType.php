@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Doctrine\DBAL\Types\BooleanType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,9 +21,9 @@ class UserFormType extends AbstractType
             ->add('email', EmailType::class)
             ->add('avatar')
             ->add('birthdate')
-            ->add('isShowCredentials', BooleanType::class)
-            ->add('hobbies')
-            ->add('country')
+            ->add('isShowCredentials', CheckboxType::class)
+
+
             ->add('Submit', SubmitType::class)
         ;
     }

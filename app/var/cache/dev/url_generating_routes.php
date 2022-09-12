@@ -18,6 +18,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     '{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page']], [], [], []],
+    'change/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::change'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/change']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'root' => [[], ['_controller' => 'App\\Controller\\RootController::index'], [], [['text', '/']], [], [], []],
     'success' => [[], ['_controller' => 'App\\Controller\\RootController::success'], [], [['text', '/success']], [], [], []],

@@ -37,9 +37,12 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/page/([^/]++)(*:183)'
-                .'|/test/([^/]++)(*:205)'
-                .'|/users/([^/]++)(*:228)'
+                .'|/page/(?'
+                    .'|([^/]++)(*:186)'
+                    .'|change/([^/]++)(*:209)'
+                .')'
+                .'|/test/([^/]++)(*:232)'
+                .'|/users/([^/]++)(*:255)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -50,9 +53,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        183 => [[['_route' => '{id}', '_controller' => 'App\\Controller\\PageController::index'], ['id'], null, null, false, true, null]],
-        205 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
-        228 => [
+        186 => [[['_route' => '{id}', '_controller' => 'App\\Controller\\PageController::index'], ['id'], null, null, false, true, null]],
+        209 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
+        232 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
+        255 => [
             [['_route' => 'usersByHobby', '_controller' => 'App\\Controller\\UsersController::usersByHobby'], ['hobbyId'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

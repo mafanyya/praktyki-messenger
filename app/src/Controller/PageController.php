@@ -7,7 +7,9 @@ use App\Form\UserFormType;
 use App\Repository\CountryRepository;
 use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -36,17 +38,44 @@ class PageController extends AbstractController
         $currentLoggedUserId = $currentLoggedUser->getId();
         $currentLoggedUserUsername = $currentLoggedUser->getUsername();
         $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+
+
+
         $user = $this->userRepository->find($id);
         $username = $user->getUsername();
         $email = $user->getEmail();
-        $avatar = $user->getAvatar();
-        $isShowCredentials = $user->isIsShowCredentials();
-        $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
-        $country = $this->countryRepository->findCountryByUser($id);
-        $country = $country[0];
-        $findByHobby = $hobbies[0];
-        $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
+        if($email == null)
+        {
+            $email = "Unknown email";
+        }
 
+        $avatar = $user->getAvatar();
+        if ($avatar == null)
+        {
+            $avatar = "https://checklists.expert/images/no-avatar-ff.png";
+        }
+
+        $isShowCredentials = $user->isIsShowCredentials();
+
+        $hobbies =$this->hobbyRepository->findHobbiesByUser($id);
+
+        if($hobbies != null)
+        {
+            $findByHobby = $hobbies[0];
+            $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
+        }else{
+            $findByHobby = null;
+            $usersByHobby = null;
+        }
+
+        $country = $this->countryRepository->findCountryByUser($id);
+
+        if($country != null)
+        {
+            $country = $country[0];
+        }else{
+            $country = null;
+        }
 
 
         return $this->render('page/index.html.twig', [
@@ -70,9 +99,40 @@ class PageController extends AbstractController
 
 }
     #[Route('/page/change/{id}', name: 'change/{id}')]
-    public function change($id): Response
+    public function change($id, Request $request, EntityManagerInterface $entityManager): Response
     {
-        $user = new User;
+        $currentId = $this->requestStack->getSession()->get('filter');
+        $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
+        $currentLoggedUserId = $currentLoggedUser->getId();
+        $currentLoggedUserUsername = $currentLoggedUser->getUsername();
+        $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+        $user = new User();
+        $user = $this->userRepository->find($id);
+        $form = $this->createForm(UserFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+
+
+            return $this->redirectToRoute('{id}', ['id' => $id]);
+
+        }
+
+
+
+        return $this->render('page/userForm.html.twig',
+        [
+            'name' => 'change',
+            'currentId' => $currentLoggedUserId,
+            'currentUsername' => $currentLoggedUserUsername,
+            'currentAvatar' => $currentLoggedUserAvatar,
+            'user_form' => $form->createView()
+        ]);
+
     }
 
 }
