@@ -33,3 +33,19 @@
     font-size: 1.5em;
     font-weight: 700;
 }
+
+.users_by_hobby{
+    display: flex;
+    flex-direction: column;
+
+}
+.users{
+    display: flex;
+    flex-direction: row;
+}
+.user{
+    margin-right: 1em;
+}
+.user a{
+
+}
