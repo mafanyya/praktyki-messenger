@@ -86,7 +86,8 @@
 {
     width: 8em;
     border:none;
-    border-radius: 20%;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
 }
 .user p{
     margin-left:1em;

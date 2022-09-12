@@ -33,13 +33,14 @@
 
 }
 .sorting_list_name {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
     border-bottom: solid #a8a8a8 2px;
 }
+
 .sorting_wrapper a{
     text-transform: lowercase;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
 }
 .sorting_wrapper a:link{
