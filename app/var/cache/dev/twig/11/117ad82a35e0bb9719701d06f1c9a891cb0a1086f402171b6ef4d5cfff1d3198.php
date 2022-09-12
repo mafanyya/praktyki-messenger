@@ -104,66 +104,44 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
             // line 12
             echo "                <div class=\"user\">
-                    <p>";
+                    <a href=\"/page/";
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 13), "html", null, true);
-            echo "</p>
-                    <a href=\"/page/";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 14), "html", null, true);
             echo "\"><img class = \"user_img\" src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 13), "html", null, true);
             echo "\"></a>
                     <p>";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 15), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 14), "html", null, true);
             echo "</p>
-                    ";
-            // line 16
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-                // line 17
-                echo "                        <form action=\"post\">
-                            <input type=\"hidden\" id = \"userid\" name = \"userid\" value = ";
-                // line 18
-                echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 18, $this->source); })()), "html", null, true);
-                echo ">
-                            <input type=\"hidden\" id = \"friendid\" name = \"friendid\" value = \"";
-                // line 19
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 19), "html", null, true);
-                echo "\">
-                            <input type=\"submit\" value = \"Add\">
-                        </form>
-                    ";
-            }
-            // line 23
-            echo "
+
                 </div>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 18
         echo "        </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list_name\">by hobby</p>
+                <p class = \"sorting_list_name\">sort by hobby</p>
                 ";
-        // line 29
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["hobby"]) {
-            // line 30
+            // line 22
             echo "                <a  class = \"sorting_list\" href=\"/users/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 22), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 22), "html", null, true);
             echo "</a>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 24
         echo "                <a  class = \"sorting_list\" href=\"/users\"><i class=\"bi bi-arrow-return-left\"></i></a>
 
 
@@ -194,7 +172,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
 
     public function getDebugInfo()
     {
-        return array (  167 => 32,  156 => 30,  152 => 29,  147 => 26,  139 => 23,  132 => 19,  128 => 18,  125 => 17,  123 => 16,  119 => 15,  113 => 14,  109 => 13,  106 => 12,  102 => 11,  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  145 => 24,  134 => 22,  130 => 21,  125 => 18,  115 => 14,  109 => 13,  106 => 12,  102 => 11,  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -211,22 +189,14 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         <div class=\"users_wrapper\">
             {% for user in users %}
                 <div class=\"user\">
-                    <p>{{ user.id }}</p>
                     <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
                     <p>{{ user.username }}</p>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <form action=\"post\">
-                            <input type=\"hidden\" id = \"userid\" name = \"userid\" value = {{ id }}>
-                            <input type=\"hidden\" id = \"friendid\" name = \"friendid\" value = \"{{ user.id }}\">
-                            <input type=\"submit\" value = \"Add\">
-                        </form>
-                    {% endif %}
 
                 </div>
             {% endfor %}
         </div>
             <div class=\"sorting_wrapper\">
-                <p class = \"sorting_list_name\">by hobby</p>
+                <p class = \"sorting_list_name\">sort by hobby</p>
                 {% for hobby in hobbies %}
                 <a  class = \"sorting_list\" href=\"/users/{{ hobby.id }}\">{{ hobby.name }}</a>
                 {% endfor %}

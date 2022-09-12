@@ -24,11 +24,11 @@ class RootController extends AbstractController
     #[Route('/', name: 'root')]
     public function index(): Response
     {
-
         $user = $this->getUser();
         $currentLoggedUserId = null;
         $currentLoggedUserUsername = null;
         $currentLoggedUserAvatar = null;
+
         if($user)
         {
             $id = $this->requestStack->getSession()->get('filter');
@@ -40,7 +40,6 @@ class RootController extends AbstractController
 
         return $this->render('base.html.twig', [
             'name' => 'Home',
-
             'currentId' => $currentLoggedUserId,
             'currentUsername' => $currentLoggedUserUsername,
             'currentAvatar' => $currentLoggedUserAvatar,
@@ -52,13 +51,10 @@ class RootController extends AbstractController
     {
         $currentLoggedUser = $this->userRepository->find($this->getUser());
         $userId = $currentLoggedUser->getId();
-
         $session = $this->requestStack->getSession();
         $session->set('filter', array('loggedUserId' => $userId));
 
         return $this->redirectToRoute('root');
-
-
     }
     
 

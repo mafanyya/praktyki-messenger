@@ -40,16 +40,10 @@
                 {% if hobbies %}
                 <div class="hobbies">
                     {% for hobby in hobbies %}
-                    <p><i class="bi bi-check2"></i> {{ hobby.name }}</p>
+                    <p><i class="{{ hobby.img }}"></i> {{ hobby.name }}</p>
                     {% endfor %}
                 </div>
                 {% endif %}
-
-                <div class="friends">
-                    <a href="/users">Users</a>
-                    <a href="/friends/{id}">Friends</a>
-
-                </div>
             </div>
 
 

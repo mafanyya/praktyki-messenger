@@ -6,12 +6,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 70%;
+    width: 90%;
 
 
 }
 .user{
     margin-left: 1em;
+    margin-bottom: 1em;
 }
 .user img{
     border-radius: 20%;
@@ -19,7 +20,7 @@
 }
 
 .sorting_wrapper{
-    width: 30%;
+    width: 10%;
     display: flex;
     flex-direction: column;
     margin-left: 1.5em;

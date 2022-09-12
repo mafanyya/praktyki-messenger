@@ -26,84 +26,84 @@ class UserFixtures extends Fixture
     {
         $hobby1 = new Hobby();
         $hobby1->setName('Art');
-        $hobby1->setImg('');
+        $hobby1->setImg('bi bi-palette');
         $manager->persist($hobby1);
 
 
 
         $hobby2 = new Hobby();
         $hobby2->setName('Baking');
-        $hobby2->setImg('');
+        $hobby2->setImg('<bi bi-egg-fried<');
         $manager->persist($hobby2);
 
         $hobby3 = new Hobby();
         $hobby3->setName('Beer tasting');
-        $hobby3->setImg('');
+        $hobby3->setImg('bi bi-cup-straw');
         $manager->persist($hobby3);
 
         $hobby4 = new Hobby();
         $hobby4->setName('Candy making');
-        $hobby4->setImg('');
+        $hobby4->setImg('bi bi-balloon-heart');
         $manager->persist($hobby4);
 
         $hobby5 = new Hobby();
         $hobby5->setName('Chess');
-        $hobby5->setImg('');
+        $hobby5->setImg('bi bi-gear');
         $manager->persist($hobby5);
 
         $hobby6 = new Hobby();
         $hobby6->setName('Programming');
-        $hobby6->setImg('');
+        $hobby6->setImg('bi bi-cpu');
         $manager->persist($hobby6);
 
         $hobby7 = new Hobby();
         $hobby7->setName('Cross stitch');
-        $hobby7->setImg('');
+        $hobby7->setImg('bi bi-x-diamond');
         $manager->persist($hobby7);
 
         $hobby8 = new Hobby();
         $hobby8->setName('Dance');
-        $hobby8->setImg('');
+        $hobby8->setImg('bi bi-boombox');
         $manager->persist($hobby8);
 
         $hobby9 = new Hobby();
         $hobby9->setName('Gaming');
-        $hobby9->setImg('');
+        $hobby9->setImg('bi bi-controller');
         $manager->persist($hobby9);
 
         $hobby10 = new Hobby();
         $hobby10->setName('Hacking');
-        $hobby10->setImg('');
+        $hobby10->setImg('bi bi-motherboard');
         $manager->persist($hobby10);
 
         $hobby11 = new Hobby();
         $hobby11->setName('Homing pigeons');
-        $hobby11->setImg('');
+        $hobby11->setImg('bi bi-egg');
         $manager->persist($hobby11);
 
         $hobby12= new Hobby();
         $hobby12->setName('Music');
-        $hobby12->setImg('');
+        $hobby12->setImg('bi bi-file-music');
         $manager->persist($hobby12);
 
         $hobby13= new Hobby();
         $hobby13->setName('Singing');
-        $hobby13->setImg('');
+        $hobby13->setImg('bi bi-music-note-list');
         $manager->persist($hobby13);
 
         $hobby14= new Hobby();
         $hobby14->setName('Soap making');
-        $hobby14->setImg('');
+        $hobby14->setImg('bi bi-brightness-high');
         $manager->persist($hobby14);
 
         $hobby15= new Hobby();
         $hobby15->setName('Telling jokes');
-        $hobby15->setImg('');
+        $hobby15->setImg('bi bi-chat-dots');
         $manager->persist($hobby15);
 
         $hobby16= new Hobby();
         $hobby16->setName('Yoga');
-        $hobby16->setImg('');
+        $hobby16->setImg('bi bi-circle');
         $manager->persist($hobby16);
 
 

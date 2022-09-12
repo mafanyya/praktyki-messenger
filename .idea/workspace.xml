@@ -3,11 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="a0785175-3e7a-4489-9e47-550043f53e04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Controller/RootController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/RootController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/DataFixtures/UserFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Form/UserFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Form/UserFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/page/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/root/users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/root/users.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/3/O/v3xxLNRh-HsFelSg9gYw" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/3/O/v3xxLNRh-HsFelSg9gYw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/A/S/xcw2J5SDGcB4HhMK3ELw" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/A/S/xcw2J5SDGcB4HhMK3ELw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/C/O/FAnOTLXe2tk5kJPUPRKA" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/C/O/FAnOTLXe2tk5kJPUPRKA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/-/nkUNh4ZPq2qnzh-kffrw" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/-/nkUNh4ZPq2qnzh-kffrw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/2/DC7ybgHcFyx2GHc4L1Yw" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/2/DC7ybgHcFyx2GHc4L1Yw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/9/wcdfIYujPDYtJCrs82Bg" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/9/wcdfIYujPDYtJCrs82Bg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/F/JoRz9W40TYj1HnkW2AtQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Q/F/JoRz9W40TYj1HnkW2AtQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/T/E/l6gxBLVvcMCVZSeVFIRA" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/T/E/l6gxBLVvcMCVZSeVFIRA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/W/M/w9HwAahRz5yKV+LXcmCQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/W/M/w9HwAahRz5yKV+LXcmCQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/twig/11/117ad82a35e0bb9719701d06f1c9a891cb0a1086f402171b6ef4d5cfff1d3198.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/twig/11/117ad82a35e0bb9719701d06f1c9a891cb0a1086f402171b6ef4d5cfff1d3198.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/twig/55/557d970e4b3524a82279c0620cf8911b594b8ae81db9da989804b1f236ca3771.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/twig/55/557d970e4b3524a82279c0620cf8911b594b8ae81db9da989804b1f236ca3771.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/log/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

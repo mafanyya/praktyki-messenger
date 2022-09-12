@@ -29,10 +29,10 @@ class UsersController extends AbstractController
     public function allUsers(): Response
     {
         $users = $this->userRepository->findAll();
-
         $user = $this->getUser();
         $hobbies = $this->hobbyRepository->findAll();
         $userId = null;
+
         if($user)
         {
             $id = $this->requestStack->getSession()->get('filter');
@@ -41,7 +41,6 @@ class UsersController extends AbstractController
             $currentLoggedUserUsername = $currentLoggedUser->getUsername();
             $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
         }
-
 
         return $this->render('root/users.html.twig',
             [
@@ -61,7 +60,6 @@ class UsersController extends AbstractController
         $users = $this->userRepository->findUserByHobby($hobbyId);
         $user = $this->getUser();
         $hobbies = $this->hobbyRepository->findAll();
-
         $userId = null;
 
         if($user)

@@ -48,6 +48,11 @@ class RegistrationFormType extends AbstractType
             ->add('avatar', HiddenType::class, [
                 'data' => 'https://checklists.expert/images/no-avatar-ff.png'
             ])
+            ->add('email', HiddenType::class, [
+                'data' => 'Unknown email',
+                'required' => false
+            ])
+
 
 
 
