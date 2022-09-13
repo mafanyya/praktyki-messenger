@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a0785175-3e7a-4489-9e47-550043f53e04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/H/+/TA8pU29eD4j8ToN-dw3w" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/H/+/TA8pU29eD4j8ToN-dw3w" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/W/M/w9HwAahRz5yKV+LXcmCQ" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/W/M/w9HwAahRz5yKV+LXcmCQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Z/R/7s02qFgxyFRG63tm2Y2Q" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/pools/system/F8jcFBJhKw/Z/R/7s02qFgxyFRG63tm2Y2Q" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/var/log/dev.log" afterDir="false" />
     </list>

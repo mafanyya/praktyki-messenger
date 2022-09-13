@@ -50,10 +50,12 @@ class PageController extends AbstractController
         $hobbies = $this->hobbyRepository->findHobbiesByUser($id);
 
         if ($hobbies != null) {
+
             $a = count($hobbies);
-            $b = rand(0, $a-1);
+            $b = rand(0, $a - 1);
             $findByHobby = $hobbies[$b];
             $usersByHobby = $this->userRepository->findUserByHobbyExceptCurrentUser($findByHobby['id'], $id);
+
         } else {
             $findByHobby = null;
             $usersByHobby = null;
@@ -83,6 +85,7 @@ class PageController extends AbstractController
 
         ]);
     }
+    
 
     #[Route('/page/change/{id}', name: 'change/{id}')]
     public function change($id, Request $request, EntityManagerInterface $entityManager): Response
