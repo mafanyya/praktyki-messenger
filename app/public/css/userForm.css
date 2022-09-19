@@ -1,0 +1,72 @@
+.container_inner{
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.page_header{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.change{
+    display: flex;
+}
+.change p{
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 0.3em;
+    color: #7d7d7d;
+}
+.form_row{
+    border-bottom: solid #a8a8a8 1.5px;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.form_row_row{
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid #a8a8a8 1.5px;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+.header_f{
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 0.7em;
+}
+.current{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.95em;
+    padding-bottom: 0.2em;
+}
+.current_f{
+    font-size: 0.95em;
+    font-weight: 600;
+    padding-left: 0.2em;
+}
+.form_row img{
+    width:8em;
+}
+.submit_btn{
+    width:8em;
+    height: 3em;
+}
+.change_credentials{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    color: #a8a8a8
+
+}
+.change_credentials a:link{
+    color: #a8a8a8;
+}

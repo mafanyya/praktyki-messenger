@@ -96,6 +96,13 @@ class PageController extends AbstractController
         $currentLoggedUserUsername = $currentLoggedUser->getUsername();
         $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
 
+        $user = $this->userRepository->find($id);
+        $username = $user->getUsername();
+        $email = $user->getEmail();
+        $avatar = $user->getAvatar();
+        $birthdate = $user->getBirthdate();
+        $isShowCredentials = $user->isIsShowCredentials();
+
 
         $user = $this->userRepository->find($id);
         $form = $this->createForm(UserFormType::class, $user);
@@ -115,7 +122,12 @@ class PageController extends AbstractController
                 'currentUsername' => $currentLoggedUserUsername,
                 'currentAvatar' => $currentLoggedUserAvatar,
                 'id' => $id,
-                'user_form' => $form->createView()
+                'user_form' => $form->createView(),
+                'avatar' => $avatar,
+                'username' => $username,
+                'email' => $email,
+                'birthdate' => $birthdate,
+                'isShowCredentials' => $isShowCredentials,
             ]);
     }
 

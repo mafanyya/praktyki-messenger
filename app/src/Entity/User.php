@@ -51,11 +51,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $isShowCredentials;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: FriendShip::class)]
+    private $friends;
+
+    #[ORM\OneToMany(mappedBy: 'friend', targetEntity: FriendShip::class)]
+    private $friendsWithMe;
+
     public function __construct()
     {
         $this->friends = new ArrayCollection();
         $this->friendsWithme = new ArrayCollection();
         $this->hobbies = new ArrayCollection();
+        $this->friendsWithMe = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -212,6 +219,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsShowCredentials(bool $isShowCredentials): self
     {
         $this->isShowCredentials = $isShowCredentials;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, FriendShip>
+     */
+    public function getFriends(): Collection
+    {
+        return $this->friends;
+    }
+
+    public function addFriend(FriendShip $friend): self
+    {
+        if (!$this->friends->contains($friend)) {
+            $this->friends[] = $friend;
+            $friend->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFriend(FriendShip $friend): self
+    {
+        if ($this->friends->removeElement($friend)) {
+            // set the owning side to null (unless already changed)
+            if ($friend->getUser() === $this) {
+                $friend->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, FriendShip>
+     */
+    public function getFriendsWithMe(): Collection
+    {
+        return $this->friendsWithMe;
+    }
+
+    public function addFriendsWithMe(FriendShip $friendsWithMe): self
+    {
+        if (!$this->friendsWithMe->contains($friendsWithMe)) {
+            $this->friendsWithMe[] = $friendsWithMe;
+            $friendsWithMe->setFriend($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFriendsWithMe(FriendShip $friendsWithMe): self
+    {
+        if ($this->friendsWithMe->removeElement($friendsWithMe)) {
+            // set the owning side to null (unless already changed)
+            if ($friendsWithMe->getFriend() === $this) {
+                $friendsWithMe->setFriend(null);
+            }
+        }
 
         return $this;
     }

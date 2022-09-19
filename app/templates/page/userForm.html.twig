@@ -1,21 +1,97 @@
 {% extends 'root/index.html.twig' %}
 {% block header %}
     <link href="{{ asset('css/root.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/page.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/userForm.css') }}" rel="stylesheet"/>
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
     <body>
     <div class="container">
-        <div class="form">
-            {{ form(user_form) }}
+        <div class="container_inner">
+            <p class = "page_header">Account settings</p>
+
+            <div class="form">
+                {{ form_start(user_form)}}
+                <div class="form_row">
+                    <p class = "header_f">Username</p>
+                    <div class="current">
+                        <p class = "current">Your username is </p>
+                        <p class = "current_f"> {{ username }}</p>
+                    </div>
+                    <div class="change">
+                        <p>Change</p>
+                        {{ form_row(user_form.username, {
+                            label: false
+                        }) }}
+                    </div>
+                </div>
+                <div class="form_row">
+                    <p class = "header_f">Email</p>
+                    <div class="current">
+                        <p class = "current">Your email is </p>
+                        <p class = "current_f"> {{ email }}</p>
+
+                    </div>
+                    <div class="change">
+                        <p>Change</p>
+                        {{ form_row(user_form.email, {
+                            label: false
+                        }) }}
+                    </div>
+                </div>
+                <div class="form_row">
+                    <p class = "header_f">Avatar</p>
+                    <div class="row">
+                    <img src="{{ avatar }}">
+                    <div class="change">
+                        <p>Change</p>
+                        {{ form_row(user_form.avatar, {
+                            label: false
+                        }) }}
+                    </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <p class = "header_f">Birthdate</p>
+                    <div class="current">
+                        <p class = "current">Your birthdate is </p>
+                        <p class = "current_f"> {{ birthdate }}</p>
+                    </div>
+                    <div class="change">
+                        <p>Change</p>
+                        {{ form_row(user_form.birthdate, {
+                            label: false
+                        }) }}
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="row">
+
+                    <p class = "current">Is other users can see you credentials?</p>
+                    <div class="change">
+                        {{ form_row(user_form.isShowCredentials, {
+                            label: false
+                        }) }}
+                    </div>
+                    </div>
+                </div>
+
+               <button type = "submit" class = "submit_btn">Submit</button>
+
+                {{ form_end(user_form) }}
+            </div>
+
+            <div class="change_credentials">
+                <a href="/page/hobbies/{{ id }}">Change hobbies</a>
+                <a href="/page/country/{{ id }}">Change country</a>
+            </div>
+
+
         </div>
 
-        <div class="change_credentials">
-            <a href="/page/hobbies/{{ id }}">Change hobbies</a>
-            <a href="/page/country/{{ id }}">Change country</a>
-        </div>
+
+
     </div>
     </body>
 {% endblock %}
