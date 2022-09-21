@@ -16,6 +16,8 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
+    'add_friend' => [['friend_id', 'origin'], ['_controller' => 'App\\Controller\\AddFriendController::add'], [], [['variable', '/', '[^/]++', 'origin', true], ['variable', '/', '[^/]++', 'friend_id', true], ['text', '/add']], [], [], []],
+    'remove_friend' => [['friend_id', 'origin'], ['_controller' => 'App\\Controller\\AddFriendController::remove'], [], [['variable', '/', '[^/]++', 'origin', true], ['variable', '/', '[^/]++', 'friend_id', true], ['text', '/remove']], [], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     '{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page']], [], [], []],
     'change/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::change'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/change']], [], [], []],

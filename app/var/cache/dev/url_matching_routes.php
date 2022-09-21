@@ -37,16 +37,18 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/add/([^/]++)/([^/]++)(*:191)'
+                .'|/remove/([^/]++)/([^/]++)(*:224)'
                 .'|/page/(?'
-                    .'|([^/]++)(*:186)'
+                    .'|([^/]++)(*:249)'
                     .'|c(?'
-                        .'|hange/([^/]++)(*:212)'
-                        .'|ountry/([^/]++)(*:235)'
+                        .'|hange/([^/]++)(*:275)'
+                        .'|ountry/([^/]++)(*:298)'
                     .')'
-                    .'|hobbies/([^/]++)(*:260)'
+                    .'|hobbies/([^/]++)(*:323)'
                 .')'
-                .'|/test/([^/]++)(*:283)'
-                .'|/users/([^/]++)(*:306)'
+                .'|/test/([^/]++)(*:346)'
+                .'|/users/([^/]++)(*:369)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -57,12 +59,14 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [[['_route' => '{id}', '_controller' => 'App\\Controller\\PageController::index'], ['id'], null, null, false, true, null]],
-        212 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
-        235 => [[['_route' => 'country/{id}', '_controller' => 'App\\Controller\\PageController::countryForm'], ['id'], null, null, false, true, null]],
-        260 => [[['_route' => 'hobbies/{id}', '_controller' => 'App\\Controller\\PageController::hobbiesForm'], ['id'], null, null, false, true, null]],
-        283 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
-        306 => [
+        191 => [[['_route' => 'add_friend', '_controller' => 'App\\Controller\\AddFriendController::add'], ['friend_id', 'origin'], null, null, false, true, null]],
+        224 => [[['_route' => 'remove_friend', '_controller' => 'App\\Controller\\AddFriendController::remove'], ['friend_id', 'origin'], null, null, false, true, null]],
+        249 => [[['_route' => '{id}', '_controller' => 'App\\Controller\\PageController::index'], ['id'], null, null, false, true, null]],
+        275 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
+        298 => [[['_route' => 'country/{id}', '_controller' => 'App\\Controller\\PageController::countryForm'], ['id'], null, null, false, true, null]],
+        323 => [[['_route' => 'hobbies/{id}', '_controller' => 'App\\Controller\\PageController::hobbiesForm'], ['id'], null, null, false, true, null]],
+        346 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], ['id'], null, null, false, true, null]],
+        369 => [
             [['_route' => 'usersByHobby', '_controller' => 'App\\Controller\\UsersController::usersByHobby'], ['hobbyId'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

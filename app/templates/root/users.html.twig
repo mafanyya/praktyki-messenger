@@ -12,6 +12,9 @@
                 <div class="user">
                     <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
                     <p>{{ user.username }}</p>
+                    <a href="{{ path('add_friend', {'friend_id': user.id, 'origin': app.request.attributes.get('_route')})}}">
+                        add
+                    </a>
 
                 </div>
             {% endfor %}
