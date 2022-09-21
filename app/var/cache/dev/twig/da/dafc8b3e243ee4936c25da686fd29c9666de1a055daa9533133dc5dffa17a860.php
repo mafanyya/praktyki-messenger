@@ -71,7 +71,7 @@ class __TwigTemplate_32047e7b7ad962bb932d3f8da5e83e906c5f930de5c43864d9099b5e1b9
         echo "\" rel=\"stylesheet\"/>
     <link href=\"";
         // line 4
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/page.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/multipleForm.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
     ";
         // line 5
@@ -102,7 +102,17 @@ class __TwigTemplate_32047e7b7ad962bb932d3f8da5e83e906c5f930de5c43864d9099b5e1b9
         <div class=\"form\">
             ";
         // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["country_form"]) || array_key_exists("country_form", $context) ? $context["country_form"] : (function () { throw new RuntimeError('Variable "country_form" does not exist.', 12, $this->source); })()), 'form');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["country_form"]) || array_key_exists("country_form", $context) ? $context["country_form"] : (function () { throw new RuntimeError('Variable "country_form" does not exist.', 12, $this->source); })()), 'form_start');
+        echo "
+            <div class=\"row\">
+                ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["country_form"]) || array_key_exists("country_form", $context) ? $context["country_form"] : (function () { throw new RuntimeError('Variable "country_form" does not exist.', 14, $this->source); })()), "country", [], "any", false, false, false, 14), 'row');
+        echo "
+            </div>
+            ";
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["country_form"]) || array_key_exists("country_form", $context) ? $context["country_form"] : (function () { throw new RuntimeError('Variable "country_form" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -128,7 +138,7 @@ class __TwigTemplate_32047e7b7ad962bb932d3f8da5e83e906c5f930de5c43864d9099b5e1b9
 
     public function getDebugInfo()
     {
-        return array (  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  115 => 16,  110 => 14,  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +146,7 @@ class __TwigTemplate_32047e7b7ad962bb932d3f8da5e83e906c5f930de5c43864d9099b5e1b9
         return new Source("{% extends 'root/index.html.twig' %}
 {% block header %}
     <link href=\"{{ asset('css/root.css') }}\" rel=\"stylesheet\"/>
-    <link href=\"{{ asset('css/page.css') }}\" rel=\"stylesheet\"/>
+    <link href=\"{{ asset('css/multipleForm.css') }}\" rel=\"stylesheet\"/>
     {{ parent() }}
 {% endblock %}
 
@@ -144,7 +154,11 @@ class __TwigTemplate_32047e7b7ad962bb932d3f8da5e83e906c5f930de5c43864d9099b5e1b9
     <body>
     <div class=\"container\">
         <div class=\"form\">
-            {{ form(country_form) }}
+            {{ form_start(country_form) }}
+            <div class=\"row\">
+                {{ form_row(country_form.country) }}
+            </div>
+            {{ form_end(country_form) }}
         </div>
     </div>
     </body>

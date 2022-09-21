@@ -17,6 +17,9 @@ class CountryFormType extends AbstractType
         $builder
             ->add('country', EntityType::class, [
                 'class' => Country::class,
+                'attr' => [
+                    'class' => 'row'
+                ],
                 'choice_label' => 'name',
                 'multiple' => false,
                 'expanded' => true

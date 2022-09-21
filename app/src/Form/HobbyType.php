@@ -19,6 +19,9 @@ class HobbyType extends AbstractType
 
             ->add('hobbies', EntityType::class, [
                 'class' => Hobby::class,
+                'attr' => [
+                    'class' => 'row'
+                ],
                 'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true

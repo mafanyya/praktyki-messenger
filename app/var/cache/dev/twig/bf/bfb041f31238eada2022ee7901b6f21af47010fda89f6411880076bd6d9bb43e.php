@@ -71,7 +71,7 @@ class __TwigTemplate_4d9c6ff8c9b39471c3ea73348877726ce0df616d4f803b6aed5d7e98216
         echo "\" rel=\"stylesheet\"/>
     <link href=\"";
         // line 4
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/page.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/multipleForm.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
     ";
         // line 5
@@ -102,7 +102,17 @@ class __TwigTemplate_4d9c6ff8c9b39471c3ea73348877726ce0df616d4f803b6aed5d7e98216
         <div class=\"form\">
             ";
         // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["hobby_form"]) || array_key_exists("hobby_form", $context) ? $context["hobby_form"] : (function () { throw new RuntimeError('Variable "hobby_form" does not exist.', 12, $this->source); })()), 'form');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["hobby_form"]) || array_key_exists("hobby_form", $context) ? $context["hobby_form"] : (function () { throw new RuntimeError('Variable "hobby_form" does not exist.', 12, $this->source); })()), 'form_start');
+        echo "
+            <div class=\"row\">
+                ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["hobby_form"]) || array_key_exists("hobby_form", $context) ? $context["hobby_form"] : (function () { throw new RuntimeError('Variable "hobby_form" does not exist.', 14, $this->source); })()), "hobbies", [], "any", false, false, false, 14), 'row');
+        echo "
+            </div>
+            ";
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["hobby_form"]) || array_key_exists("hobby_form", $context) ? $context["hobby_form"] : (function () { throw new RuntimeError('Variable "hobby_form" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -128,7 +138,7 @@ class __TwigTemplate_4d9c6ff8c9b39471c3ea73348877726ce0df616d4f803b6aed5d7e98216
 
     public function getDebugInfo()
     {
-        return array (  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  115 => 16,  110 => 14,  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +146,7 @@ class __TwigTemplate_4d9c6ff8c9b39471c3ea73348877726ce0df616d4f803b6aed5d7e98216
         return new Source("{% extends 'root/index.html.twig' %}
 {% block header %}
     <link href=\"{{ asset('css/root.css') }}\" rel=\"stylesheet\"/>
-    <link href=\"{{ asset('css/page.css') }}\" rel=\"stylesheet\"/>
+    <link href=\"{{ asset('css/multipleForm.css') }}\" rel=\"stylesheet\"/>
     {{ parent() }}
 {% endblock %}
 
@@ -144,7 +154,11 @@ class __TwigTemplate_4d9c6ff8c9b39471c3ea73348877726ce0df616d4f803b6aed5d7e98216
     <body>
     <div class=\"container\">
         <div class=\"form\">
-            {{ form(hobby_form) }}
+            {{ form_start(hobby_form) }}
+            <div class=\"row\">
+                {{ form_row(hobby_form.hobbies) }}
+            </div>
+            {{ form_end(hobby_form) }}
         </div>
     </div>
     </body>
