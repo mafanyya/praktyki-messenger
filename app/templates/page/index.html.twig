@@ -38,7 +38,13 @@
                 {% if id == currentId %}
                 <div class="change_credentials">
                     <a href="/page/change/{{ id }}">Change account information</a>
+
                 </div>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN')%}
+                    <div class="change_credentials">
+                        <a href="/admin">Admin panel</a>
+                    </div>
                 {% endif %}
 
 

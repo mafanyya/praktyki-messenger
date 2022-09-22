@@ -46,6 +46,7 @@ class PageController extends AbstractController
         $email = $user->getEmail();
         $avatar = $user->getAvatar();
         $isShowCredentials = $user->isIsShowCredentials();
+        $roles = $user->getRoles();
 
         $hobbies = $this->hobbyRepository->findHobbiesByUser($id);
 
@@ -82,6 +83,8 @@ class PageController extends AbstractController
             'isShowCredentials' => $isShowCredentials,
             'findByHobby' => $findByHobby,
             'usersByHobby' => $usersByHobby,
+            'roles' => $roles
+
 
         ]);
     }

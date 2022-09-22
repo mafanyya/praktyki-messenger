@@ -71,7 +71,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
         echo "\" rel=\"stylesheet\"/>
     <link href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/login.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/userForm.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
 ";
         
@@ -95,37 +95,41 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
         // line 9
         echo "    <body>
     <div class=\"container\">
-    <div class=\"main_content\">
-        <div class=\"login_panel\">
-
-    ";
+        <div class=\"container_inner\">
+            <p class = \"page_header\">Registration</p>
+            <div class=\"form\">
+                ";
         // line 14
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 14, $this->source); })())) {
             // line 15
-            echo "        <div>";
+            echo "                    <div>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 15, $this->source); })()), "messageKey", [], "any", false, false, false, 15), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 15, $this->source); })()), "messageData", [], "any", false, false, false, 15), "security"), "html", null, true);
             echo "</div>
-    ";
+                ";
         }
         // line 17
         echo "
-    <form action=\"";
+                <form action=\"";
         // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\" method=\"post\">
-        <label class = \"form_string\" for=\"username\">Username:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
+                    <div class=\"form_row\">
+                        <label class = \"form_string\" for=\"username\">Username:</label>
+                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 21
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 21, $this->source); })()), "html", null, true);
         echo "\"/>
+                    </div>
 
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\"/>
-
-        <button type=\"submit\">login</button>
-    </form>
+                    <div class=\"form_row\">
+                        <label for=\"password\">Password:</label>
+                        <input type=\"password\" id=\"password\" name=\"_password\"/>
+                    </div>
+                    
+                    <button type=\"submit\">login</button>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
     </body>
 ";
@@ -149,7 +153,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
 
     public function getDebugInfo()
     {
-        return array (  119 => 20,  114 => 18,  111 => 17,  105 => 15,  103 => 14,  96 => 9,  86 => 8,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  120 => 21,  114 => 18,  111 => 17,  105 => 15,  103 => 14,  96 => 9,  86 => 8,  74 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -158,32 +162,40 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
 
 {% block header %}
     <link href=\"{{ asset('css/root.css') }}\" rel=\"stylesheet\"/>
-    <link href=\"{{ asset('css/login.css') }}\" rel=\"stylesheet\"/>
+    <link href=\"{{ asset('css/userForm.css') }}\" rel=\"stylesheet\"/>
 {% endblock %}
 
 {% block body %}
     <body>
     <div class=\"container\">
-    <div class=\"main_content\">
-        <div class=\"login_panel\">
+        <div class=\"container_inner\">
+            <p class = \"page_header\">Registration</p>
+            <div class=\"form\">
+                {% if error %}
+                    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
 
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+                <form action=\"{{ path('login') }}\" method=\"post\">
+                    <div class=\"form_row\">
+                        <label class = \"form_string\" for=\"username\">Username:</label>
+                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\"/>
+                    </div>
 
-    <form action=\"{{ path('login') }}\" method=\"post\">
-        <label class = \"form_string\" for=\"username\">Username:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\"/>
-
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\"/>
-
-        <button type=\"submit\">login</button>
-    </form>
+                    <div class=\"form_row\">
+                        <label for=\"password\">Password:</label>
+                        <input type=\"password\" id=\"password\" name=\"_password\"/>
+                    </div>
+                    
+                    <button type=\"submit\">login</button>
+                </form>
+            </div>
         </div>
     </div>
-    </div>
     </body>
-{% endblock %}", "login/index.html.twig", "/var/www/sunflower/templates/login/index.html.twig");
+{% endblock %}
+
+
+
+", "login/index.html.twig", "/var/www/sunflower/templates/login/index.html.twig");
     }
 }

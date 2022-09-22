@@ -1,0 +1,30 @@
+.container_inner{
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+
+}
+.row{
+
+    display: flex;
+    flex-direction: column;
+    border-top: solid #a8a8a8 2px;
+    padding-bottom: 1em;
+}
+.row a{
+    font-size: 1em;
+    margin-bottom: 0.5em;
+
+}
+
+.header_p{
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: 0.3em;
+}
+.row a:link{
+    color: #808080;
+}

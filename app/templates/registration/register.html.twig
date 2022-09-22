@@ -1,27 +1,32 @@
-{% extends 'root/index.html.twig' %}
+
 {% block header %}
-    <header>
-        <a href="/">Home</a>
-    </header>
+    <link href="{{ asset('css/root.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/userForm.css') }}" rel="stylesheet"/>
 {% endblock %}
-
-{% block title %}Register{% endblock %}
-
 {% block body %}
-    <h1>Register</h1>
+    <body>
+    <div class="container">
+        <div class="container_inner">
+            <p class = "page_header">Registration</p>
+            <div class="form">
+                {{ form_start(registrationForm) }}
+                <div class="form_row">
+                    {{ form_row(registrationForm.username) }}
+                </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
+                <div class="form_row">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: none
+                    }) }}
+                </div>
+                <div class="form_row">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
 
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-
-
-{#    <input type="checkbox" id = "isAdmin" name = "isAdmin" value = true>#}
-{#    <label for="isAdmin">Admin</label>#}
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                <button type="submit" class="btn">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+    </body>
 {% endblock %}

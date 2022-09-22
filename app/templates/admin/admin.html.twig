@@ -1,0 +1,33 @@
+{% extends 'root/index.html.twig' %}
+{% block header %}
+    <link href="{{ asset('css/root.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container">
+        <div class="container_inner">
+            <div class="row">
+                <p class = "header_p">Users</p>
+                <a href="/add_user"><i class="bi bi-plus-circle"></i> Add user</a>
+                <a href="/remove_user"><i class="bi bi-dash-circle"></i> Delete user</a>
+            </div>
+            <div class="row">
+                <p class = "header_p">Hobbies</p>
+                <a href="/add_hobby"><i class="bi bi-plus-circle"></i> Add hobby</a>
+                <a href="/remove_hobby"><i class="bi bi-dash-circle"></i> Delete hobby</a>
+
+            </div>
+            <div class="row">
+                <p class = "header_p">Countries</p>
+                <a href="/add_country"><i class="bi bi-plus-circle"></i> Add country</a>
+                <a href="/remove_country"><i class="bi bi-dash-circle"></i> Delete country</a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </body>
+{% endblock %}
