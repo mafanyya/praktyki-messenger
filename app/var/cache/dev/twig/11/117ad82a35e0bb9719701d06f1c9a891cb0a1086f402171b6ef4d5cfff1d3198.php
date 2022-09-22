@@ -114,40 +114,33 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 14), "html", null, true);
             echo "</p>
-                    <a href=\"";
-            // line 15
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_friend", ["friend_id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 15), "origin" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "request", [], "any", false, false, false, 15), "attributes", [], "any", false, false, false, 15), "get", [0 => "_route"], "method", false, false, false, 15)]), "html", null, true);
-            echo "\">
-                        add
-                    </a>
-
                 </div>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 17
         echo "        </div>
             <div class=\"sorting_wrapper\">
                 <p class = \"sorting_list_name\">by hobby</p>
                 ";
-        // line 24
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["hobby"]) {
-            // line 25
+            // line 21
             echo "                <a  class = \"sorting_list\" href=\"/users/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 21), "html", null, true);
             echo "</a>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 23
         echo "                <a  class = \"sorting_list\" href=\"/users\"><i class=\"bi bi-arrow-return-left\"></i></a>
 
 
@@ -178,7 +171,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
 
     public function getDebugInfo()
     {
-        return array (  151 => 27,  140 => 25,  136 => 24,  131 => 21,  119 => 15,  115 => 14,  109 => 13,  106 => 12,  102 => 11,  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  144 => 23,  133 => 21,  129 => 20,  124 => 17,  115 => 14,  109 => 13,  106 => 12,  102 => 11,  96 => 7,  86 => 6,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -197,10 +190,6 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
                 <div class=\"user\">
                     <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
                     <p>{{ user.username }}</p>
-                    <a href=\"{{ path('add_friend', {'friend_id': user.id, 'origin': app.request.attributes.get('_route')})}}\">
-                        add
-                    </a>
-
                 </div>
             {% endfor %}
         </div>

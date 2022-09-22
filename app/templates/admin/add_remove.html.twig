@@ -1,0 +1,52 @@
+{% extends 'root/index.html.twig' %}
+{% block header %}
+    <link href="{{ asset('css/root.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/add_remove.css') }}" rel="stylesheet"/>
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div class="container">
+            {% if name == 'addUser' %}
+            {% endif %}
+            {% if name == 'removeUser' %}
+                <div class="users">
+                    <div class="users_wrapper">
+                        {% for user in users %}
+                            <div class="user">
+                                <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
+                                <div class="panel">
+                                    <a href="/remove_user/{{ user.id }}"><i class="bi bi-dash-circle"></i></a>
+                                    <p>{{ user.username }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if name == 'addHobby' %}
+            {% endif %}
+            {% if name == 'removeHobby' %}
+                <div class="container_inner">
+                    <p class = "header_f">Hobbies</p>
+                    <div class="hobbies_wrapper">
+                        {% for hobby in hobbies %}
+                            <div class="hobby">
+                                <p>{{ hobby.name }}</p>
+                                <a href="/remove_hobby/{{ hobby.id }}"><i class="bi bi-dash-circle"></i></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if name == 'addCountry' %}
+            {% endif %}
+            {% if name == 'removeCountry' %}
+            {% endif %}
+
+
+
+        </div>
+    </body>
+{% endblock %}

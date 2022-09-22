@@ -24,7 +24,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         parent::__construct($registry, User::class);
     }
 
-    public function add(User $entity, bool $flush = false): void
+    public function add(User $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -33,7 +33,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         }
     }
 
-    public function remove(User $entity, bool $flush = false): void
+    public function remove(User $entity, bool $flush = true): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -104,6 +104,15 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->andWhere('hobbies = :hobbies')
             ->andWhere('users.id != :userId')
             ->setParameter('hobbies',$hobbyId)
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+    public function findAllUsersExceptCurrentUser($userId)
+    {
+        return $this->createQueryBuilder('users')
+            ->select('users')
+            ->andWhere('users.id != :userId')
             ->setParameter('userId',$userId)
             ->getQuery()
             ->getArrayResult();

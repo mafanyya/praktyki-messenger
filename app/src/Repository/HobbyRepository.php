@@ -21,7 +21,7 @@ class HobbyRepository extends ServiceEntityRepository
         parent::__construct($registry, Hobby::class);
     }
 
-    public function add(Hobby $entity, bool $flush = false): void
+    public function add(Hobby $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class HobbyRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Hobby $entity, bool $flush = false): void
+    public function remove(Hobby $entity, bool $flush = true): void
     {
         $this->getEntityManager()->remove($entity);
 
