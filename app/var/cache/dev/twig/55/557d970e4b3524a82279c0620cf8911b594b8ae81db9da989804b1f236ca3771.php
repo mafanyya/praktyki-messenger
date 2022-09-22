@@ -178,6 +178,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
             }
             // line 43
             echo "
+
                 <a href=\"/friends/{id}\">Friends</a>
             </div>
         </div>
@@ -187,50 +188,50 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
         <div class=\"users_by_hobby\">
 
             ";
-            // line 52
-            if ((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 52, $this->source); })())) {
-                // line 53
+            // line 53
+            if ((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 53, $this->source); })())) {
+                // line 54
                 echo "            ";
-                if (((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 53, $this->source); })()) == (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 53, $this->source); })()))) {
-                    // line 54
+                if (((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 54, $this->source); })()) == (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 54, $this->source); })()))) {
+                    // line 55
                     echo "            <p>Are you intersted in ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 54, $this->source); })()), "name", [], "any", false, false, false, 54), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 55, $this->source); })()), "name", [], "any", false, false, false, 55), "html", null, true);
                     echo "? These are other users who are interested in ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 54, $this->source); })()), "name", [], "any", false, false, false, 54), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 55, $this->source); })()), "name", [], "any", false, false, false, 55), "html", null, true);
                     echo ":</p>
                 ";
                 } else {
-                    // line 56
+                    // line 57
                     echo "                    <div class=\"header_hobby\">
                 <p class = \"hobby_username\">";
-                    // line 57
-                    echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 57, $this->source); })()), "html", null, true);
+                    // line 58
+                    echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 58, $this->source); })()), "html", null, true);
                     echo " </p><p>is interested in ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 57, $this->source); })()), "name", [], "any", false, false, false, 57), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 58, $this->source); })()), "name", [], "any", false, false, false, 58), "html", null, true);
                     echo ". These are other users who are interested in ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 57, $this->source); })()), "name", [], "any", false, false, false, 57), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["findByHobby"]) || array_key_exists("findByHobby", $context) ? $context["findByHobby"] : (function () { throw new RuntimeError('Variable "findByHobby" does not exist.', 58, $this->source); })()), "name", [], "any", false, false, false, 58), "html", null, true);
                     echo ":</p>
                     </div>
             ";
                 }
-                // line 60
+                // line 61
                 echo "                <div class=\"users\">
             ";
-                // line 61
+                // line 62
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 61, $this->source); })()));
+                $context['_seq'] = twig_ensure_traversable((isset($context["usersByHobby"]) || array_key_exists("usersByHobby", $context) ? $context["usersByHobby"] : (function () { throw new RuntimeError('Variable "usersByHobby" does not exist.', 62, $this->source); })()));
                 foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                    // line 62
+                    // line 63
                     echo "                <div class=\"user\">
                     <a href=\"/page/";
-                    // line 63
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 63), "html", null, true);
+                    // line 64
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 64), "html", null, true);
                     echo "\" ><img  src=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 63), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 64), "html", null, true);
                     echo "\"></a>
                     <p>";
-                    // line 64
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 64), "html", null, true);
+                    // line 65
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 65), "html", null, true);
                     echo "</p>
                 </div>
             ";
@@ -238,20 +239,20 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 67
+                // line 68
                 echo "                </div>
             ";
             }
-            // line 69
+            // line 70
             echo "        </div>
         ";
         } else {
-            // line 71
+            // line 72
             echo "        <p>This is a private profile.</p>
 
         ";
         }
-        // line 74
+        // line 75
         echo "
 
 
@@ -281,7 +282,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
 
     public function getDebugInfo()
     {
-        return array (  255 => 74,  250 => 71,  246 => 69,  242 => 67,  233 => 64,  227 => 63,  224 => 62,  220 => 61,  217 => 60,  207 => 57,  204 => 56,  196 => 54,  193 => 53,  191 => 52,  180 => 43,  174 => 40,  171 => 39,  169 => 38,  166 => 37,  162 => 35,  151 => 33,  147 => 32,  144 => 31,  141 => 30,  135 => 27,  132 => 26,  130 => 25,  125 => 23,  122 => 22,  120 => 21,  115 => 19,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  256 => 75,  251 => 72,  247 => 70,  243 => 68,  234 => 65,  228 => 64,  225 => 63,  221 => 62,  218 => 61,  208 => 58,  205 => 57,  197 => 55,  194 => 54,  192 => 53,  180 => 43,  174 => 40,  171 => 39,  169 => 38,  166 => 37,  162 => 35,  151 => 33,  147 => 32,  144 => 31,  141 => 30,  135 => 27,  132 => 26,  130 => 25,  125 => 23,  122 => 22,  120 => 21,  115 => 19,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -328,6 +329,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     <a href=\"/page/change/{{ id }}\">Change account information</a>
                 </div>
                 {% endif %}
+
 
                 <a href=\"/friends/{id}\">Friends</a>
             </div>

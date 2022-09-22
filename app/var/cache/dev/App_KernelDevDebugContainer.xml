@@ -313,6 +313,7 @@
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\FriendsController"/>
       </call>
     </service>
+    <service id="App\Controller\HobbyController" class="App\Controller\HobbyController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>

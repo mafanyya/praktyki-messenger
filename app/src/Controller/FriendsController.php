@@ -34,8 +34,10 @@ class FriendsController extends AbstractController
 
     public function friends($id): Response
     {
+        $currentId = $this->requestStack->getSession()->get('filter');
 
-        $friends = $this->user->getFriends();
+        $friends = $this->friendShipRepository->findFriendsByUser($id);
+        dump($friends);
 
         return $this->render('root/friends.html.twig',
             [
@@ -68,8 +70,12 @@ class FriendsController extends AbstractController
     public function remove($friend_id, $origin): Response
     {
         $friend = $this-> userRepository ->find($friend_id);
-        $removefriend = $this->friendship->setFriend($friend);
-        $this->user->removeFriend($removefriend);
+        $currentId = $this->requestStack->getSession()->get('filter');
+        $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
+        $fs = new FriendShip();
+        $fs->setUser($currentLoggedUser);
+        $fs->setFriend($friend);
+        $this->friendShipRepository->remove($fs);
 
         return $this->redirectToRoute($origin);
 

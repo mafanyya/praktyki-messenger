@@ -53,18 +53,8 @@ class __TwigTemplate_26bc5029459e1da64c82f92499707ae67f7ec493289a62847a6a892c258
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 4
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 4, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["hobby"]) {
-            // line 5
-            echo "    <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 5), "html", null, true);
-            echo "</p>
+        echo "
 ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -85,7 +75,7 @@ class __TwigTemplate_26bc5029459e1da64c82f92499707ae67f7ec493289a62847a6a892c258
 
     public function getDebugInfo()
     {
-        return array (  60 => 5,  56 => 4,  47 => 2,  43 => 1,);
+        return array (  56 => 4,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -93,9 +83,7 @@ class __TwigTemplate_26bc5029459e1da64c82f92499707ae67f7ec493289a62847a6a892c258
         return new Source("{% for user in friends %}
     <p>{{ user.username }}</p>
 {% endfor %}
-{% for hobby in hobbies %}
-    <p>{{ hobby.name }}</p>
-{% endfor %}
+
 ", "root/friends.html.twig", "/var/www/sunflower/templates/root/friends.html.twig");
     }
 }

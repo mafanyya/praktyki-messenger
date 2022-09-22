@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -31,9 +32,14 @@ class RegistrationFormType extends AbstractType
             ])
 
 
-            ->add('plainPassword', PasswordType::class, [
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
                 'mapped' => false,
+                'invalid_message' => 'The password fields must match.',
                 'attr' => ['autocomplete' => 'new-password'],
+                'required' => true,
+                'first_options' => ['label' => 'Password'],
+                'second_options' => ['label' => 'Repeat Password'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -45,6 +51,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+
             ->add('avatar', HiddenType::class, [
                 'data' => 'https://checklists.expert/images/no-avatar-ff.png'
             ])

@@ -21,7 +21,7 @@ class FriendShipRepository extends ServiceEntityRepository
         parent::__construct($registry, FriendShip::class);
     }
 
-    public function add(FriendShip $entity, bool $flush = false): void
+    public function add(FriendShip $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -40,13 +40,23 @@ class FriendShipRepository extends ServiceEntityRepository
     }
 
 
-    public function findFriendByUser($userId)
+//    public function findFriendByUser($userId)
+//    {
+//        return $this->createQueryBuilder('friend')
+//            ->select('friends','user')
+//            ->leftJoin('friends.user','user')
+//            ->andWhere('user = :userId')
+//            ->setParameter('userId',$userId)
+//            ->getQuery()
+//            ->getArrayResult();
+//    }
+
+    public function findFriendsByUser($userId)
     {
-        return $this->createQueryBuilder('friend')
-            ->select('friends','user')
-            ->leftJoin('friends.user','user')
-            ->andWhere('user = :userId')
-            ->setParameter('userId',$userId)
+        return $this->createQueryBuilder('friends')
+
+            ->select('friends.user')
+//            ->setParameter('userId', $userId)
             ->getQuery()
             ->getArrayResult();
     }
