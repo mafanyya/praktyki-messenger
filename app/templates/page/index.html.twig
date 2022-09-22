@@ -10,18 +10,14 @@
     <div class="container">
         <div class="main_inf">
             <div class="avatar_inf">
-                <div class="avatar_page">
-                    <img class = "avatar_content_page" src="{{ avatar }}">
+                    <div class="avatar_page">
+                        <img class = "avatar_content_page" src="{{ avatar }}">
+                    </div>
                 </div>
-                </div>
-
             <div class="user_inf">
                 <div class="username_page">
                     <p>{{ username }}</p>
                 </div>
-
-
-
                 {% if (isShowCredentials  == true) or (id == currentId) %}
                 <div class="email">
                     <p><i class="bi bi-envelope"></i> {{ email}}</p>
@@ -31,8 +27,6 @@
                     <p><i class="bi bi-globe"></i> {{ country.name }}</p>
                 </div>
                 {% endif %}
-
-
                 {% if hobbies %}
                 <div class="hobbies">
                     {% for hobby in hobbies %}
@@ -46,6 +40,8 @@
                     <a href="/page/change/{{ id }}">Change account information</a>
                 </div>
                 {% endif %}
+
+                <a href="/friends/{id}">Friends</a>
             </div>
         </div>
 

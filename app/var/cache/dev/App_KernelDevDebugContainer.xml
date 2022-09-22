@@ -301,14 +301,16 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\AddFriendController" class="App\Controller\AddFriendController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\FriendsController" class="App\Controller\FriendsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\UserRepository"/>
       <argument type="service" id="App\Entity\User"/>
       <argument type="service" id="App\Entity\Friendship"/>
+      <argument type="service" id="App\Repository\FriendShipRepository"/>
+      <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\AddFriendController"/>
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\FriendsController"/>
       </call>
     </service>
     <service id="App\Controller\LoginController" class="App\Controller\LoginController" public="true" autowire="true" autoconfigure="true">
@@ -4192,9 +4194,9 @@
       <argument type="service" id="web_profiler.csp.handler"/>
       <argument>null</argument>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AddFriendController" class="App\Controller\AddFriendController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AddFriendController" class="App\Controller\AddFriendController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AddFriendController" class="App\Controller\AddFriendController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4860,9 +4862,9 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.l1ae.Qz.App\Controller\AddFriendController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\AddFriendController"/>
-      <argument>App\Controller\AddFriendController</argument>
+    <service id=".service_locator.l1ae.Qz.App\Controller\FriendsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\FriendsController"/>
+      <argument>App\Controller\FriendsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>

@@ -57,12 +57,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'friend', targetEntity: FriendShip::class)]
     private $friendsWithMe;
 
+
+
     public function __construct()
     {
         $this->friends = new ArrayCollection();
         $this->friendsWithme = new ArrayCollection();
         $this->hobbies = new ArrayCollection();
-        $this->friendsWithMe = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -231,15 +233,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->friends;
     }
 
-    public function addFriend(FriendShip $friend): self
+    public function addFriendship(FriendShip $friendship)
     {
-        if (!$this->friends->contains($friend)) {
-            $this->friends[] = $friend;
-            $friend->setUser($this);
-        }
-
-        return $this;
+        $this->friends->add($friendship);
+        $this->addFriendshipWithMe($friendship);
     }
+
+    public function addFriendshipWithMe(Friendship $friendship)
+    {
+        $this->friendsWithMe->add($friendship);
+    }
+
+
+
+
+//    public function addFriendship(FriendShip $friend): self
+//    {
+//        if (!$this->friends->contains($friend)) {
+//            $friend->setUser($this);
+//            $this->friends[] = $friend;
+//
+//        }
+//
+//        return $this;
+//    }
 
     public function removeFriend(FriendShip $friend): self
     {

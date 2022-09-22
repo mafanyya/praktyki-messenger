@@ -39,6 +39,17 @@ class FriendShipRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findFriendByUser($userId)
+    {
+        return $this->createQueryBuilder('friend')
+            ->select('friends','user')
+            ->leftJoin('friends.user','user')
+            ->andWhere('user = :userId')
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
 //    /**
 //     * @return FriendShip[] Returns an array of FriendShip objects
 //     */

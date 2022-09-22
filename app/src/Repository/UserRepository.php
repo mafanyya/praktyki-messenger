@@ -111,6 +111,19 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
 
 
+    public function findFriendByUser($userId)
+    {
+        return $this->createQueryBuilder('friend')
+            ->select('friends','user')
+            ->leftJoin('friends.user','user')
+            ->andWhere('user = :userId')
+            ->setParameter('userId',$userId)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+
+
 
 
 
