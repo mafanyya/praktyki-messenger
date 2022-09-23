@@ -25,6 +25,7 @@ return [
     'remove_hobby/{id}' => [['id'], ['_controller' => 'App\\Controller\\AdminController::removeHobbyId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/remove_hobby']], [], [], []],
     'add_country' => [[], ['_controller' => 'App\\Controller\\AdminController::addCountry'], [], [['text', '/add_country']], [], [], []],
     'remove_country' => [[], ['_controller' => 'App\\Controller\\AdminController::removeCountry'], [], [['text', '/remove_country']], [], [], []],
+    'remove_country/{id}' => [['id'], ['_controller' => 'App\\Controller\\AdminController::removeCountryId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/remove_country']], [], [], []],
     'friends{id}' => [['id'], ['_controller' => 'App\\Controller\\FriendsController::friends'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/friends']], [], [], []],
     'add_friend' => [['friend_id', 'origin'], ['_controller' => 'App\\Controller\\FriendsController::add'], [], [['variable', '/', '[^/]++', 'origin', true], ['variable', '/', '[^/]++', 'friend_id', true], ['text', '/add']], [], [], []],
     'remove_friend' => [['friend_id', 'origin'], ['_controller' => 'App\\Controller\\FriendsController::remove'], [], [['variable', '/', '[^/]++', 'origin', true], ['variable', '/', '[^/]++', 'friend_id', true], ['text', '/remove']], [], [], []],

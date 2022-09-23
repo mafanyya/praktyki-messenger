@@ -18,7 +18,7 @@ class Country
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $continent;
 
     #[ORM\OneToMany(mappedBy: 'country', targetEntity: User::class)]

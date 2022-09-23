@@ -49,9 +49,9 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
     ";
         // line 22
         $this->displayBlock('header', $context, $blocks);
-        // line 61
+        // line 62
         $this->displayBlock('body', $context, $blocks);
-        // line 91
+        // line 92
         echo "
 
 
@@ -129,36 +129,37 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     <a class = \"logo_name\" href=\"/\"><i class=\"bi bi-flower1\"style = \"font-size: 1.2em\"></i> Sunflower</a>
                 </div>
                 <a class=\"user_credentials\" href=\"/users\">users</a>
+                <a class=\"user_credentials\" href=\"/admin\">admin panel</a>
 
                 <div class=\"panel\">
                     <div class=\"user_credentials\">
                         <div class=\"avatar\">
                             <img class = \"avatar_content\" src=\"";
-        // line 35
-        echo twig_escape_filter($this->env, (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 35, $this->source); })()), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 36, $this->source); })()), "html", null, true);
         echo "\">
                         </div>
                         <div class=\"username\">
                             <a class = \"panel_link\" href=\"/page/";
-        // line 38
-        echo twig_escape_filter($this->env, (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 38, $this->source); })()), "html", null, true);
+        // line 39
+        echo twig_escape_filter($this->env, (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 39, $this->source); })()), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, (isset($context["currentUsername"]) || array_key_exists("currentUsername", $context) ? $context["currentUsername"] : (function () { throw new RuntimeError('Variable "currentUsername" does not exist.', 38, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["currentUsername"]) || array_key_exists("currentUsername", $context) ? $context["currentUsername"] : (function () { throw new RuntimeError('Variable "currentUsername" does not exist.', 39, $this->source); })()), "html", null, true);
         echo "</a>
                         </div>
                     </div>
                 <div class=\"login_panel\">
                     ";
-        // line 42
+        // line 43
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 43
+            // line 44
             echo "                        <div class=\"panel_block\">
 
                            <a class = \"panel_link\" href=\"/logout\"><i class=\"bi bi-door-open-fill\"></i></a>
                         </div>
                     ";
         } else {
-            // line 48
+            // line 49
             echo "                        <div class=\"panel_block\">
 
                            <a class = \"panel_link\" href=\"/register\">Sign Up</a>
@@ -168,7 +169,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                         </div>
                     ";
         }
-        // line 56
+        // line 57
         echo "                </div>
                 </div>
             </div>
@@ -182,7 +183,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     }
 
-    // line 61
+    // line 62
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,14 +193,14 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 62
+        // line 63
         echo "    <body>
     <div class=\"container\">
         <div class=\"main_content\">
             ";
-        // line 65
+        // line 66
         if ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 66
+            // line 67
             echo "            <div class=\"main_img\">
             <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
             </div>
@@ -211,7 +212,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
             </div>
                 ";
         } else {
-            // line 76
+            // line 77
             echo "                    <div class=\"main_img\">
                         <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
                     </div>
@@ -222,7 +223,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     </div>
             ";
         }
-        // line 85
+        // line 86
         echo "
         </div>
     </div>
@@ -244,7 +245,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     public function getDebugInfo()
     {
-        return array (  226 => 85,  215 => 76,  203 => 66,  201 => 65,  196 => 62,  186 => 61,  172 => 56,  162 => 48,  155 => 43,  153 => 42,  144 => 38,  138 => 35,  122 => 23,  112 => 22,  99 => 18,  94 => 16,  78 => 2,  68 => 1,  55 => 91,  53 => 61,  51 => 22,  48 => 21,  46 => 1,);
+        return array (  227 => 86,  216 => 77,  204 => 67,  202 => 66,  197 => 63,  187 => 62,  173 => 57,  163 => 49,  156 => 44,  154 => 43,  145 => 39,  139 => 36,  122 => 23,  112 => 22,  99 => 18,  94 => 16,  78 => 2,  68 => 1,  55 => 92,  53 => 62,  51 => 22,  48 => 21,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -279,6 +280,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     <a class = \"logo_name\" href=\"/\"><i class=\"bi bi-flower1\"style = \"font-size: 1.2em\"></i> Sunflower</a>
                 </div>
                 <a class=\"user_credentials\" href=\"/users\">users</a>
+                <a class=\"user_credentials\" href=\"/admin\">admin panel</a>
 
                 <div class=\"panel\">
                     <div class=\"user_credentials\">

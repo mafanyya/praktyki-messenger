@@ -96,7 +96,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
         echo "    <body>
     <div class=\"container\">
         <div class=\"container_inner\">
-            <p class = \"page_header\">Registration</p>
+            <p class = \"page_header\">Login</p>
             <div class=\"form\">
                 ";
         // line 14
@@ -125,7 +125,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
                         <label for=\"password\">Password:</label>
                         <input type=\"password\" id=\"password\" name=\"_password\"/>
                     </div>
-                    
+
                     <button type=\"submit\">login</button>
                 </form>
             </div>
@@ -169,7 +169,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
     <body>
     <div class=\"container\">
         <div class=\"container_inner\">
-            <p class = \"page_header\">Registration</p>
+            <p class = \"page_header\">Login</p>
             <div class=\"form\">
                 {% if error %}
                     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -185,7 +185,7 @@ class __TwigTemplate_12c45fa6cde5061957bf16ba949130fa093acc3f4d350ee2373c563288b
                         <label for=\"password\">Password:</label>
                         <input type=\"password\" id=\"password\" name=\"_password\"/>
                     </div>
-                    
+
                     <button type=\"submit\">login</button>
                 </form>
             </div>

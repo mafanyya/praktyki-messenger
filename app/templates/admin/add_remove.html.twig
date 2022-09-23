@@ -8,7 +8,53 @@
 {% block body %}
     <body>
         <div class="container">
+            <p class = "header_f">Add user</p>
             {% if name == 'addUser' %}
+                {{ form_start(addUserForm) }}
+                <div class="form_row">
+                    <p>Username</p>
+                    {{ form_row(addUserForm.username, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Password</p>
+                    {{ form_row(addUserForm.password.first, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Repeat password</p>
+                    {{ form_row(addUserForm.password.second, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Email</p>
+                    {{ form_row(addUserForm.email, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Avatar</p>
+                    {{ form_row(addUserForm.avatar, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Birthdate</p>
+                    {{ form_row(addUserForm.birthdate, {
+                        'label': false
+                    }) }}
+                </div>
+                <div class="form_row">
+                    <p>Role</p>
+                    {{ form_row(addUserForm.roles, {
+                    'label': false
+                    }) }}
+                </div>
+                <button type ="submit">Add</button>
+                {{ form_end(addUserForm) }}
             {% endif %}
             {% if name == 'removeUser' %}
                 <div class="users">
@@ -23,9 +69,32 @@
                             </div>
                         {% endfor %}
                     </div>
+                    <div class="return">
+                        <a  href="/admin"><i class="bi bi-arrow-return-left"></i></a>
+                    </div>
                 </div>
             {% endif %}
             {% if name == 'addHobby' %}
+                <div class="container_inner">
+
+                    {{ form_start(addHobbyForm) }}
+                    <p class = "header_f">Add hobby</p>
+                    <div class="form_row">
+                        <p>Name</p>
+                            {{ form_row(addHobbyForm.name,{
+                                label:false
+                            }) }}
+                    </div>
+                    <div class="form_row">
+                            <p>Img</p>
+                            {{ form_row(addHobbyForm.img, {
+                                label: false
+                            }) }}
+                    </div>
+                    <button type ="submit">Add</button>
+                    {{ form_end(addHobbyForm) }}
+
+                </div>
             {% endif %}
             {% if name == 'removeHobby' %}
                 <div class="container_inner">
@@ -41,8 +110,32 @@
                 </div>
             {% endif %}
             {% if name == 'addCountry' %}
+                <div class="container_inner">
+                    {{ form_start(addCountryForm) }}
+                    <p class = "header_f">Add country</p>
+                    <div class="form_row">
+                        <p>Name</p>
+                        {{ form_row(addCountryForm.name,{
+                            label:false
+                        }) }}
+                    </div>
+
+                    <button type ="submit">Add</button>
+                    {{ form_end(addCountryForm) }}
+                </div>
             {% endif %}
             {% if name == 'removeCountry' %}
+                <div class="container_inner">
+                    <p class = "header_f">Countries</p>
+                    <div class="countries_wrapper">
+                        {% for country in countries %}
+                            <div class="hobby">
+                                <p>{{ country.name }}</p>
+                                <a href="/remove_country/{{ country.id }}"><i class="bi bi-dash-circle"></i></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             {% endif %}
 
 
