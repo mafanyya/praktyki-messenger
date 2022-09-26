@@ -99,12 +99,13 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
         // line 9
         echo "    <body>
         <div class=\"container\">
-            <p class = \"header_f\">Add user</p>
             ";
-        // line 12
-        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 12, $this->source); })()) == "addUser")) {
+        // line 11
+        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 11, $this->source); })()) == "addUser")) {
+            // line 12
+            echo "                <p class = \"header_f\">Add user</p>
+                ";
             // line 13
-            echo "                ";
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addUserForm"]) || array_key_exists("addUserForm", $context) ? $context["addUserForm"] : (function () { throw new RuntimeError('Variable "addUserForm" does not exist.', 13, $this->source); })()), 'form_start');
             echo "
                 <div class=\"form_row\">
@@ -234,42 +235,41 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     </div>
                     <div class=\"form_row\">
                             <p>Img</p>
-                            ";
+                        ";
             // line 90
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addHobbyForm"]) || array_key_exists("addHobbyForm", $context) ? $context["addHobbyForm"] : (function () { throw new RuntimeError('Variable "addHobbyForm" does not exist.', 90, $this->source); })()), "img", [], "any", false, false, false, 90), 'row', ["label" => false]);
-            // line 92
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addHobbyForm"]) || array_key_exists("addHobbyForm", $context) ? $context["addHobbyForm"] : (function () { throw new RuntimeError('Variable "addHobbyForm" does not exist.', 90, $this->source); })()), "img", [], "any", false, false, false, 90), 'widget');
             echo "
                     </div>
                     <button type =\"submit\">Add</button>
                     ";
-            // line 95
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addHobbyForm"]) || array_key_exists("addHobbyForm", $context) ? $context["addHobbyForm"] : (function () { throw new RuntimeError('Variable "addHobbyForm" does not exist.', 95, $this->source); })()), 'form_end');
+            // line 93
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addHobbyForm"]) || array_key_exists("addHobbyForm", $context) ? $context["addHobbyForm"] : (function () { throw new RuntimeError('Variable "addHobbyForm" does not exist.', 93, $this->source); })()), 'form_end');
             echo "
 
                 </div>
             ";
         }
-        // line 99
+        // line 97
         echo "            ";
-        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 99, $this->source); })()) == "removeHobby")) {
-            // line 100
+        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 97, $this->source); })()) == "removeHobby")) {
+            // line 98
             echo "                <div class=\"container_inner\">
                     <p class = \"header_f\">Hobbies</p>
                     <div class=\"hobbies_wrapper\">
                         ";
-            // line 103
+            // line 101
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 103, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["hobbies"]) || array_key_exists("hobbies", $context) ? $context["hobbies"] : (function () { throw new RuntimeError('Variable "hobbies" does not exist.', 101, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["hobby"]) {
-                // line 104
+                // line 102
                 echo "                            <div class=\"hobby\">
                                 <p>";
-                // line 105
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 105), "html", null, true);
+                // line 103
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "name", [], "any", false, false, false, 103), "html", null, true);
                 echo "</p>
                                 <a href=\"/remove_hobby/";
-                // line 106
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 106), "html", null, true);
+                // line 104
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 104), "html", null, true);
                 echo "\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         ";
@@ -277,59 +277,66 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['hobby'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 109
+            // line 107
             echo "                    </div>
                 </div>
             ";
         }
-        // line 112
+        // line 110
         echo "            ";
-        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 112, $this->source); })()) == "addCountry")) {
-            // line 113
+        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 110, $this->source); })()) == "addCountry")) {
+            // line 111
             echo "                <div class=\"container_inner\">
                     ";
-            // line 114
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 114, $this->source); })()), 'form_start');
+            // line 112
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 112, $this->source); })()), 'form_start');
             echo "
                     <p class = \"header_f\">Add country</p>
                     <div class=\"form_row\">
                         <p>Name</p>
-                        ";
+                         ";
+            // line 116
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 116, $this->source); })()), "name", [], "any", false, false, false, 116), 'row', ["label" => false]);
             // line 118
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 118, $this->source); })()), "name", [], "any", false, false, false, 118), 'row', ["label" => false]);
-            // line 120
+            echo "
+                    </div>
+                    <div class=\"form_row\">
+                        <p>Img</p>
+                        ";
+            // line 122
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 122, $this->source); })()), "img", [], "any", false, false, false, 122), 'widget');
             echo "
                     </div>
 
                     <button type =\"submit\">Add</button>
                     ";
-            // line 124
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 124, $this->source); })()), 'form_end');
+            // line 126
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addCountryForm"]) || array_key_exists("addCountryForm", $context) ? $context["addCountryForm"] : (function () { throw new RuntimeError('Variable "addCountryForm" does not exist.', 126, $this->source); })()), 'form_end');
             echo "
                 </div>
             ";
         }
-        // line 127
+        // line 129
         echo "            ";
-        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 127, $this->source); })()) == "removeCountry")) {
-            // line 128
+        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 129, $this->source); })()) == "removeCountry")) {
+            // line 130
             echo "                <div class=\"container_inner\">
                     <p class = \"header_f\">Countries</p>
                     <div class=\"countries_wrapper\">
                         ";
-            // line 131
+            // line 133
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["countries"]) || array_key_exists("countries", $context) ? $context["countries"] : (function () { throw new RuntimeError('Variable "countries" does not exist.', 131, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["countries"]) || array_key_exists("countries", $context) ? $context["countries"] : (function () { throw new RuntimeError('Variable "countries" does not exist.', 133, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["country"]) {
-                // line 132
+                // line 134
                 echo "                            <div class=\"hobby\">
                                 <p>";
-                // line 133
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["country"], "name", [], "any", false, false, false, 133), "html", null, true);
+                // line 135
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["country"], "name", [], "any", false, false, false, 135), "html", null, true);
                 echo "</p>
                                 <a href=\"/remove_country/";
-                // line 134
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["country"], "id", [], "any", false, false, false, 134), "html", null, true);
+                // line 136
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["country"], "id", [], "any", false, false, false, 136), "html", null, true);
                 echo "\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         ";
@@ -337,12 +344,12 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['country'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 137
+            // line 139
             echo "                    </div>
                 </div>
             ";
         }
-        // line 140
+        // line 142
         echo "
 
 
@@ -369,7 +376,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
 
     public function getDebugInfo()
     {
-        return array (  346 => 140,  341 => 137,  332 => 134,  328 => 133,  325 => 132,  321 => 131,  316 => 128,  313 => 127,  307 => 124,  301 => 120,  299 => 118,  292 => 114,  289 => 113,  286 => 112,  281 => 109,  272 => 106,  268 => 105,  265 => 104,  261 => 103,  256 => 100,  253 => 99,  246 => 95,  241 => 92,  239 => 90,  233 => 86,  231 => 84,  224 => 80,  220 => 78,  217 => 77,  209 => 71,  199 => 67,  195 => 66,  188 => 64,  185 => 63,  181 => 62,  177 => 60,  174 => 59,  169 => 57,  164 => 54,  162 => 52,  156 => 48,  154 => 46,  148 => 42,  146 => 40,  140 => 36,  138 => 34,  132 => 30,  130 => 28,  124 => 24,  122 => 22,  116 => 18,  114 => 16,  107 => 13,  105 => 12,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  353 => 142,  348 => 139,  339 => 136,  335 => 135,  332 => 134,  328 => 133,  323 => 130,  320 => 129,  314 => 126,  307 => 122,  301 => 118,  299 => 116,  292 => 112,  289 => 111,  286 => 110,  281 => 107,  272 => 104,  268 => 103,  265 => 102,  261 => 101,  256 => 98,  253 => 97,  246 => 93,  240 => 90,  234 => 86,  232 => 84,  225 => 80,  221 => 78,  218 => 77,  210 => 71,  200 => 67,  196 => 66,  189 => 64,  186 => 63,  182 => 62,  178 => 60,  175 => 59,  170 => 57,  165 => 54,  163 => 52,  157 => 48,  155 => 46,  149 => 42,  147 => 40,  141 => 36,  139 => 34,  133 => 30,  131 => 28,  125 => 24,  123 => 22,  117 => 18,  115 => 16,  109 => 13,  106 => 12,  104 => 11,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -384,8 +391,8 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
 {% block body %}
     <body>
         <div class=\"container\">
-            <p class = \"header_f\">Add user</p>
             {% if name == 'addUser' %}
+                <p class = \"header_f\">Add user</p>
                 {{ form_start(addUserForm) }}
                 <div class=\"form_row\">
                     <p>Username</p>
@@ -463,9 +470,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     </div>
                     <div class=\"form_row\">
                             <p>Img</p>
-                            {{ form_row(addHobbyForm.img, {
-                                label: false
-                            }) }}
+                        {{ form_widget(addHobbyForm.img) }}
                     </div>
                     <button type =\"submit\">Add</button>
                     {{ form_end(addHobbyForm) }}
@@ -491,9 +496,13 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     <p class = \"header_f\">Add country</p>
                     <div class=\"form_row\">
                         <p>Name</p>
-                        {{ form_row(addCountryForm.name,{
+                         {{ form_row(addCountryForm.name,{
                             label:false
                         }) }}
+                    </div>
+                    <div class=\"form_row\">
+                        <p>Img</p>
+                        {{ form_widget(addCountryForm.img) }}
                     </div>
 
                     <button type =\"submit\">Add</button>

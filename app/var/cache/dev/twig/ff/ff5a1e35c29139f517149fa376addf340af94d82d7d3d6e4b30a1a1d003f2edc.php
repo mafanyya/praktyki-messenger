@@ -44,14 +44,14 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
         // line 1
         $this->displayBlock('head', $context, $blocks);
-        // line 21
+        // line 22
         echo "
     ";
-        // line 22
+        // line 23
         $this->displayBlock('header', $context, $blocks);
-        // line 62
+        // line 63
         $this->displayBlock('body', $context, $blocks);
-        // line 92
+        // line 93
         echo "
 
 
@@ -88,15 +88,16 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
         900&display=swap\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css\">
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css\"/>
 
         <link href=\"";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/root.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
 
         <title>";
-        // line 18
-        echo twig_escape_filter($this->env, (isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 18, $this->source); })()), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, (isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 19, $this->source); })()), "html", null, true);
         echo "</title>
     </head>
 ";
@@ -108,7 +109,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     }
 
-    // line 22
+    // line 23
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -118,7 +119,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 23
+        // line 24
         echo "        <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/homepage.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
@@ -135,31 +136,31 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     <div class=\"user_credentials\">
                         <div class=\"avatar\">
                             <img class = \"avatar_content\" src=\"";
-        // line 36
-        echo twig_escape_filter($this->env, (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 36, $this->source); })()), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 37, $this->source); })()), "html", null, true);
         echo "\">
                         </div>
                         <div class=\"username\">
                             <a class = \"panel_link\" href=\"/page/";
-        // line 39
-        echo twig_escape_filter($this->env, (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 39, $this->source); })()), "html", null, true);
+        // line 40
+        echo twig_escape_filter($this->env, (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 40, $this->source); })()), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, (isset($context["currentUsername"]) || array_key_exists("currentUsername", $context) ? $context["currentUsername"] : (function () { throw new RuntimeError('Variable "currentUsername" does not exist.', 39, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["currentUsername"]) || array_key_exists("currentUsername", $context) ? $context["currentUsername"] : (function () { throw new RuntimeError('Variable "currentUsername" does not exist.', 40, $this->source); })()), "html", null, true);
         echo "</a>
                         </div>
                     </div>
                 <div class=\"login_panel\">
                     ";
-        // line 43
+        // line 44
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 44
+            // line 45
             echo "                        <div class=\"panel_block\">
 
                            <a class = \"panel_link\" href=\"/logout\"><i class=\"bi bi-door-open-fill\"></i></a>
                         </div>
                     ";
         } else {
-            // line 49
+            // line 50
             echo "                        <div class=\"panel_block\">
 
                            <a class = \"panel_link\" href=\"/register\">Sign Up</a>
@@ -169,7 +170,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                         </div>
                     ";
         }
-        // line 57
+        // line 58
         echo "                </div>
                 </div>
             </div>
@@ -183,7 +184,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     }
 
-    // line 62
+    // line 63
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,14 +194,14 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 63
+        // line 64
         echo "    <body>
     <div class=\"container\">
         <div class=\"main_content\">
             ";
-        // line 66
+        // line 67
         if ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 67
+            // line 68
             echo "            <div class=\"main_img\">
             <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
             </div>
@@ -212,7 +213,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
             </div>
                 ";
         } else {
-            // line 77
+            // line 78
             echo "                    <div class=\"main_img\">
                         <img class=\"img_content\" src=\"https://i.pinimg.com/564x/ee/bd/11/eebd114c8e202c352318a1bca29646a8.jpg\">
                     </div>
@@ -223,7 +224,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                     </div>
             ";
         }
-        // line 86
+        // line 87
         echo "
         </div>
     </div>
@@ -245,7 +246,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
 
     public function getDebugInfo()
     {
-        return array (  227 => 86,  216 => 77,  204 => 67,  202 => 66,  197 => 63,  187 => 62,  173 => 57,  163 => 49,  156 => 44,  154 => 43,  145 => 39,  139 => 36,  122 => 23,  112 => 22,  99 => 18,  94 => 16,  78 => 2,  68 => 1,  55 => 92,  53 => 62,  51 => 22,  48 => 21,  46 => 1,);
+        return array (  228 => 87,  217 => 78,  205 => 68,  203 => 67,  198 => 64,  188 => 63,  174 => 58,  164 => 50,  157 => 45,  155 => 44,  146 => 40,  140 => 37,  123 => 24,  113 => 23,  100 => 19,  95 => 17,  78 => 2,  68 => 1,  55 => 93,  53 => 63,  51 => 23,  48 => 22,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -264,6 +265,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
         900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
         900&display=swap\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css\">
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css\"/>
 
         <link href=\"{{ asset('css/root.css') }}\" rel=\"stylesheet\"/>
 

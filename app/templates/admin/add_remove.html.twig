@@ -8,8 +8,8 @@
 {% block body %}
     <body>
         <div class="container">
-            <p class = "header_f">Add user</p>
             {% if name == 'addUser' %}
+                <p class = "header_f">Add user</p>
                 {{ form_start(addUserForm) }}
                 <div class="form_row">
                     <p>Username</p>
@@ -87,9 +87,7 @@
                     </div>
                     <div class="form_row">
                             <p>Img</p>
-                            {{ form_row(addHobbyForm.img, {
-                                label: false
-                            }) }}
+                        {{ form_widget(addHobbyForm.img) }}
                     </div>
                     <button type ="submit">Add</button>
                     {{ form_end(addHobbyForm) }}
@@ -115,9 +113,13 @@
                     <p class = "header_f">Add country</p>
                     <div class="form_row">
                         <p>Name</p>
-                        {{ form_row(addCountryForm.name,{
+                         {{ form_row(addCountryForm.name,{
                             label:false
                         }) }}
+                    </div>
+                    <div class="form_row">
+                        <p>Img</p>
+                        {{ form_widget(addCountryForm.img) }}
                     </div>
 
                     <button type ="submit">Add</button>
