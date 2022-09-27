@@ -17,6 +17,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
 
 class AdminController extends AbstractController
 {
@@ -59,7 +64,7 @@ class AdminController extends AbstractController
 
     #[Route('/add_user', name: 'add_user')]
 
-    public function addUser(Request $request,EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher ):Response
+    public function addUser(Request $request,EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher, SluggerInterface $slugger ):Response
     {
         $currentId = $this->requestStack->getSession()->get('filter');
         $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
@@ -73,12 +78,32 @@ class AdminController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
+
+
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('password')->getData()
                 )
             );
+
+            $avatar = $form->get('avatar')->getData();
+
+            if($avatar){
+                $originalFilename = pathinfo($avatar->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$avatar->guessExtension();
+                try{
+                    $avatar->move(
+                        $this->getParameter('avatar_directory'),
+                        $newFilename
+                    );
+                }catch (FileException $e){
+
+                }
+                $user->setAvatar($newFilename);
+
+            }
             $user->setRoles(['ROLE_USER']);
             $user = $form->getData();
             $entityManager->persist($user);

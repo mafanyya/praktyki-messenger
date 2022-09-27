@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\ArrayType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -15,6 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\File;
 
 class AddUserFormType extends AbstractType
 {
@@ -39,9 +41,20 @@ class AddUserFormType extends AbstractType
             ->add('email', TextType::class, [
                 'data' => 'Unknown email'
             ])
-            ->add('avatar', TextType::class, [
-                'data' => 'https://checklists.expert/images/no-avatar-ff.png',
-                'required' => false
+            ->add('avatar', FileType::class, [
+                'label' => 'None',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Try again',
+                    ])
+            ],
             ])
             ->add('birthdate', TextType::class, [
                 'required' => false
