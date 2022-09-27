@@ -104,7 +104,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     <div class=\"avatar_page\">
                         <img class = \"avatar_content_page\" src=\"";
         // line 14
-        echo twig_escape_filter($this->env, (isset($context["avatar"]) || array_key_exists("avatar", $context) ? $context["avatar"] : (function () { throw new RuntimeError('Variable "avatar" does not exist.', 14, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/avatars/" . (isset($context["avatar"]) || array_key_exists("avatar", $context) ? $context["avatar"] : (function () { throw new RuntimeError('Variable "avatar" does not exist.', 14, $this->source); })()))), "html", null, true);
         echo "\">
                     </div>
                 </div>
@@ -133,8 +133,8 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     <p class=\"fi fi-";
                 // line 27
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["country"]) || array_key_exists("country", $context) ? $context["country"] : (function () { throw new RuntimeError('Variable "country" does not exist.', 27, $this->source); })()), "img", [], "any", false, false, false, 27), "html", null, true);
-                echo "\"></p>
-                    <p>";
+                echo " fis\"></p>
+                    <p class = \"name\">";
                 // line 28
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["country"]) || array_key_exists("country", $context) ? $context["country"] : (function () { throw new RuntimeError('Variable "country" does not exist.', 28, $this->source); })()), "name", [], "any", false, false, false, 28), "html", null, true);
                 echo "</p>
@@ -168,20 +168,15 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
             }
             // line 38
             echo "
-                ";
-            // line 39
-            if (((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 39, $this->source); })()) == (isset($context["currentId"]) || array_key_exists("currentId", $context) ? $context["currentId"] : (function () { throw new RuntimeError('Variable "currentId" does not exist.', 39, $this->source); })()))) {
-                // line 40
-                echo "                <div class=\"change_credentials\">
+
+                <div class=\"change_credentials\">
                     <a href=\"/page/change/";
-                // line 41
-                echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 41, $this->source); })()), "html", null, true);
-                echo "\">Change account information</a>
+            // line 41
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 41, $this->source); })()), "html", null, true);
+            echo "\">Change account information</a>
                 </div>
-                ";
-            }
-            // line 44
-            echo "                <a href=\"/friends/{id}\">Friends</a>
+
+                <a href=\"/friends/{id}\">Friends</a>
             </div>
         </div>
 
@@ -229,7 +224,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                     // line 63
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 63), "html", null, true);
                     echo "\" ><img  src=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 63), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/avatars/" . twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 63))), "html", null, true);
                     echo "\"></a>
                     <p>";
                     // line 64
@@ -284,7 +279,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
 
     public function getDebugInfo()
     {
-        return array (  258 => 74,  253 => 71,  249 => 69,  245 => 67,  236 => 64,  230 => 63,  227 => 62,  223 => 61,  220 => 60,  210 => 57,  207 => 56,  199 => 54,  196 => 53,  194 => 52,  184 => 44,  178 => 41,  175 => 40,  173 => 39,  170 => 38,  166 => 36,  155 => 34,  151 => 33,  148 => 32,  145 => 31,  139 => 28,  135 => 27,  132 => 26,  130 => 25,  125 => 23,  122 => 22,  120 => 21,  115 => 19,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  253 => 74,  248 => 71,  244 => 69,  240 => 67,  231 => 64,  225 => 63,  222 => 62,  218 => 61,  215 => 60,  205 => 57,  202 => 56,  194 => 54,  191 => 53,  189 => 52,  175 => 41,  170 => 38,  166 => 36,  155 => 34,  151 => 33,  148 => 32,  145 => 31,  139 => 28,  135 => 27,  132 => 26,  130 => 25,  125 => 23,  122 => 22,  120 => 21,  115 => 19,  107 => 14,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -302,7 +297,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
         <div class=\"main_inf\">
             <div class=\"avatar_inf\">
                     <div class=\"avatar_page\">
-                        <img class = \"avatar_content_page\" src=\"{{ avatar }}\">
+                        <img class = \"avatar_content_page\" src=\"{{ asset('uploads/avatars/' ~  avatar ) }}\">
                     </div>
                 </div>
             <div class=\"user_inf\">
@@ -315,8 +310,8 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                 </div>
                 {% if country %}
                 <div class=\"country\">
-                    <p class=\"fi fi-{{ country.img }}\"></p>
-                    <p>{{ country.name }}</p>
+                    <p class=\"fi fi-{{ country.img }} fis\"></p>
+                    <p class = \"name\">{{ country.name }}</p>
                 </div>
                 {% endif %}
                 {% if hobbies %}
@@ -327,11 +322,11 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                 </div>
                 {% endif %}
 
-                {% if id == currentId %}
+
                 <div class=\"change_credentials\">
                     <a href=\"/page/change/{{ id }}\">Change account information</a>
                 </div>
-                {% endif %}
+
                 <a href=\"/friends/{id}\">Friends</a>
             </div>
         </div>
@@ -351,7 +346,7 @@ class __TwigTemplate_b67dc3d4219bdc351cee4a63b526e1476665fe137a2be542f941ca2b02d
                 <div class=\"users\">
             {% for user in usersByHobby %}
                 <div class=\"user\">
-                    <a href=\"/page/{{ user.id }}\" ><img  src=\"{{ user.avatar }}\"></a>
+                    <a href=\"/page/{{ user.id }}\" ><img  src=\"{{ asset('uploads/avatars/' ~  user.avatar ) }}\"></a>
                     <p>{{ user.username }}</p>
                 </div>
             {% endfor %}

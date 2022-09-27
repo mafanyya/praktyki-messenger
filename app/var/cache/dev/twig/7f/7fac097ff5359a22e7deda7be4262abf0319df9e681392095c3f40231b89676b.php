@@ -187,7 +187,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                 // line 62
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 62), "html", null, true);
                 echo "\"><img class = \"user_img\" src=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 62), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/avatars/" . twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 62))), "html", null, true);
                 echo "\"></a>
                                 <div class=\"panel\">
                                     <a  href=\"/remove_user/";
@@ -443,7 +443,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     <div class=\"users_wrapper\">
                         {% for user in users %}
                             <div class=\"user\">
-                                <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
+                                <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ asset('uploads/avatars/' ~  user.avatar ) }}\"></a>
                                 <div class=\"panel\">
                                     <a  href=\"/remove_user/{{ user.id }}\" onclick=\"return confirm('Are you sure you want to delete the user?')\"><i class=\"bi bi-dash-circle\"></i></a
                                     <p>{{ user.username }}</p>

@@ -137,7 +137,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                         <div class=\"avatar\">
                             <img class = \"avatar_content\" src=\"";
         // line 37
-        echo twig_escape_filter($this->env, (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 37, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/avatars/" . (isset($context["currentAvatar"]) || array_key_exists("currentAvatar", $context) ? $context["currentAvatar"] : (function () { throw new RuntimeError('Variable "currentAvatar" does not exist.', 37, $this->source); })()))), "html", null, true);
         echo "\">
                         </div>
                         <div class=\"username\">
@@ -287,7 +287,7 @@ class __TwigTemplate_8eceec5d7d0808ac267c1b661bad29ec3c6096e293be98da8845c15c7ae
                 <div class=\"panel\">
                     <div class=\"user_credentials\">
                         <div class=\"avatar\">
-                            <img class = \"avatar_content\" src=\"{{ currentAvatar }}\">
+                            <img class = \"avatar_content\" src=\"{{ asset('uploads/avatars/' ~  currentAvatar ) }}\">
                         </div>
                         <div class=\"username\">
                             <a class = \"panel_link\" href=\"/page/{{ currentId }}\">{{ currentUsername }}</a>

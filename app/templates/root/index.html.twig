@@ -34,7 +34,7 @@
                 <div class="panel">
                     <div class="user_credentials">
                         <div class="avatar">
-                            <img class = "avatar_content" src="{{ currentAvatar }}">
+                            <img class = "avatar_content" src="{{ asset('uploads/avatars/' ~  currentAvatar ) }}">
                         </div>
                         <div class="username">
                             <a class = "panel_link" href="/page/{{ currentId }}">{{ currentUsername }}</a>

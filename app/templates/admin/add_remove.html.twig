@@ -59,7 +59,7 @@
                     <div class="users_wrapper">
                         {% for user in users %}
                             <div class="user">
-                                <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
+                                <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ asset('uploads/avatars/' ~  user.avatar ) }}"></a>
                                 <div class="panel">
                                     <a  href="/remove_user/{{ user.id }}" onclick="return confirm('Are you sure you want to delete the user?')"><i class="bi bi-dash-circle"></i></a
                                     <p>{{ user.username }}</p>

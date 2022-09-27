@@ -10,10 +10,12 @@ use App\Repository\HobbyRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class PageController extends AbstractController
 {
@@ -92,7 +94,7 @@ class PageController extends AbstractController
     
 
     #[Route('/page/change/{id}', name: 'change/{id}')]
-    public function change($id, Request $request, EntityManagerInterface $entityManager): Response
+    public function change($id, Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $currentId = $this->requestStack->getSession()->get('filter');
         $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
@@ -113,6 +115,22 @@ class PageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $avatar = $form->get('avatar')->getData();
+            if($avatar){
+                $originalFilename = pathinfo($avatar->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$avatar->guessExtension();
+
+                    $avatar->move(
+                        $this->getParameter('avatar_directory'),
+                        $newFilename
+                    );
+
+
+
+                $user->setAvatar($newFilename);
+
+            }
             $entityManager->persist($user);
             $entityManager->flush();
 

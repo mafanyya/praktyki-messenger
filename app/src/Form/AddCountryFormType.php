@@ -16,26 +16,6 @@ class AddCountryFormType extends AbstractType
             ->add('name')
             ->add('img', ChoiceType::class,[
                 'choices' => [
-                    'Afghanistan' => 'af',
-                    'Malaysia' => 'my',
-                    'North Korea' => 'kp',
-                    'China' => 'cn',
-                    'Congo' => 'sd',
-                    'Uganda' => 'ug',
-                    'Mozambique' => 'mz',
-                    'Germany' => 'de',
-                    'Ireland' => 'ie',
-                    'Poland' => 'pl',
-                    'Russia' => 'ru',
-                    'USA' => 'us',
-                    'Canada' => 'ca',
-                    'Mexico' => 'mx',
-                    'Cuba' => 'cu',
-                    'Brazil' => 'br',
-                    'Peru' => 'pe',
-                    'Chile' => 'cl',
-                    'Australia' => 'au',
-                    'Papua New Guinea' => 'pg',
                     'Other' => 'un'
                 ]
             ])

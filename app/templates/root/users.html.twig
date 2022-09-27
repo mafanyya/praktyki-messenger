@@ -10,7 +10,7 @@
         <div class="users_wrapper">
             {% for user in users %}
                 <div class="user">
-                    <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
+                    <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ asset('uploads/avatars/' ~  user.avatar ) }}"></a>
                     <p>{{ user.username }}</p>
                 </div>
             {% endfor %}

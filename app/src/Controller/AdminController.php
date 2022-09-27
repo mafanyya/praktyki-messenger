@@ -93,14 +93,14 @@ class AdminController extends AbstractController
                 $originalFilename = pathinfo($avatar->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatar->guessExtension();
-                try{
+
                     $avatar->move(
                         $this->getParameter('avatar_directory'),
                         $newFilename
                     );
-                }catch (FileException $e){
 
-                }
+
+
                 $user->setAvatar($newFilename);
 
             }

@@ -108,7 +108,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 13), "html", null, true);
             echo "\"><img class = \"user_img\" src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 13), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/avatars/" . twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 13))), "html", null, true);
             echo "\"></a>
                     <p>";
             // line 14
@@ -188,7 +188,7 @@ class __TwigTemplate_007ad204e001b522618d2e013727caa129b2bff39a0441ff8d6d6093b55
         <div class=\"users_wrapper\">
             {% for user in users %}
                 <div class=\"user\">
-                    <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
+                    <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ asset('uploads/avatars/' ~  user.avatar ) }}\"></a>
                     <p>{{ user.username }}</p>
                 </div>
             {% endfor %}
