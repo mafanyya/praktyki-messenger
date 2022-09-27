@@ -157,47 +157,46 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
             echo "
                 </div>
                 <div class=\"form_row\">
-                    <p>Role</p>
+                    <p>Is show credentials?</p>
                     ";
             // line 52
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addUserForm"]) || array_key_exists("addUserForm", $context) ? $context["addUserForm"] : (function () { throw new RuntimeError('Variable "addUserForm" does not exist.', 52, $this->source); })()), "roles", [], "any", false, false, false, 52), 'row', ["label" => false]);
-            // line 54
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["addUserForm"]) || array_key_exists("addUserForm", $context) ? $context["addUserForm"] : (function () { throw new RuntimeError('Variable "addUserForm" does not exist.', 52, $this->source); })()), "isShowCredentials", [], "any", false, false, false, 52), 'widget');
             echo "
                 </div>
                 <button type =\"submit\">Add</button>
                 ";
-            // line 57
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addUserForm"]) || array_key_exists("addUserForm", $context) ? $context["addUserForm"] : (function () { throw new RuntimeError('Variable "addUserForm" does not exist.', 57, $this->source); })()), 'form_end');
+            // line 55
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["addUserForm"]) || array_key_exists("addUserForm", $context) ? $context["addUserForm"] : (function () { throw new RuntimeError('Variable "addUserForm" does not exist.', 55, $this->source); })()), 'form_end');
             echo "
             ";
         }
-        // line 59
+        // line 57
         echo "            ";
-        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 59, $this->source); })()) == "removeUser")) {
-            // line 60
+        if (((isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 57, $this->source); })()) == "removeUser")) {
+            // line 58
             echo "                <div class=\"users\">
                     <div class=\"users_wrapper\">
                         ";
-            // line 62
+            // line 60
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 62, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 60, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 63
+                // line 61
                 echo "                            <div class=\"user\">
                                 <a href=\"/page/";
-                // line 64
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 64), "html", null, true);
+                // line 62
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 62), "html", null, true);
                 echo "\"><img class = \"user_img\" src=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 64), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 62), "html", null, true);
                 echo "\"></a>
                                 <div class=\"panel\">
-                                    <a href=\"/remove_user/";
-                // line 66
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 66), "html", null, true);
-                echo "\"><i class=\"bi bi-dash-circle\"></i></a>
+                                    <a  href=\"/remove_user/";
+                // line 64
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 64), "html", null, true);
+                echo "\" onclick=\"return confirm('Are you sure you want to delete the user?')\"><i class=\"bi bi-dash-circle\"></i></a
                                     <p>";
-                // line 67
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 67), "html", null, true);
+                // line 65
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 65), "html", null, true);
                 echo "</p>
                                 </div>
                             </div>
@@ -206,11 +205,13 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 71
+            // line 69
             echo "                    </div>
                     <div class=\"return\">
                         <a  href=\"/admin\"><i class=\"bi bi-arrow-return-left\"></i></a>
                     </div>
+
+
                 </div>
             ";
         }
@@ -270,7 +271,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                                 <a href=\"/remove_hobby/";
                 // line 104
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["hobby"], "id", [], "any", false, false, false, 104), "html", null, true);
-                echo "\"><i class=\"bi bi-dash-circle\"></i></a>
+                echo "\" onclick=\"return confirm('Are you sure you want to delete the hobby?')\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         ";
             }
@@ -337,7 +338,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                                 <a href=\"/remove_country/";
                 // line 136
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["country"], "id", [], "any", false, false, false, 136), "html", null, true);
-                echo "\"><i class=\"bi bi-dash-circle\"></i></a>
+                echo "\" onclick=\"return confirm('Are you sure you want to delete the country?')\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         ";
             }
@@ -376,7 +377,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
 
     public function getDebugInfo()
     {
-        return array (  353 => 142,  348 => 139,  339 => 136,  335 => 135,  332 => 134,  328 => 133,  323 => 130,  320 => 129,  314 => 126,  307 => 122,  301 => 118,  299 => 116,  292 => 112,  289 => 111,  286 => 110,  281 => 107,  272 => 104,  268 => 103,  265 => 102,  261 => 101,  256 => 98,  253 => 97,  246 => 93,  240 => 90,  234 => 86,  232 => 84,  225 => 80,  221 => 78,  218 => 77,  210 => 71,  200 => 67,  196 => 66,  189 => 64,  186 => 63,  182 => 62,  178 => 60,  175 => 59,  170 => 57,  165 => 54,  163 => 52,  157 => 48,  155 => 46,  149 => 42,  147 => 40,  141 => 36,  139 => 34,  133 => 30,  131 => 28,  125 => 24,  123 => 22,  117 => 18,  115 => 16,  109 => 13,  106 => 12,  104 => 11,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  354 => 142,  349 => 139,  340 => 136,  336 => 135,  333 => 134,  329 => 133,  324 => 130,  321 => 129,  315 => 126,  308 => 122,  302 => 118,  300 => 116,  293 => 112,  290 => 111,  287 => 110,  282 => 107,  273 => 104,  269 => 103,  266 => 102,  262 => 101,  257 => 98,  254 => 97,  247 => 93,  241 => 90,  235 => 86,  233 => 84,  226 => 80,  222 => 78,  219 => 77,  209 => 69,  199 => 65,  195 => 64,  188 => 62,  185 => 61,  181 => 60,  177 => 58,  174 => 57,  169 => 55,  163 => 52,  157 => 48,  155 => 46,  149 => 42,  147 => 40,  141 => 36,  139 => 34,  133 => 30,  131 => 28,  125 => 24,  123 => 22,  117 => 18,  115 => 16,  109 => 13,  106 => 12,  104 => 11,  100 => 9,  90 => 8,  78 => 5,  74 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -431,10 +432,8 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     }) }}
                 </div>
                 <div class=\"form_row\">
-                    <p>Role</p>
-                    {{ form_row(addUserForm.roles, {
-                    'label': false
-                    }) }}
+                    <p>Is show credentials?</p>
+                    {{ form_widget(addUserForm.isShowCredentials) }}
                 </div>
                 <button type =\"submit\">Add</button>
                 {{ form_end(addUserForm) }}
@@ -446,7 +445,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                             <div class=\"user\">
                                 <a href=\"/page/{{ user.id }}\"><img class = \"user_img\" src=\"{{ user.avatar }}\"></a>
                                 <div class=\"panel\">
-                                    <a href=\"/remove_user/{{ user.id }}\"><i class=\"bi bi-dash-circle\"></i></a>
+                                    <a  href=\"/remove_user/{{ user.id }}\" onclick=\"return confirm('Are you sure you want to delete the user?')\"><i class=\"bi bi-dash-circle\"></i></a
                                     <p>{{ user.username }}</p>
                                 </div>
                             </div>
@@ -455,6 +454,8 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                     <div class=\"return\">
                         <a  href=\"/admin\"><i class=\"bi bi-arrow-return-left\"></i></a>
                     </div>
+
+
                 </div>
             {% endif %}
             {% if name == 'addHobby' %}
@@ -484,7 +485,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                         {% for hobby in hobbies %}
                             <div class=\"hobby\">
                                 <p>{{ hobby.name }}</p>
-                                <a href=\"/remove_hobby/{{ hobby.id }}\"><i class=\"bi bi-dash-circle\"></i></a>
+                                <a href=\"/remove_hobby/{{ hobby.id }}\" onclick=\"return confirm('Are you sure you want to delete the hobby?')\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         {% endfor %}
                     </div>
@@ -516,7 +517,7 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
                         {% for country in countries %}
                             <div class=\"hobby\">
                                 <p>{{ country.name }}</p>
-                                <a href=\"/remove_country/{{ country.id }}\"><i class=\"bi bi-dash-circle\"></i></a>
+                                <a href=\"/remove_country/{{ country.id }}\" onclick=\"return confirm('Are you sure you want to delete the country?')\"><i class=\"bi bi-dash-circle\"></i></a>
                             </div>
                         {% endfor %}
                     </div>
@@ -527,6 +528,8 @@ class __TwigTemplate_16e11d15f4e9bc2bdfb8d3f945c5729f783f1dec561a57efc298f599a86
 
         </div>
     </body>
-{% endblock %}", "admin/add_remove.html.twig", "/var/www/sunflower/templates/admin/add_remove.html.twig");
+{% endblock %}
+
+", "admin/add_remove.html.twig", "/var/www/sunflower/templates/admin/add_remove.html.twig");
     }
 }

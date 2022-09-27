@@ -48,10 +48,8 @@
                     }) }}
                 </div>
                 <div class="form_row">
-                    <p>Role</p>
-                    {{ form_row(addUserForm.roles, {
-                    'label': false
-                    }) }}
+                    <p>Is show credentials?</p>
+                    {{ form_widget(addUserForm.isShowCredentials) }}
                 </div>
                 <button type ="submit">Add</button>
                 {{ form_end(addUserForm) }}
@@ -63,7 +61,7 @@
                             <div class="user">
                                 <a href="/page/{{ user.id }}"><img class = "user_img" src="{{ user.avatar }}"></a>
                                 <div class="panel">
-                                    <a href="/remove_user/{{ user.id }}"><i class="bi bi-dash-circle"></i></a>
+                                    <a  href="/remove_user/{{ user.id }}" onclick="return confirm('Are you sure you want to delete the user?')"><i class="bi bi-dash-circle"></i></a
                                     <p>{{ user.username }}</p>
                                 </div>
                             </div>
@@ -72,6 +70,8 @@
                     <div class="return">
                         <a  href="/admin"><i class="bi bi-arrow-return-left"></i></a>
                     </div>
+
+
                 </div>
             {% endif %}
             {% if name == 'addHobby' %}
@@ -101,7 +101,7 @@
                         {% for hobby in hobbies %}
                             <div class="hobby">
                                 <p>{{ hobby.name }}</p>
-                                <a href="/remove_hobby/{{ hobby.id }}"><i class="bi bi-dash-circle"></i></a>
+                                <a href="/remove_hobby/{{ hobby.id }}" onclick="return confirm('Are you sure you want to delete the hobby?')"><i class="bi bi-dash-circle"></i></a>
                             </div>
                         {% endfor %}
                     </div>
@@ -133,7 +133,7 @@
                         {% for country in countries %}
                             <div class="hobby">
                                 <p>{{ country.name }}</p>
-                                <a href="/remove_country/{{ country.id }}"><i class="bi bi-dash-circle"></i></a>
+                                <a href="/remove_country/{{ country.id }}" onclick="return confirm('Are you sure you want to delete the country?')"><i class="bi bi-dash-circle"></i></a>
                             </div>
                         {% endfor %}
                     </div>
@@ -145,3 +145,4 @@
         </div>
     </body>
 {% endblock %}
+

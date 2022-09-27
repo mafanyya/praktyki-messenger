@@ -24,7 +24,8 @@
                 </div>
                 {% if country %}
                 <div class="country">
-                    <p><i class="bi bi-globe"></i> {{ country.name }}</p>
+                    <p class="fi fi-{{ country.img }}"></p>
+                    <p>{{ country.name }}</p>
                 </div>
                 {% endif %}
                 {% if hobbies %}
@@ -38,16 +39,8 @@
                 {% if id == currentId %}
                 <div class="change_credentials">
                     <a href="/page/change/{{ id }}">Change account information</a>
-
                 </div>
                 {% endif %}
-                {% if is_granted('ROLE_ADMIN')%}
-                    <div class="change_credentials">
-                        <a href="/admin">Admin panel</a>
-                    </div>
-                {% endif %}
-
-
                 <a href="/friends/{id}">Friends</a>
             </div>
         </div>

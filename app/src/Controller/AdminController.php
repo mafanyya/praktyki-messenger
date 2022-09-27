@@ -14,6 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -58,7 +59,7 @@ class AdminController extends AbstractController
 
     #[Route('/add_user', name: 'add_user')]
 
-    public function addUser(Request $request,EntityManagerInterface $entityManager ):Response
+    public function addUser(Request $request,EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher ):Response
     {
         $currentId = $this->requestStack->getSession()->get('filter');
         $currentLoggedUser = $this->userRepository->find($currentId['loggedUserId']);
@@ -71,9 +72,15 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $user = $form->getData();
-            dump($user);
 
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+            $user->setRoles(['ROLE_USER']);
+            $user = $form->getData();
             $entityManager->persist($user);
             $entityManager->flush();
 

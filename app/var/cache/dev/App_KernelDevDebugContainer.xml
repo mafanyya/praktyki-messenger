@@ -4611,12 +4611,12 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.6ux2ipA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.79ici6s" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::addCountry" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController::addHobby" type="service_closure" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\AdminController::addUser" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\AdminController::addUser" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController::change" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController::countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -4630,7 +4630,7 @@
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AdminController:addCountry" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController:addHobby" type="service_closure" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\AdminController:addUser" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\AdminController:addUser" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController:change" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\PageController:countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -5066,12 +5066,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.6ux2ipA"/>
+      <argument type="service" id=".service_locator.79ici6s"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.6ux2ipA"/>
+      <argument type="service" id=".service_locator.79ici6s"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5809,7 +5809,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.6ux2ipA"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.79ici6s"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -5824,7 +5824,7 @@
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.0dgJmp0" alias=".service_locator.6ux2ipA"/>
+    <service id=".service_locator.MJjjfBK" alias=".service_locator.79ici6s"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.04p2G4d" alias=".service_locator.vxh7p5N"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>

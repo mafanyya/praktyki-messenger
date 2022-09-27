@@ -48,6 +48,7 @@ class PageController extends AbstractController
         $isShowCredentials = $user->isIsShowCredentials();
         $roles = $user->getRoles();
 
+
         $hobbies = $this->hobbyRepository->findHobbiesByUser($id);
 
         if ($hobbies != null) {

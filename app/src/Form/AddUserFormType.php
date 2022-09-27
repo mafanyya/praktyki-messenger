@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Doctrine\DBAL\Types\ArrayType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -45,9 +46,8 @@ class AddUserFormType extends AbstractType
             ->add('birthdate', TextType::class, [
                 'required' => false
             ])
-            ->add('roles', CollectionType::class, [
-
-                'data' => [('ROLE_USER')]
+            ->add('isShowCredentials', CheckboxType::class, [
+                'required' => false
             ])
         ;
     }
