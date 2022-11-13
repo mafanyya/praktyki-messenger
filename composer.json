@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/webpack-encore-bundle": "^1.16",
+        "symfony/webpack-encore-pack": "^1.0"
+    }
+}

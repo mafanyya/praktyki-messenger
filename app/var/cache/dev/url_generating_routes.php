@@ -35,9 +35,8 @@ return [
     'hobbies/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::hobbiesForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/hobbies']], [], [], []],
     'country/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::countryForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/country']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
-    'root' => [[], ['_controller' => 'App\\Controller\\RootController::index'], [], [['text', '/']], [], [], []],
     'success' => [[], ['_controller' => 'App\\Controller\\RootController::success'], [], [['text', '/success']], [], [], []],
-    'test' => [['id'], ['_controller' => 'App\\Controller\\RootController::test'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/test']], [], [], []],
+    'test' => [[], ['_controller' => 'App\\Controller\\RootController::test'], [], [['text', '/']], [], [], []],
     'allUsers' => [[], ['_controller' => 'App\\Controller\\UsersController::allUsers'], [], [['text', '/users']], [], [], []],
     'usersByHobby' => [['hobbyId'], ['_controller' => 'App\\Controller\\UsersController::usersByHobby'], [], [['variable', '/', '[^/]++', 'hobbyId', true], ['text', '/users']], [], [], []],
 ];

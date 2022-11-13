@@ -21,31 +21,31 @@ class RootController extends AbstractController
         $this->requestStack = $requestStack;
     }
 
-    #[Route('/', name: 'root')]
-    public function index(): Response
-    {
-        $user = $this->getUser();
-        $currentLoggedUserId = null;
-        $currentLoggedUserUsername = null;
-        $currentLoggedUserAvatar = null;
-
-        if($user)
-        {
-            $id = $this->requestStack->getSession()->get('filter');
-            $currentLoggedUser = $this->userRepository->find($id['loggedUserId']);
-            $currentLoggedUserId = $currentLoggedUser->getId();
-            $currentLoggedUserUsername = $currentLoggedUser->getUsername();
-            $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
-        }
-
-        return $this->render('base.html.twig', [
-            'name' => 'Home',
-            'currentId' => $currentLoggedUserId,
-            'currentUsername' => $currentLoggedUserUsername,
-            'currentAvatar' => $currentLoggedUserAvatar,
-
-        ]);
-    }
+//    #[Route('/', name: 'root')]
+//    public function index(): Response
+//    {
+//        $user = $this->getUser();
+//        $currentLoggedUserId = null;
+//        $currentLoggedUserUsername = null;
+//        $currentLoggedUserAvatar = null;
+//
+//        if($user)
+//        {
+//            $id = $this->requestStack->getSession()->get('filter');
+//            $currentLoggedUser = $this->userRepository->find($id['loggedUserId']);
+//            $currentLoggedUserId = $currentLoggedUser->getId();
+//            $currentLoggedUserUsername = $currentLoggedUser->getUsername();
+//            $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+//        }
+//
+//        return $this->render('base.html.twig', [
+//            'name' => 'Home',
+//            'currentId' => $currentLoggedUserId,
+//            'currentUsername' => $currentLoggedUserUsername,
+//            'currentAvatar' => $currentLoggedUserAvatar,
+//
+//        ]);
+//    }
     #[Route('/success', name: "success")]
     public function success():Response
     {
@@ -58,13 +58,13 @@ class RootController extends AbstractController
     }
     
 
-    #[Route('/test/{id}', name: 'test')]
+    #[Route('/', name: 'test')]
 
-    public function test($id): Response
+    public function test(): Response
     {
         return $this->render('test.html.twig',
         [
-            'id' => $id,
+
             'name' => 'test'
         ]);
     }

@@ -803,6 +803,15 @@
             'reference' => '72c103c3aa0aad379bcd1c78b0ab8793496f668a',
             'dev_requirement' => true,
         ),
+        'symfony/webpack-encore-bundle' => array(
+            'pretty_version' => 'v1.16.0',
+            'version' => '1.16.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/webpack-encore-bundle',
+            'aliases' => array(),
+            'reference' => 'bb399930c0299866258b616a74a27b50b94c5d45',
+            'dev_requirement' => false,
+        ),
         'symfony/yaml' => array(
             'pretty_version' => 'v6.0.3',
             'version' => '6.0.3.0',
