@@ -10,3 +10,5 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+import { registerVueControllerComponents } from '@symfony/ux-vue';
+registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));

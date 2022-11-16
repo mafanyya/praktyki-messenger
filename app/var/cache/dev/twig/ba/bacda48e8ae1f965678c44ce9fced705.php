@@ -45,6 +45,9 @@ class __TwigTemplate_bfd89249af852719c4db30b91ef4c9b3 extends Template
 ";
         // line 2
         $this->displayBlock('body', $context, $blocks);
+        // line 11
+        echo "
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -53,6 +56,7 @@ class __TwigTemplate_bfd89249af852719c4db30b91ef4c9b3 extends Template
 
     }
 
+    // line 2
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,11 +68,9 @@ class __TwigTemplate_bfd89249af852719c4db30b91ef4c9b3 extends Template
 
         // line 3
         echo "    <body>
-    <div class=\"container\">
-      ";
-        // line 5
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 5, $this->source); })()), "html", null, true);
-        echo "
+
+
+        <div id = \"root\"></div>
 
     </body>
 
@@ -88,7 +90,7 @@ class __TwigTemplate_bfd89249af852719c4db30b91ef4c9b3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  70 => 5,  66 => 3,  47 => 2,  44 => 1,);
+        return array (  70 => 3,  60 => 2,  49 => 11,  47 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -96,11 +98,14 @@ class __TwigTemplate_bfd89249af852719c4db30b91ef4c9b3 extends Template
         return new Source("
 {% block body %}
     <body>
-    <div class=\"container\">
-      {{ id }}
+
+
+        <div id = \"root\"></div>
 
     </body>
 
-{% endblock %}", "test.html.twig", "/home/dev/Desktop/sunflower/app/templates/test.html.twig");
+{% endblock %}
+
+", "test.html.twig", "/home/dev/Desktop/sunflower/app/templates/test.html.twig");
     }
 }

@@ -767,6 +767,15 @@
             'reference' => '0c5bb02150d08fa3174d8cd7600496a51702360a',
             'dev_requirement' => false,
         ),
+        'symfony/ux-vue' => array(
+            'pretty_version' => 'v2.5.0',
+            'version' => '2.5.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/ux-vue',
+            'aliases' => array(),
+            'reference' => '84d79ae80ca00a49def719b4e7d020b461d749bd',
+            'dev_requirement' => false,
+        ),
         'symfony/validator' => array(
             'pretty_version' => 'v6.0.8',
             'version' => '6.0.8.0',

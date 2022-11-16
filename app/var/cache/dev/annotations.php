@@ -130,6 +130,10 @@ return [[
 '[C]App%5CController%5CPageController%24countryRepository' => 1,
 'App%5CController%5CPageController%24requestStack' => 0,
 '[C]App%5CController%5CPageController%24requestStack' => 1,
+'App%5CController%5CReactController' => 0,
+'[C]App%5CController%5CReactController' => 1,
+'App%5CController%5CReactController%23test' => 2,
+'[C]App%5CController%5CReactController%23test' => 1,
 'App%5CController%5CRegistrationController' => 0,
 '[C]App%5CController%5CRegistrationController' => 1,
 'App%5CController%5CRegistrationController%23register' => 0,
@@ -138,8 +142,6 @@ return [[
 '[C]App%5CController%5CRootController' => 1,
 'App%5CController%5CRootController%23__construct' => 0,
 '[C]App%5CController%5CRootController%23__construct' => 1,
-'App%5CController%5CRootController%23index' => 0,
-'[C]App%5CController%5CRootController%23index' => 1,
 'App%5CController%5CRootController%23success' => 0,
 '[C]App%5CController%5CRootController%23success' => 1,
 'App%5CController%5CRootController%23test' => 0,
@@ -878,6 +880,59 @@ return [[
 ], [
 
 0 => [],
-1 => 1668352324,
+1 => 1668629993,
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/{reactRouting}',
+                ],
+                'methods' => [
+                    [],
+                ],
+                'schemes' => [
+                    [],
+                ],
+                'name' => [
+                    'app_home',
+                ],
+                'requirements' => [
+                    [
+                        'reactRouting' => '^(?!api).+',
+                    ],
+                ],
+                'options' => [
+                    [],
+                ],
+                'defaults' => [
+                    [
+                        'reactRouting' => null,
+                    ],
+                ],
+                'host' => [
+                    null,
+                ],
+                'condition' => [
+                    null,
+                ],
+                'priority' => [
+                    null,
+                ],
+                'env' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
 
 ]];
