@@ -22,6 +22,11 @@ return [
         '/add_country' => [[['_route' => 'add_country', '_controller' => 'App\\Controller\\AdminController::addCountry'], null, null, null, false, false, null]],
         '/remove_country' => [[['_route' => 'remove_country', '_controller' => 'App\\Controller\\AdminController::removeCountry'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'root', '_controller' => 'App\\Controller\\RootController::index'], null, null, null, false, false, null]],
+        '/success' => [[['_route' => 'success', '_controller' => 'App\\Controller\\RootController::success'], null, null, null, false, false, null]],
+        '/test' => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], null, null, null, false, false, null]],
+        '/users' => [[['_route' => 'allUsers', '_controller' => 'App\\Controller\\UsersController::allUsers'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -58,14 +63,7 @@ return [
                     .')'
                     .'|hobbies/([^/]++)(*:424)'
                 .')'
-                .'|/((?!api).+)?(*:446)'
-                .'|/register(*:463)'
-                .'|/success(*:479)'
-                .'|/(*:488)'
-                .'|/users(?'
-                    .'|(*:505)'
-                    .'|/([^/]++)(*:522)'
-                .')'
+                .'|/users/([^/]++)(*:448)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -86,12 +84,7 @@ return [
         376 => [[['_route' => 'change/{id}', '_controller' => 'App\\Controller\\PageController::change'], ['id'], null, null, false, true, null]],
         399 => [[['_route' => 'country/{id}', '_controller' => 'App\\Controller\\PageController::countryForm'], ['id'], null, null, false, true, null]],
         424 => [[['_route' => 'hobbies/{id}', '_controller' => 'App\\Controller\\PageController::hobbiesForm'], ['id'], null, null, false, true, null]],
-        446 => [[['_route' => 'app_home', 'reactRouting' => null, '_controller' => 'App\\Controller\\ReactController::test'], ['reactRouting'], null, null, false, true, null]],
-        463 => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], [], null, null, false, false, null]],
-        479 => [[['_route' => 'success', '_controller' => 'App\\Controller\\RootController::success'], [], null, null, false, false, null]],
-        488 => [[['_route' => 'test', '_controller' => 'App\\Controller\\RootController::test'], [], null, null, false, false, null]],
-        505 => [[['_route' => 'allUsers', '_controller' => 'App\\Controller\\UsersController::allUsers'], [], null, null, false, false, null]],
-        522 => [
+        448 => [
             [['_route' => 'usersByHobby', '_controller' => 'App\\Controller\\UsersController::usersByHobby'], ['hobbyId'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

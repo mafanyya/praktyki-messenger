@@ -34,10 +34,10 @@ return [
     'change/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::change'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/change']], [], [], []],
     'hobbies/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::hobbiesForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/hobbies']], [], [], []],
     'country/{id}' => [['id'], ['_controller' => 'App\\Controller\\PageController::countryForm'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/page/country']], [], [], []],
-    'app_home' => [['reactRouting'], ['reactRouting' => null, '_controller' => 'App\\Controller\\ReactController::test'], ['reactRouting' => '(?!api).+'], [['variable', '/', '(?!api).+', 'reactRouting', true]], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'root' => [[], ['_controller' => 'App\\Controller\\RootController::index'], [], [['text', '/']], [], [], []],
     'success' => [[], ['_controller' => 'App\\Controller\\RootController::success'], [], [['text', '/success']], [], [], []],
-    'test' => [[], ['_controller' => 'App\\Controller\\RootController::test'], [], [['text', '/']], [], [], []],
+    'test' => [[], ['_controller' => 'App\\Controller\\RootController::test'], [], [['text', '/test']], [], [], []],
     'allUsers' => [[], ['_controller' => 'App\\Controller\\UsersController::allUsers'], [], [['text', '/users']], [], [], []],
     'usersByHobby' => [['hobbyId'], ['_controller' => 'App\\Controller\\UsersController::usersByHobby'], [], [['variable', '/', '[^/]++', 'hobbyId', true], ['text', '/users']], [], [], []],
 ];
