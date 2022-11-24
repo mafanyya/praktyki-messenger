@@ -1,4 +1,4 @@
-{% extends '../base.html.twig' %}
+{% extends '/base.html.twig' %}
 {% block head %}
     {{ parent() }}
 {% endblock %}
@@ -15,23 +15,30 @@
 
 
 {% block header %}
-    <header>
-
-
-    </header>
+    {{ parent() }}
 {% endblock %}
 
-
-
-
-
-
-
 {% block body %}
+    {{ parent() }}
     <body>
-    <div class="container">
+        <div class="container">
+            <div class="container_inner">
+               <div class="homepage_content">
+                   <div class="homepage_slogan">
+                       <p class = "slogan_b">Many SMALL things for your BIG</p>
+                       <p class = "slogan_s">Make your own community from here.</p>
+                   </div>
+                  <div class="homepage_img">
+                      <img src="{{ asset('build/images/homepage_img.svg') }}" alt="">
+                  </div>
+                   <div class="email_form">
+                       <input placeholder="Email address" id = "email" type="text">
+                       <button> Sign up</button>
+                   </div>
+               </div>
 
-    </div>
+            </div>
+        </div>
 
     </body>
 {% endblock %}

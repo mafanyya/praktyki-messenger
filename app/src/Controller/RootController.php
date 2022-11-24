@@ -38,7 +38,7 @@ class RootController extends AbstractController
             $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
         }
 
-        return $this->render('base.html.twig', [
+        return $this->render('root/index.html.twig', [
             'name' => 'Home',
             'currentId' => $currentLoggedUserId,
             'currentUsername' => $currentLoggedUserUsername,

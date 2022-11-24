@@ -41,4 +41,5 @@ class RegistrationController extends AbstractController
             'name' => 'Sign In'
         ]);
     }
+
 }

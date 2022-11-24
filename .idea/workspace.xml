@@ -14,7 +14,7 @@
       <change beforePath="$PROJECT_DIR$/mysql/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/#innodb_temp/temp_7.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/#innodb_temp/temp_8.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql/binlog.000042" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/binlog.000042" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql/binlog.000043" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/binlog.000043" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/binlog.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/ib_buffer_pool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/mysql/ib_logfile0" afterDir="false" />
@@ -36,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -184,7 +184,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dev/Downloads/DeepOcean.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dev/Desktop/sunflower/app/assets/images&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Cucumber&quot;,
@@ -198,6 +198,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
@@ -221,7 +222,8 @@
       <workItem from="1664225530298" duration="14833000" />
       <workItem from="1668625851871" duration="8971000" />
       <workItem from="1668638221021" duration="805000" />
-      <workItem from="1669107984481" duration="5519000" />
+      <workItem from="1669107984481" duration="17586000" />
+      <workItem from="1669317250388" duration="9689000" />
     </task>
     <servers />
   </component>
