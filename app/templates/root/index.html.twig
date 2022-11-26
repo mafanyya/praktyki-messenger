@@ -40,7 +40,49 @@
             </div>
         </div>
 
+        <div class="background_login"></div>
+        <div class="modal">
+            <button class = "close">
+                &#x2715
+            </button>
+
+            <div class="new_panel">
+
+            </div>
+            <div class="login_panel">
+
+            </div>
+
+
+
+        </div>
+
+
+
     </body>
+
+
+
+    {#            <div class="login_form">#}
+    {#                <form action="{{ path('login') }}" method="post">#}
+    {#                    <div class="form_row">#}
+    {#                        <label class = "form_string" for="username">Username:</label>#}
+    {#                        <input type="text" id="username" name="_username" value="bob"/>#}
+    {#                    </div>#}
+    {#                    <div class="form_row">#}
+    {#                        <label for="password">Password:</label>#}
+    {#                        <input type="password" id="password" name="_password"/>#}
+    {#                    </div>#}
+    {#                    <button type="submit">Login</button>#}
+    {#                </form>#}
+    {#            </div>#}
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
 {% endblock %}
 
 

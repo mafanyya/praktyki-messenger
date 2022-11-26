@@ -30,6 +30,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             'javascripts' => [$this, 'block_javascripts'],
             'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -195,7 +196,80 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             </div>
         </div>
 
+        <div class=\"background_login\"></div>
+        <div class=\"modal\">
+            <button class = \"close\">
+                &#x2715
+            </button>
+
+            <div class=\"new_panel\">
+
+            </div>
+            <div class=\"login_panel\">
+
+            </div>
+
+
+
+        </div>
+
+
+
     </body>
+
+
+
+    ";
+        // line 67
+        echo "    ";
+        // line 68
+        echo "    ";
+        // line 69
+        echo "    ";
+        // line 70
+        echo "    ";
+        // line 71
+        echo "    ";
+        // line 72
+        echo "    ";
+        // line 73
+        echo "    ";
+        // line 74
+        echo "    ";
+        // line 75
+        echo "    ";
+        // line 76
+        echo "    ";
+        // line 77
+        echo "    ";
+        // line 78
+        echo "    ";
+        // line 79
+        echo "
+
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 84
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 85
+        $this->displayParentBlock("footer", $context, $blocks);
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -217,7 +291,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     public function getDebugInfo()
     {
-        return array (  186 => 32,  172 => 22,  162 => 21,  149 => 18,  139 => 17,  127 => 13,  122 => 12,  112 => 11,  100 => 8,  95 => 7,  85 => 6,  72 => 3,  62 => 2,  39 => 1,);
+        return array (  271 => 85,  261 => 84,  248 => 79,  246 => 78,  244 => 77,  242 => 76,  240 => 75,  238 => 74,  236 => 73,  234 => 72,  232 => 71,  230 => 70,  228 => 69,  226 => 68,  224 => 67,  187 => 32,  173 => 22,  163 => 21,  150 => 18,  140 => 17,  128 => 13,  123 => 12,  113 => 11,  101 => 8,  96 => 7,  86 => 6,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -264,7 +338,49 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             </div>
         </div>
 
+        <div class=\"background_login\"></div>
+        <div class=\"modal\">
+            <button class = \"close\">
+                &#x2715
+            </button>
+
+            <div class=\"new_panel\">
+
+            </div>
+            <div class=\"login_panel\">
+
+            </div>
+
+
+
+        </div>
+
+
+
     </body>
+
+
+
+    {#            <div class=\"login_form\">#}
+    {#                <form action=\"{{ path('login') }}\" method=\"post\">#}
+    {#                    <div class=\"form_row\">#}
+    {#                        <label class = \"form_string\" for=\"username\">Username:</label>#}
+    {#                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"bob\"/>#}
+    {#                    </div>#}
+    {#                    <div class=\"form_row\">#}
+    {#                        <label for=\"password\">Password:</label>#}
+    {#                        <input type=\"password\" id=\"password\" name=\"_password\"/>#}
+    {#                    </div>#}
+    {#                    <button type=\"submit\">Login</button>#}
+    {#                </form>#}
+    {#            </div>#}
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
 {% endblock %}
 
 

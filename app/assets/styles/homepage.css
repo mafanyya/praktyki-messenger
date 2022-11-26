@@ -120,3 +120,50 @@
     background-color: #feffdf;
 }
 
+/*LOGIN FORM*/
+
+.background_login{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    opacity: 0.2;
+
+}
+.modal{
+    position: fixed;
+    left: 50%;
+    top:10%;
+    transform: translate(-50%,0);
+    background-color: white;
+    width: 45%;
+    height: 560px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.close{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    color: #b7b7b7;
+
+}
+.login_panel{
+    width: 50%;
+    border:none;
+
+
+}
+.new_panel{
+    width:50%;
+    background-color: #feffdf;
+}
+
+

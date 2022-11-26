@@ -62,17 +62,17 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 ";
         // line 25
         $this->displayBlock('header', $context, $blocks);
-        // line 39
+        // line 51
         echo "
 ";
-        // line 40
-        $this->displayBlock('body', $context, $blocks);
-        // line 42
-        echo "
-";
-        // line 43
-        $this->displayBlock('footer', $context, $blocks);
         // line 52
+        $this->displayBlock('body', $context, $blocks);
+        // line 54
+        echo "
+";
+        // line 55
+        $this->displayBlock('footer', $context, $blocks);
+        // line 64
         echo "
 ";
         
@@ -178,7 +178,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         // line 26
         echo "    <div class=\"container\">
        <header>
-           <a  href=\"";
+           <a href=\"";
         // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("root");
         echo "\">
@@ -187,10 +187,29 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/Logo1.svg"), "html", null, true);
         echo "\" alt=\"\">
            </a>
+
            <div class=\"nav_bar\">
-               <div class=\"login_btn\">
-                   <a href=\"/login\">Login</a>
-               </div>
+               ";
+        // line 33
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 34
+            echo "                   <a  id = \"login-show\" href=\"/logout\">
+                       <div class=\"login_btn\">
+                           <p>Logout</p>
+                       </div>
+                   </a>
+               ";
+        } elseif ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 40
+            echo "                   <a href=\"/login\">
+                       <div class=\"login_btn\">
+                           <p>Login</p>
+                       </div>
+                   </a>
+               ";
+        }
+        // line 46
+        echo "
            </div>
        </header>
     </div>
@@ -203,7 +222,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 40
+    // line 52
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -221,7 +240,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 43
+    // line 55
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -231,7 +250,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 44
+        // line 56
         echo "    <footer>
         <div class=\"container\">
             <div class=\"footer_content\">
@@ -255,7 +274,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     public function getDebugInfo()
     {
-        return array (  235 => 44,  225 => 43,  207 => 40,  187 => 29,  183 => 28,  179 => 26,  169 => 25,  156 => 22,  146 => 21,  133 => 18,  123 => 17,  110 => 13,  97 => 2,  87 => 1,  76 => 52,  74 => 43,  71 => 42,  69 => 40,  66 => 39,  64 => 25,  61 => 24,  59 => 21,  56 => 20,  54 => 17,  51 => 16,  49 => 1,);
+        return array (  254 => 56,  244 => 55,  226 => 52,  212 => 46,  204 => 40,  196 => 34,  194 => 33,  187 => 29,  183 => 28,  179 => 26,  169 => 25,  156 => 22,  146 => 21,  133 => 18,  123 => 17,  110 => 13,  97 => 2,  87 => 1,  76 => 64,  74 => 55,  71 => 54,  69 => 52,  66 => 51,  64 => 25,  61 => 24,  59 => 21,  56 => 20,  54 => 17,  51 => 16,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -287,13 +306,25 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 {% block header %}
     <div class=\"container\">
        <header>
-           <a  href=\"{{ path('root') }}\">
+           <a href=\"{{ path('root') }}\">
                <img class = \"logo\" src=\"{{ asset('build/images/Logo1.svg') }}\" alt=\"\">
            </a>
+
            <div class=\"nav_bar\">
-               <div class=\"login_btn\">
-                   <a href=\"/login\">Login</a>
-               </div>
+               {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
+                   <a  id = \"login-show\" href=\"/logout\">
+                       <div class=\"login_btn\">
+                           <p>Logout</p>
+                       </div>
+                   </a>
+               {% elseif not is_granted ('IS_AUTHENTICATED_FULLY') %}
+                   <a href=\"/login\">
+                       <div class=\"login_btn\">
+                           <p>Login</p>
+                       </div>
+                   </a>
+               {% endif %}
+
            </div>
        </header>
     </div>

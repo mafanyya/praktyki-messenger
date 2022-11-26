@@ -25,13 +25,25 @@
 {% block header %}
     <div class="container">
        <header>
-           <a  href="{{ path('root') }}">
+           <a href="{{ path('root') }}">
                <img class = "logo" src="{{ asset('build/images/Logo1.svg') }}" alt="">
            </a>
+
            <div class="nav_bar">
-               <div class="login_btn">
-                   <a href="/login">Login</a>
-               </div>
+               {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
+                   <a  id = "login-show" href="/logout">
+                       <div class="login_btn">
+                           <p>Logout</p>
+                       </div>
+                   </a>
+               {% elseif not is_granted ('IS_AUTHENTICATED_FULLY') %}
+                   <a href="/login">
+                       <div class="login_btn">
+                           <p>Login</p>
+                       </div>
+                   </a>
+               {% endif %}
+
            </div>
        </header>
     </div>
