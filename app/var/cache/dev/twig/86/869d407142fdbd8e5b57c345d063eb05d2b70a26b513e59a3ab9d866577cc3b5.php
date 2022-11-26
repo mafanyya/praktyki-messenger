@@ -203,49 +203,50 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             </button>
 
             <div class=\"new_panel\">
+                <p class = \"header1\">New here?</p>
+                <div class=\"header_block\">
+                    <p class = \"header\">Sign up and discover a great amount of new opportunities!</p>
+                </div>
+                <div class=\"login_img\">
+                    <img src=\"";
+        // line 55
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/login_img.svg"), "html", null, true);
+        echo "\" alt=\"\">
+                </div>
+                <button>Sign up</button>
 
             </div>
             <div class=\"login_panel\">
+                <p class = \"header\">Login to your account</p>
+                <p class = \"header2\">Welcome to Sunflower</p>
+                <div class=\"login_form\">
+                    <form action=\"";
+        // line 64
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\" method=\"post\">
+                        <div class=\"form_row\">
+                            <input placeholder=\"Username\" type=\"text\" id=\"username\" name=\"_username\" value=\"bob\"/>
+                        </div>
+                        <div class=\"form_row\">
+                            <input placeholder=\"Password\" type=\"password\" id=\"password\" name=\"_password\"/>
+                        </div>
+
+                        <p class = header3> Forgot password?</p>
+                        <button type=\"submit\">Sign in</button>
+                    </form>
+
+                </div>
+
+
 
             </div>
-
-
-
         </div>
-
-
-
     </body>
 
 
 
-    ";
-        // line 67
-        echo "    ";
-        // line 68
-        echo "    ";
-        // line 69
-        echo "    ";
-        // line 70
-        echo "    ";
-        // line 71
-        echo "    ";
-        // line 72
-        echo "    ";
-        // line 73
-        echo "    ";
-        // line 74
-        echo "    ";
-        // line 75
-        echo "    ";
-        // line 76
-        echo "    ";
-        // line 77
-        echo "    ";
-        // line 78
-        echo "    ";
-        // line 79
-        echo "
+
+
 
 
 ";
@@ -257,7 +258,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 84
+    // line 92
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -267,7 +268,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 85
+        // line 93
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -291,7 +292,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     public function getDebugInfo()
     {
-        return array (  271 => 85,  261 => 84,  248 => 79,  246 => 78,  244 => 77,  242 => 76,  240 => 75,  238 => 74,  236 => 73,  234 => 72,  232 => 71,  230 => 70,  228 => 69,  226 => 68,  224 => 67,  187 => 32,  173 => 22,  163 => 21,  150 => 18,  140 => 17,  128 => 13,  123 => 12,  113 => 11,  101 => 8,  96 => 7,  86 => 6,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  272 => 93,  262 => 92,  225 => 64,  213 => 55,  187 => 32,  173 => 22,  163 => 21,  150 => 18,  140 => 17,  128 => 13,  123 => 12,  113 => 11,  101 => 8,  96 => 7,  86 => 6,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -345,35 +346,43 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             </button>
 
             <div class=\"new_panel\">
+                <p class = \"header1\">New here?</p>
+                <div class=\"header_block\">
+                    <p class = \"header\">Sign up and discover a great amount of new opportunities!</p>
+                </div>
+                <div class=\"login_img\">
+                    <img src=\"{{ asset('build/images/login_img.svg') }}\" alt=\"\">
+                </div>
+                <button>Sign up</button>
 
             </div>
             <div class=\"login_panel\">
+                <p class = \"header\">Login to your account</p>
+                <p class = \"header2\">Welcome to Sunflower</p>
+                <div class=\"login_form\">
+                    <form action=\"{{ path('login') }}\" method=\"post\">
+                        <div class=\"form_row\">
+                            <input placeholder=\"Username\" type=\"text\" id=\"username\" name=\"_username\" value=\"bob\"/>
+                        </div>
+                        <div class=\"form_row\">
+                            <input placeholder=\"Password\" type=\"password\" id=\"password\" name=\"_password\"/>
+                        </div>
+
+                        <p class = header3> Forgot password?</p>
+                        <button type=\"submit\">Sign in</button>
+                    </form>
+
+                </div>
+
+
 
             </div>
-
-
-
         </div>
-
-
-
     </body>
 
 
 
-    {#            <div class=\"login_form\">#}
-    {#                <form action=\"{{ path('login') }}\" method=\"post\">#}
-    {#                    <div class=\"form_row\">#}
-    {#                        <label class = \"form_string\" for=\"username\">Username:</label>#}
-    {#                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"bob\"/>#}
-    {#                    </div>#}
-    {#                    <div class=\"form_row\">#}
-    {#                        <label for=\"password\">Password:</label>#}
-    {#                        <input type=\"password\" id=\"password\" name=\"_password\"/>#}
-    {#                    </div>#}
-    {#                    <button type=\"submit\">Login</button>#}
-    {#                </form>#}
-    {#            </div>#}
+
 
 
 

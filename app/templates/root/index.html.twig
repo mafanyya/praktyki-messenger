@@ -47,35 +47,43 @@
             </button>
 
             <div class="new_panel">
+                <p class = "header1">New here?</p>
+                <div class="header_block">
+                    <p class = "header">Sign up and discover a great amount of new opportunities!</p>
+                </div>
+                <div class="login_img">
+                    <img src="{{ asset('build/images/login_img.svg') }}" alt="">
+                </div>
+                <button>Sign up</button>
 
             </div>
             <div class="login_panel">
+                <p class = "header">Login to your account</p>
+                <p class = "header2">Welcome to Sunflower</p>
+                <div class="login_form">
+                    <form action="{{ path('login') }}" method="post">
+                        <div class="form_row">
+                            <input placeholder="Username" type="text" id="username" name="_username" value="bob"/>
+                        </div>
+                        <div class="form_row">
+                            <input placeholder="Password" type="password" id="password" name="_password"/>
+                        </div>
+
+                        <p class = header3> Forgot password?</p>
+                        <button type="submit">Sign in</button>
+                    </form>
+
+                </div>
+
+
 
             </div>
-
-
-
         </div>
-
-
-
     </body>
 
 
 
-    {#            <div class="login_form">#}
-    {#                <form action="{{ path('login') }}" method="post">#}
-    {#                    <div class="form_row">#}
-    {#                        <label class = "form_string" for="username">Username:</label>#}
-    {#                        <input type="text" id="username" name="_username" value="bob"/>#}
-    {#                    </div>#}
-    {#                    <div class="form_row">#}
-    {#                        <label for="password">Password:</label>#}
-    {#                        <input type="password" id="password" name="_password"/>#}
-    {#                    </div>#}
-    {#                    <button type="submit">Login</button>#}
-    {#                </form>#}
-    {#            </div>#}
+
 
 
 
