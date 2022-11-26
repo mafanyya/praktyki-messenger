@@ -73,6 +73,7 @@ header a{
     background-color: #fbed9e;
     border-radius: 23px;
     color: #7a7a7a;
+    cursor: pointer;
 
 }
 .login_btn a:visited{

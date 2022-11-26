@@ -4301,7 +4301,7 @@
       <argument type="service" id="assets.packages"/>
       <argument type="collection"/>
       <argument type="collection">
-        <argument key="defer">true</argument>
+        <argument key="defer">false</argument>
       </argument>
       <argument type="collection"/>
       <argument type="service" id="debug.event_dispatcher"/>

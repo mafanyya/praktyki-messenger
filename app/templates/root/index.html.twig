@@ -3,15 +3,7 @@
     {{ parent() }}
 {% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    {{ encore_entry_link_tags('homepage') }}
-{% endblock %}
 
-{% block javascripts %}
-    {{ parent() }}
-    {{ encore_entry_script_tags('homepage') }}
-{% endblock %}
 
 
 {% block header %}
@@ -21,76 +13,104 @@
 {% block body %}
     {{ parent() }}
     <body>
-        <div class="container">
-            <div class="container_inner">
-               <div class="homepage_content">
-                   <div class="homepage_slogan">
-                       <p class = "slogan_b">Many SMALL things for your BIG</p>
-                       <p class = "slogan_s">Make your own community from here.</p>
-                   </div>
-                  <div class="homepage_img">
-                      <img src="{{ asset('build/images/homepage_img.svg') }}" alt="">
-                  </div>
-                   <div class="email_form">
-                       <input placeholder="Email address" id = "email" type="text">
-                       <button> Sign up</button>
-                   </div>
-               </div>
+    <div class="container">
+        <div class="container_inner">
+            <div class="homepage_content">
+                <div class="homepage_slogan">
+                    <p class="slogan_b">Many SMALL things for your BIG</p>
+                    <p class="slogan_s">Make your own community from here.</p>
+                </div>
+                <div class="homepage_img">
+                    <img src="{{ asset('build/images/homepage_img.svg') }}" alt="">
+                </div>
+                <div class="email_form">
+                    <input placeholder="Email address" id="email" type="text">
+                    <button> Sign up</button>
+                </div>
+            </div>
 
+        </div>
+    </div>
+
+    <div id="background_modal" class="background_login" hidden></div>
+
+
+    <div id="login_modal" class="login_modal">
+        <button id="close_button" class="close">
+            &#x2715
+        </button>
+        <div class="new_panel">
+            <p class="header1">New here?</p>
+            <div class="header_block">
+                <p class="header">Sign up and discover a great amount of new opportunities!</p>
+            </div>
+            <div class="login_img">
+                <img src="{{ asset('build/images/login_img.svg') }}" alt="">
+            </div>
+            <button>Sign up</button>
+
+        </div>
+        <div class="login_panel">
+            <p class="header">Login to your account</p>
+            <p class="header2">Welcome to Sunflower</p>
+
+            {% if error is defined %}
+                {% if error is not null %}
+                    <p class="login_error" data-error="{{ error }}">{{ error.messageKey|trans(error
+                        .messageData,
+                            'security') }}</p>
+                {% else %}
+                    <p>ne ma</p>
+                {% endif %}
+            {% endif %}
+
+            <div class="login_form">
+
+                <form action="{{ path('login') }}" method="post">
+                    <div class="form_row">
+                        <input placeholder="Username" type="text" id="username" name="_username"/>
+                    </div>
+                    <div class="form_row">
+                        <input placeholder="Password" type="password" id="password" name="_password"/>
+                    </div>
+                    <p class=header3> Forgot password?</p>
+                    <button type="submit">Sign in</button>
+                </form>
             </div>
         </div>
-
-        <div class="background_login"></div>
-        <div class="modal">
-            <button class = "close">
-                &#x2715
-            </button>
-
-            <div class="new_panel">
-                <p class = "header1">New here?</p>
-                <div class="header_block">
-                    <p class = "header">Sign up and discover a great amount of new opportunities!</p>
-                </div>
-                <div class="login_img">
-                    <img src="{{ asset('build/images/login_img.svg') }}" alt="">
-                </div>
-                <button>Sign up</button>
-
-            </div>
-            <div class="login_panel">
-                <p class = "header">Login to your account</p>
-                <p class = "header2">Welcome to Sunflower</p>
-                <div class="login_form">
-                    <form action="{{ path('login') }}" method="post">
-                        <div class="form_row">
-                            <input placeholder="Username" type="text" id="username" name="_username" value="bob"/>
-                        </div>
-                        <div class="form_row">
-                            <input placeholder="Password" type="password" id="password" name="_password"/>
-                        </div>
-
-                        <p class = header3> Forgot password?</p>
-                        <button type="submit">Sign in</button>
-                    </form>
-
-                </div>
+    </div>
 
 
 
-            </div>
-        </div>
+    <div id="background_modal1" class="background_login1" ></div>
+
+
+    <div id="register_modal" class="register_modal">
+        <button id="close_button" class="close">
+            &#x2715
+        </button>
+
+
+    </div>
+
+
+
     </body>
-
-
-
-
-
-
 
 {% endblock %}
 
 {% block footer %}
-{{ parent() }}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('homepage') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('homepage') }}
 {% endblock %}
 
 

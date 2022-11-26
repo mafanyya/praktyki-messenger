@@ -44,6 +44,7 @@ class RootController extends AbstractController
             'currentUsername' => $currentLoggedUserUsername,
             'currentAvatar' => $currentLoggedUserAvatar,
 
+
         ]);
     }
     #[Route('/success', name: "success")]

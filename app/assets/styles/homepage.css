@@ -104,11 +104,13 @@
 
 
 
+
 }
 .email_form button:hover{
     background-color: #e97f44;
     border: 2px solid #e97f44;
     color: white;
+
 
 }
 .email_form input:focus{
@@ -132,7 +134,7 @@
     opacity: 0.2;
 
 }
-.modal{
+.login_modal{
     position: fixed;
     left: 50%;
     top:10%;
@@ -144,6 +146,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    visibility: hidden;
 }
 .close{
     position: absolute;
@@ -153,6 +156,7 @@
     background-color: transparent;
     font-size: 25px;
     color: #b7b7b7;
+    cursor: pointer;
 
 }
 .login_panel{
@@ -188,6 +192,11 @@
     font-size: 15px;
     border-radius: 7px;
 }
+.login_error{
+    font-size: 18px;
+    color: #fd4242;
+
+}
 
 .login_form button{
     border: none;
@@ -196,8 +205,9 @@
     width:300px;
     height: 45px;
     border-radius: 7px;
-    margin-top: 55px;
+    margin-top: 65px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .new_panel{
@@ -244,6 +254,7 @@
 .login_img img{
     width: 250px;
 }
+
 .new_panel button{
     border: none;
     background-color: #e97f44;
@@ -251,8 +262,35 @@
     width:300px;
     height: 45px;
     border-radius: 7px;
-    margin-top: 265px;
+    margin-top: 275px;
     font-size: 16px;
+    cursor: pointer;
+}
+
+/*-------REGISTER MODULE-------*/
+.background_login1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    opacity: 0.2;
 
 }
+.register_modal{
+    position: fixed;
+    left: 50%;
+    top:10%;
+    transform: translate(-50%,0);
+    background-color: white;
+    width: 45%;
+    height: 570px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    visibility: visible;
+}
+
 

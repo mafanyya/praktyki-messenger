@@ -12,3 +12,8 @@ import './styles/app.css';
 import './bootstrap';
 import { registerVueControllerComponents } from '@symfony/ux-vue';
 registerVueControllerComponents(require.context('./vue/controllers', true, /\.vue$/));
+// require jQuery normally
+// require jQuery normally
+//import $ from 'jquery' DOESN'T WORK
+const $ = require('jquery');
+global.$ = global.jQuery = $;
