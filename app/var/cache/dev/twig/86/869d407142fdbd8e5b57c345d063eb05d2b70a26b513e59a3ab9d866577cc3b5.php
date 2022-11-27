@@ -191,10 +191,11 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         }
         // line 66
         echo "
+
             <div class=\"login_form\">
 
                 <form action=\"";
-        // line 69
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         echo "\" method=\"post\">
                     <div class=\"form_row\">
@@ -214,14 +215,76 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     <div id=\"background_modal1\" class=\"background_login1\" ></div>
 
-
     <div id=\"register_modal\" class=\"register_modal\">
         <button id=\"close_button\" class=\"close\">
             &#x2715
         </button>
 
-        
+        <div class=\"register_panel\">
+            <p class=\"header\">Login to your account</p>
+            <p class=\"header2\">Welcome to Sunflower</p>
+
+            <div class=\"register_form\">
+
+                <div class=\"form\">
+
+                    ";
+        // line 101
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 101, $this->source); })()), 'form_start');
+        echo "
+
+                    <div class=\"form_row\">
+                        ";
+        // line 104
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 104, $this->source); })()), "username", [], "any", false, false, false, 104), 'widget');
+        echo "
+                    </div>
+
+
+                    <div class=\"form_row\">
+                        ";
+        // line 109
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 109, $this->source); })()), "plainPassword", [], "any", false, false, false, 109), 'widget');
+        echo "
+                    </div>
+
+                    <div class=\"form_row\">
+                        ";
+        // line 113
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 113, $this->source); })()), "agreeTerms", [], "any", false, false, false, 113), 'widget');
+        echo "
+                    </div>
+
+                    <button type=\"submit\" class=\"btn\">Register</button>
+                    ";
+        // line 117
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 117, $this->source); })()), 'form_end');
+        echo "
+                </div>
+            </div>
+        </div>
+        <div class=\"new_panel_register\">
+            <p class=\"header1\">Hi there!</p>
+            <div class=\"header_block\">
+                <p class=\"header\">This is a good time to make more friends.</p>
+            </div>
+            <div class=\"register_img\">
+                <img src=\"";
+        // line 127
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/registration_img.svg"), "html", null, true);
+        echo "\" alt=\"\">
+            </div>
+            <p class = \"header4\">Already have an account?</p>
+            <button>Sign up</button>
+
+        </div>
+
+
+
     </div>
+
+
+
 
 
 
@@ -236,7 +299,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 102
+    // line 147
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -246,7 +309,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 103
+        // line 148
         echo "    ";
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
@@ -259,7 +322,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 106
+    // line 151
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -269,12 +332,12 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 107
+        // line 152
         echo "    ";
         $this->displayParentBlock("stylesheets", $context, $blocks);
         echo "
     ";
-        // line 108
+        // line 153
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("homepage");
         echo "
 ";
@@ -286,7 +349,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 111
+    // line 156
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -296,12 +359,12 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 112
+        // line 157
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     ";
-        // line 113
+        // line 158
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("homepage");
         echo "
 ";
@@ -325,7 +388,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     public function getDebugInfo()
     {
-        return array (  305 => 113,  300 => 112,  290 => 111,  278 => 108,  273 => 107,  263 => 106,  250 => 103,  240 => 102,  198 => 69,  193 => 66,  190 => 65,  186 => 63,  182 => 61,  177 => 59,  174 => 58,  172 => 57,  160 => 48,  133 => 24,  119 => 14,  109 => 13,  96 => 10,  86 => 9,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  368 => 158,  363 => 157,  353 => 156,  341 => 153,  336 => 152,  326 => 151,  313 => 148,  303 => 147,  274 => 127,  261 => 117,  254 => 113,  247 => 109,  239 => 104,  233 => 101,  199 => 70,  193 => 66,  190 => 65,  186 => 63,  182 => 61,  177 => 59,  174 => 58,  172 => 57,  160 => 48,  133 => 24,  119 => 14,  109 => 13,  96 => 10,  86 => 9,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -396,6 +459,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                 {% endif %}
             {% endif %}
 
+
             <div class=\"login_form\">
 
                 <form action=\"{{ path('login') }}\" method=\"post\">
@@ -416,14 +480,58 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     <div id=\"background_modal1\" class=\"background_login1\" ></div>
 
-
     <div id=\"register_modal\" class=\"register_modal\">
         <button id=\"close_button\" class=\"close\">
             &#x2715
         </button>
 
-        
+        <div class=\"register_panel\">
+            <p class=\"header\">Login to your account</p>
+            <p class=\"header2\">Welcome to Sunflower</p>
+
+            <div class=\"register_form\">
+
+                <div class=\"form\">
+
+                    {{ form_start(registrationForm) }}
+
+                    <div class=\"form_row\">
+                        {{ form_widget(registrationForm.username)}}
+                    </div>
+
+
+                    <div class=\"form_row\">
+                        {{ form_widget(registrationForm.plainPassword) }}
+                    </div>
+
+                    <div class=\"form_row\">
+                        {{ form_widget(registrationForm.agreeTerms) }}
+                    </div>
+
+                    <button type=\"submit\" class=\"btn\">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+        <div class=\"new_panel_register\">
+            <p class=\"header1\">Hi there!</p>
+            <div class=\"header_block\">
+                <p class=\"header\">This is a good time to make more friends.</p>
+            </div>
+            <div class=\"register_img\">
+                <img src=\"{{ asset('build/images/registration_img.svg') }}\" alt=\"\">
+            </div>
+            <p class = \"header4\">Already have an account?</p>
+            <button>Sign up</button>
+
+        </div>
+
+
+
     </div>
+
+
+
 
 
 
@@ -444,6 +552,9 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
     {{ parent() }}
     {{ encore_entry_script_tags('homepage') }}
 {% endblock %}
+
+
+
 
 
 

@@ -267,6 +267,19 @@
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------REGISTER MODULE-------*/
 .background_login1{
     position: fixed;
@@ -290,7 +303,124 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    visibility: visible;
+
 }
+
+.register_panel{
+    width: 50%;
+    border:none;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.register_panel .header{
+    font-size: 23px;
+    margin-top: 70px;
+}
+.register_panel .header2{
+    font-size: 18px;
+    color: #7a7a7a;
+    margin-top: 35px;
+}
+.register_form{
+    margin-top: 40px;
+}
+
+.form_row input{
+    margin-bottom: 35px;
+    border:none;
+    background-color: #feffdf;
+    width:270px;
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #696969;
+    font-size: 15px;
+    border-radius: 7px;
+}
+
+.register_form button{
+    border: none;
+    background-color: #e97f44;
+    color: white;
+    width:300px;
+    height: 45px;
+    border-radius: 7px;
+    margin-top: 65px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.new_panel_register{
+    width:50%;
+    background-color: #feffdf;
+}
+.header3{
+    font-size: 16px;
+    margin-left: 10px;
+    color:#7a7a7a;
+}
+
+/*NEW PANEL*/
+.new_panel_register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*position: relative;*/
+    background-color: #feffdf;
+
+}
+.new_panel_register .header1{
+    font-size: 48px;
+    font-weight: 600;
+    margin-top: 25px;
+    color:  #e97f44;
+}
+.new_panel_register .header_block{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border:none;
+    border-radius: 10px;
+    width: 70%;
+}
+.new_panel_register .header_block .header{
+    font-size: 18px;
+    text-align: center;
+    color: #7a7a7a;
+}
+.new_panel_register .header4{
+    margin-top:260px;
+    font-size: 16px;
+    margin-left: 10px;
+    color:#7a7a7a;
+}
+.register_img{
+    position:absolute;
+    top:175px;
+    right:105px;
+}
+.register_img img{
+    width: 255px;
+}
+
+.new_panel_register button{
+    border: none;
+    background-color: #e97f44;
+    color: white;
+    width:300px;
+    height: 45px;
+    border-radius: 7px;
+    position: absolute;
+    top:485px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
 
 

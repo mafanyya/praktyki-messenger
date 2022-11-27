@@ -64,6 +64,7 @@
                 {% endif %}
             {% endif %}
 
+
             <div class="login_form">
 
                 <form action="{{ path('login') }}" method="post">
@@ -84,14 +85,58 @@
 
     <div id="background_modal1" class="background_login1" ></div>
 
-
     <div id="register_modal" class="register_modal">
         <button id="close_button" class="close">
             &#x2715
         </button>
 
+        <div class="register_panel">
+            <p class="header">Login to your account</p>
+            <p class="header2">Welcome to Sunflower</p>
+
+            <div class="register_form">
+
+                <div class="form">
+
+                    {{ form_start(registrationForm) }}
+
+                    <div class="form_row">
+                        {{ form_widget(registrationForm.username)}}
+                    </div>
+
+
+                    <div class="form_row">
+                        {{ form_widget(registrationForm.plainPassword) }}
+                    </div>
+
+                    <div class="form_row">
+                        {{ form_widget(registrationForm.agreeTerms) }}
+                    </div>
+
+                    <button type="submit" class="btn">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+        <div class="new_panel_register">
+            <p class="header1">Hi there!</p>
+            <div class="header_block">
+                <p class="header">This is a good time to make more friends.</p>
+            </div>
+            <div class="register_img">
+                <img src="{{ asset('build/images/registration_img.svg') }}" alt="">
+            </div>
+            <p class = "header4">Already have an account?</p>
+            <button>Sign up</button>
+
+        </div>
+
+
 
     </div>
+
+
+
 
 
 
@@ -112,6 +157,9 @@
     {{ parent() }}
     {{ encore_entry_script_tags('homepage') }}
 {% endblock %}
+
+
+
 
 
 
