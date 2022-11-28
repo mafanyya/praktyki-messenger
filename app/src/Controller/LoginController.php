@@ -20,6 +20,7 @@ class LoginController extends AbstractController
         return $this->render('root/index.html.twig', [
 
             'error' => $error,
+            'isValid' => "true",
             'name' => 'Log in',
         ]);
     }

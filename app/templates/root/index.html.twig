@@ -24,8 +24,8 @@
                     <img src="{{ asset('build/images/homepage_img.svg') }}" alt="">
                 </div>
                 <div class="email_form">
-                    <input placeholder="Email address" id="email" type="text">
-                    <button> Sign up</button>
+                    <input placeholder="Username" id="email" type="text">
+                    <button id = "sign_up_home"> Sign up</button>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
 
 
     <div id="login_modal" class="login_modal">
-        <button id="close_button" class="close">
+        <button id="close_login" class="close">
             &#x2715
         </button>
         <div class="new_panel">
@@ -47,7 +47,7 @@
             <div class="login_img">
                 <img src="{{ asset('build/images/login_img.svg') }}" alt="">
             </div>
-            <button>Sign up</button>
+            <button id = "sign_up">Sign up</button>
 
         </div>
         <div class="login_panel">
@@ -60,7 +60,7 @@
                         .messageData,
                             'security') }}</p>
                 {% else %}
-                    <p>ne ma</p>
+
                 {% endif %}
             {% endif %}
 
@@ -75,7 +75,7 @@
                         <input placeholder="Password" type="password" id="password" name="_password"/>
                     </div>
                     <p class=header3> Forgot password?</p>
-                    <button type="submit">Sign in</button>
+                    <button  type="submit">Sign in</button>
                 </form>
             </div>
         </div>
@@ -83,38 +83,48 @@
 
 
 
-    <div id="background_modal1" class="background_login1" ></div>
+
 
     <div id="register_modal" class="register_modal">
-        <button id="close_button" class="close">
+        <button id="close_register" class="close">
             &#x2715
         </button>
 
-        <div class="register_panel">
-            <p class="header">Login to your account</p>
-            <p class="header2">Welcome to Sunflower</p>
+        {% if isValid is defined %}
 
-            <div class="register_form">
+        <div id = "register_error" data-isValid = "{{ isValid }} hidden"></div>
+
+        {% endif %}
+
+        <div class="register_panel">
+            <p class="header">Sign Up</p>
+
+
+
+            <div  class="register_form">
 
                 <div class="form">
-
+                    {% if registrationForm is defined %}
                     {{ form_start(registrationForm) }}
 
                     <div class="form_row">
                         {{ form_widget(registrationForm.username)}}
                     </div>
 
-
                     <div class="form_row">
                         {{ form_widget(registrationForm.plainPassword) }}
                     </div>
-
-                    <div class="form_row">
-                        {{ form_widget(registrationForm.agreeTerms) }}
+                    <div  class="form_error" >
+                        {{ form_errors(registrationForm.plainPassword) }}
                     </div>
 
+                    <div class="agree_terms">
+                                {{ form_widget(registrationForm.agreeTerms) }}
+                            <p>Agree our terms</p>
+                        </div>
                     <button type="submit" class="btn">Register</button>
                     {{ form_end(registrationForm) }}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -127,12 +137,9 @@
                 <img src="{{ asset('build/images/registration_img.svg') }}" alt="">
             </div>
             <p class = "header4">Already have an account?</p>
-            <button>Sign up</button>
+            <button id = "sign_in" >Sign In</button>
 
         </div>
-
-
-
     </div>
 
 

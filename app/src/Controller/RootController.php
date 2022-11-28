@@ -20,9 +20,12 @@ class RootController extends AbstractController
     private UserRepository $userRepository;
 
 
-    public function __construct(UserRepository $userRepository, EntityManagerInterface $entityManager, RequestStack $requestStack) {
+
+    public function __construct(UserRepository $userRepository, EntityManagerInterface $entityManager, RequestStack
+    $requestStack) {
         $this->userRepository = $userRepository;
         $this->requestStack = $requestStack;
+
 
     }
 
@@ -34,6 +37,7 @@ class RootController extends AbstractController
         $currentLoggedUserId = null;
         $currentLoggedUserUsername = null;
         $currentLoggedUserAvatar = null;
+        $isValid = "true";
 
         if($user)
         {
@@ -48,6 +52,16 @@ class RootController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $newUser);
         $form->handleRequest($request);
 
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $isValid = "true";
+            }else{
+                $isValid = "false";
+            }
+
+
+        }
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $newUser->setPassword(
@@ -61,8 +75,14 @@ class RootController extends AbstractController
             $entityManager->persist($newUser);
             $entityManager->flush();
 
+
             return $this->redirectToRoute('root');
         }
+
+
+
+
+
 
         return $this->render('root/index.html.twig', [
             'name' => 'Home',
@@ -70,6 +90,7 @@ class RootController extends AbstractController
             'currentUsername' => $currentLoggedUserUsername,
             'currentAvatar' => $currentLoggedUserAvatar,
             'registrationForm' => $form->createView(),
+            'isValid' => $isValid
 
 
 

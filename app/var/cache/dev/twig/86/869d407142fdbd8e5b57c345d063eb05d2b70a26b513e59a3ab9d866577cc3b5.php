@@ -134,8 +134,8 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         echo "\" alt=\"\">
                 </div>
                 <div class=\"email_form\">
-                    <input placeholder=\"Email address\" id=\"email\" type=\"text\">
-                    <button> Sign up</button>
+                    <input placeholder=\"Username\" id=\"email\" type=\"text\">
+                    <button id = \"sign_up_home\"> Sign up</button>
                 </div>
             </div>
 
@@ -146,7 +146,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
 
     <div id=\"login_modal\" class=\"login_modal\">
-        <button id=\"close_button\" class=\"close\">
+        <button id=\"close_login\" class=\"close\">
             &#x2715
         </button>
         <div class=\"new_panel\">
@@ -160,7 +160,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/login_img.svg"), "html", null, true);
         echo "\" alt=\"\">
             </div>
-            <button>Sign up</button>
+            <button id = \"sign_up\">Sign up</button>
 
         </div>
         <div class=\"login_panel\">
@@ -183,7 +183,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                 ";
             } else {
                 // line 63
-                echo "                    <p>ne ma</p>
+                echo "
                 ";
             }
             // line 65
@@ -205,7 +205,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                         <input placeholder=\"Password\" type=\"password\" id=\"password\" name=\"_password\"/>
                     </div>
                     <p class=header3> Forgot password?</p>
-                    <button type=\"submit\">Sign in</button>
+                    <button  type=\"submit\">Sign in</button>
                 </form>
             </div>
         </div>
@@ -213,54 +213,79 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
 
 
-    <div id=\"background_modal1\" class=\"background_login1\" ></div>
+
 
     <div id=\"register_modal\" class=\"register_modal\">
-        <button id=\"close_button\" class=\"close\">
+        <button id=\"close_register\" class=\"close\">
             &#x2715
         </button>
 
-        <div class=\"register_panel\">
-            <p class=\"header\">Login to your account</p>
-            <p class=\"header2\">Welcome to Sunflower</p>
+        ";
+        // line 93
+        if (array_key_exists("isValid", $context)) {
+            // line 94
+            echo "
+        <div id = \"register_error\" data-isValid = \"";
+            // line 95
+            echo twig_escape_filter($this->env, (isset($context["isValid"]) || array_key_exists("isValid", $context) ? $context["isValid"] : (function () { throw new RuntimeError('Variable "isValid" does not exist.', 95, $this->source); })()), "html", null, true);
+            echo " hidden\"></div>
 
-            <div class=\"register_form\">
+        ";
+        }
+        // line 98
+        echo "
+        <div class=\"register_panel\">
+            <p class=\"header\">Sign Up</p>
+
+
+
+            <div  class=\"register_form\">
 
                 <div class=\"form\">
-
                     ";
-        // line 101
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 101, $this->source); })()), 'form_start');
-        echo "
+        // line 107
+        if (array_key_exists("registrationForm", $context)) {
+            // line 108
+            echo "                    ";
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 108, $this->source); })()), 'form_start');
+            echo "
 
                     <div class=\"form_row\">
                         ";
-        // line 104
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 104, $this->source); })()), "username", [], "any", false, false, false, 104), 'widget');
-        echo "
-                    </div>
-
-
-                    <div class=\"form_row\">
-                        ";
-        // line 109
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 109, $this->source); })()), "plainPassword", [], "any", false, false, false, 109), 'widget');
-        echo "
+            // line 111
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 111, $this->source); })()), "username", [], "any", false, false, false, 111), 'widget');
+            echo "
                     </div>
 
                     <div class=\"form_row\">
                         ";
-        // line 113
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 113, $this->source); })()), "agreeTerms", [], "any", false, false, false, 113), 'widget');
-        echo "
+            // line 115
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 115, $this->source); })()), "plainPassword", [], "any", false, false, false, 115), 'widget');
+            echo "
+                    </div>
+                    <div  class=\"form_error\" >
+                        ";
+            // line 118
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 118, $this->source); })()), "plainPassword", [], "any", false, false, false, 118), 'errors');
+            echo "
                     </div>
 
+                    <div class=\"agree_terms\">
+                                ";
+            // line 122
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 122, $this->source); })()), "agreeTerms", [], "any", false, false, false, 122), 'widget');
+            echo "
+                            <p>Agree our terms</p>
+                        </div>
                     <button type=\"submit\" class=\"btn\">Register</button>
                     ";
-        // line 117
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 117, $this->source); })()), 'form_end');
-        echo "
-                </div>
+            // line 126
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 126, $this->source); })()), 'form_end');
+            echo "
+                    ";
+        }
+        // line 128
+        echo "                </div>
             </div>
         </div>
         <div class=\"new_panel_register\">
@@ -270,17 +295,14 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             </div>
             <div class=\"register_img\">
                 <img src=\"";
-        // line 127
+        // line 137
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/registration_img.svg"), "html", null, true);
         echo "\" alt=\"\">
             </div>
             <p class = \"header4\">Already have an account?</p>
-            <button>Sign up</button>
+            <button id = \"sign_in\" >Sign In</button>
 
         </div>
-
-
-
     </div>
 
 
@@ -299,7 +321,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 147
+    // line 154
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -309,7 +331,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 148
+        // line 155
         echo "    ";
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
@@ -322,7 +344,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 151
+    // line 158
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -332,12 +354,12 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 152
+        // line 159
         echo "    ";
         $this->displayParentBlock("stylesheets", $context, $blocks);
         echo "
     ";
-        // line 153
+        // line 160
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("homepage");
         echo "
 ";
@@ -349,7 +371,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     }
 
-    // line 156
+    // line 163
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -359,12 +381,12 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 157
+        // line 164
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     ";
-        // line 158
+        // line 165
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("homepage");
         echo "
 ";
@@ -388,7 +410,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
     public function getDebugInfo()
     {
-        return array (  368 => 158,  363 => 157,  353 => 156,  341 => 153,  336 => 152,  326 => 151,  313 => 148,  303 => 147,  274 => 127,  261 => 117,  254 => 113,  247 => 109,  239 => 104,  233 => 101,  199 => 70,  193 => 66,  190 => 65,  186 => 63,  182 => 61,  177 => 59,  174 => 58,  172 => 57,  160 => 48,  133 => 24,  119 => 14,  109 => 13,  96 => 10,  86 => 9,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  390 => 165,  385 => 164,  375 => 163,  363 => 160,  358 => 159,  348 => 158,  335 => 155,  325 => 154,  299 => 137,  288 => 128,  283 => 126,  276 => 122,  269 => 118,  263 => 115,  256 => 111,  249 => 108,  247 => 107,  236 => 98,  230 => 95,  227 => 94,  225 => 93,  199 => 70,  193 => 66,  190 => 65,  186 => 63,  182 => 61,  177 => 59,  174 => 58,  172 => 57,  160 => 48,  133 => 24,  119 => 14,  109 => 13,  96 => 10,  86 => 9,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -419,8 +441,8 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                     <img src=\"{{ asset('build/images/homepage_img.svg') }}\" alt=\"\">
                 </div>
                 <div class=\"email_form\">
-                    <input placeholder=\"Email address\" id=\"email\" type=\"text\">
-                    <button> Sign up</button>
+                    <input placeholder=\"Username\" id=\"email\" type=\"text\">
+                    <button id = \"sign_up_home\"> Sign up</button>
                 </div>
             </div>
 
@@ -431,7 +453,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
 
     <div id=\"login_modal\" class=\"login_modal\">
-        <button id=\"close_button\" class=\"close\">
+        <button id=\"close_login\" class=\"close\">
             &#x2715
         </button>
         <div class=\"new_panel\">
@@ -442,7 +464,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
             <div class=\"login_img\">
                 <img src=\"{{ asset('build/images/login_img.svg') }}\" alt=\"\">
             </div>
-            <button>Sign up</button>
+            <button id = \"sign_up\">Sign up</button>
 
         </div>
         <div class=\"login_panel\">
@@ -455,7 +477,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                         .messageData,
                             'security') }}</p>
                 {% else %}
-                    <p>ne ma</p>
+
                 {% endif %}
             {% endif %}
 
@@ -470,7 +492,7 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                         <input placeholder=\"Password\" type=\"password\" id=\"password\" name=\"_password\"/>
                     </div>
                     <p class=header3> Forgot password?</p>
-                    <button type=\"submit\">Sign in</button>
+                    <button  type=\"submit\">Sign in</button>
                 </form>
             </div>
         </div>
@@ -478,38 +500,48 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
 
 
 
-    <div id=\"background_modal1\" class=\"background_login1\" ></div>
+
 
     <div id=\"register_modal\" class=\"register_modal\">
-        <button id=\"close_button\" class=\"close\">
+        <button id=\"close_register\" class=\"close\">
             &#x2715
         </button>
 
-        <div class=\"register_panel\">
-            <p class=\"header\">Login to your account</p>
-            <p class=\"header2\">Welcome to Sunflower</p>
+        {% if isValid is defined %}
 
-            <div class=\"register_form\">
+        <div id = \"register_error\" data-isValid = \"{{ isValid }} hidden\"></div>
+
+        {% endif %}
+
+        <div class=\"register_panel\">
+            <p class=\"header\">Sign Up</p>
+
+
+
+            <div  class=\"register_form\">
 
                 <div class=\"form\">
-
+                    {% if registrationForm is defined %}
                     {{ form_start(registrationForm) }}
 
                     <div class=\"form_row\">
                         {{ form_widget(registrationForm.username)}}
                     </div>
 
-
                     <div class=\"form_row\">
                         {{ form_widget(registrationForm.plainPassword) }}
                     </div>
-
-                    <div class=\"form_row\">
-                        {{ form_widget(registrationForm.agreeTerms) }}
+                    <div  class=\"form_error\" >
+                        {{ form_errors(registrationForm.plainPassword) }}
                     </div>
 
+                    <div class=\"agree_terms\">
+                                {{ form_widget(registrationForm.agreeTerms) }}
+                            <p>Agree our terms</p>
+                        </div>
                     <button type=\"submit\" class=\"btn\">Register</button>
                     {{ form_end(registrationForm) }}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -522,12 +554,9 @@ class __TwigTemplate_cdbc1fb9f8416d5816ec1f289ed852fb46b945463f0ca0d078fda4bcbb5
                 <img src=\"{{ asset('build/images/registration_img.svg') }}\" alt=\"\">
             </div>
             <p class = \"header4\">Already have an account?</p>
-            <button>Sign up</button>
+            <button id = \"sign_in\" >Sign In</button>
 
         </div>
-
-
-
     </div>
 
 
