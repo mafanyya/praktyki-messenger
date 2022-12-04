@@ -41,6 +41,7 @@ class PageController extends AbstractController
         $currentLoggedUserId = $currentLoggedUser->getId();
         $currentLoggedUserUsername = $currentLoggedUser->getUsername();
         $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+        $isAuth = "true";
 
 
         $user = $this->userRepository->find($id);
@@ -86,7 +87,8 @@ class PageController extends AbstractController
             'isShowCredentials' => $isShowCredentials,
             'findByHobby' => $findByHobby,
             'usersByHobby' => $usersByHobby,
-            'roles' => $roles
+            'roles' => $roles,
+            'isAuth' => $isAuth
 
 
         ]);

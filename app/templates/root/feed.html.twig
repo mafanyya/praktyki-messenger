@@ -1,0 +1,100 @@
+{% extends '/base.html.twig' %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <body>
+    <div class="container">
+        {% block navbar %}
+            <div class="nav_bar">
+                <a class = "nav_links" href="/page/{{ currentId }}">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-person-circle"></i></p>
+                        <p>My page</p>
+                    </div>
+                </a>
+                <a href="{{ path('root') }}">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-receipt"></i></p>
+                        <p>News</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-chat"></i></p>
+                        <p>Messenger</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-people"></i></p>
+                        <p>Friends</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-dice-5"></i></p>
+                        <p>Communities</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="nav_link">
+                        <p class = "icon"><i class="bi bi-gear"></i></p>
+                        <p>Settings</p>
+                    </div>
+                </a>
+            </div>
+            <div class="news_content">
+                <div id = "make_post_btn" class="make_post_btn">
+                    <div class="avatar_min">
+                        <img src="{{ asset('uploads/avatars/' ~  currentAvatar ) }}" >
+                    </div>
+                    <button id = "open_make_post" class = "text">Anything new?</button>
+                    <div class="icons">
+                        <button class = "icon"><i class="bi bi-camera"></i></button>
+                        <button class = "icon"><i class="bi bi-play-circle"></i></button>
+                    </div>
+                </div>
+
+                <div id = "make_post" class="make_post" >
+                    <div class="row1">
+                        <div class="avatar_min">
+                            <img src="{{ asset('uploads/avatars/' ~  currentAvatar ) }}" >
+                        </div>
+                        <textarea placeholder = "Anything new?"></textarea>
+
+                    </div>
+                    <div class="row2">
+                        <div class="icons">
+                            <button class = "icon"><i class="bi bi-camera"></i></button>
+                            <button class = "icon"><i class="bi bi-play-circle"></i></button>
+                        </div>
+                        <button>Publish</button>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+    </body>
+
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('feed') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('feed') }}
+{% endblock %}

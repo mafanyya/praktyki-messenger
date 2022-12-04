@@ -2,35 +2,40 @@
 {% block head %}
     {{ parent() }}
 {% endblock %}
-
-
-
-
 {% block header %}
     {{ parent() }}
 {% endblock %}
-
 {% block body %}
     {{ parent() }}
     <body>
     <div class="container">
         <div class="container_inner">
+
             <div class="homepage_content">
                 <div class="homepage_slogan">
                     <p class="slogan_b">Many SMALL things for your BIG</p>
-                    <p class="slogan_s">Make your own community from here.</p>
+                    <p class="slogan_s">Make your own community from here. </p>
+
                 </div>
                 <div class="homepage_img">
                     <img src="{{ asset('build/images/homepage_img.svg') }}" alt="">
                 </div>
+                {% if not is_granted ('IS_AUTHENTICATED_FULLY') %}
                 <div class="email_form">
-                    <input placeholder="Username" id="email" type="text">
-                    <button id = "sign_up_home"> Sign up</button>
+                    <input placeholder="Username" id="username_home" name = "username" type="text">
+                    <button id = "sign_up_home" onclick="GetUsername()">Sign up</button>
+                    <script>
+                        function GetUsername(){
+                            var username = document.getElementById('username_home').value
+                            document.getElementById('registration_form_username').value = username
+                        }
+                    </script>
                 </div>
+                {% endif %}
             </div>
-
         </div>
     </div>
+    {% if not is_granted ('IS_AUTHENTICATED_FULLY') %}
 
     <div id="background_modal" class="background_login" hidden></div>
 
@@ -54,13 +59,12 @@
             <p class="header">Login to your account</p>
             <p class="header2">Welcome to Sunflower</p>
 
+
             {% if error is defined %}
                 {% if error is not null %}
                     <p class="login_error" data-error="{{ error }}">{{ error.messageKey|trans(error
                         .messageData,
                             'security') }}</p>
-                {% else %}
-
                 {% endif %}
             {% endif %}
 
@@ -70,9 +74,11 @@
                 <form action="{{ path('login') }}" method="post">
                     <div class="form_row">
                         <input placeholder="Username" type="text" id="username" name="_username"/>
+
                     </div>
                     <div class="form_row">
                         <input placeholder="Password" type="password" id="password" name="_password"/>
+
                     </div>
                     <p class=header3> Forgot password?</p>
                     <button  type="submit">Sign in</button>
@@ -81,48 +87,44 @@
         </div>
     </div>
 
-
-
-
-
+    {% endif%}
+    {% if not is_granted ('IS_AUTHENTICATED_FULLY') %}
+{#        {% if regErrors is defined %}#}
+{#            {% if regErrors is not null %}#}
+{#                <p class="reg_error" data-reg-error="{{ regErrors }}"></p>#}
+{#            {% endif %}#}
+{#        {% endif %}#}
     <div id="register_modal" class="register_modal">
         <button id="close_register" class="close">
             &#x2715
         </button>
-
-        {% if isValid is defined %}
-
-        <div id = "register_error" data-isValid = "{{ isValid }} hidden"></div>
-
-        {% endif %}
-
         <div class="register_panel">
             <p class="header">Sign Up</p>
-
-
-
             <div  class="register_form">
 
                 <div class="form">
                     {% if registrationForm is defined %}
                     {{ form_start(registrationForm) }}
 
-                    <div class="form_row">
-                        {{ form_widget(registrationForm.username)}}
+                    <div  class="form_row">
+                        {{ form_widget(registrationForm.username, {'attr': {'id': 'username_reg'}})}}
+{#                        {{ registrationForm.username.vars.value }}#}
+
                     </div>
 
                     <div class="form_row">
                         {{ form_widget(registrationForm.plainPassword) }}
                     </div>
                     <div  class="form_error" >
-                        {{ form_errors(registrationForm.plainPassword) }}
+
+                       <p id = "reg_form_error"> {{ form_errors(registrationForm.plainPassword) }} </p>
                     </div>
 
                     <div class="agree_terms">
                                 {{ form_widget(registrationForm.agreeTerms) }}
                             <p>Agree our terms</p>
                         </div>
-                    <button type="submit" class="btn">Register</button>
+                    <button id = "sign_up_submit_btn" type="submit" class="btn">Register</button>
                     {{ form_end(registrationForm) }}
                     {% endif %}
                 </div>
@@ -142,28 +144,24 @@
         </div>
     </div>
 
-
-
-
-
-
+    {% endif %}
     </body>
-
 {% endblock %}
 
 {% block footer %}
     {{ parent() }}
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('homepage') }}
+{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('homepage') }}
 {% endblock %}
 
-{% block javascripts %}
-    {{ parent() }}
-    {{ encore_entry_script_tags('homepage') }}
-{% endblock %}
+
 
 
 

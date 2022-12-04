@@ -21,8 +21,11 @@ class LoginController extends AbstractController
 
             'error' => $error,
             'isValid' => "true",
-            'name' => 'Log in',
+            'name' => 'Log in'
+
         ]);
+
+
     }
 
 }

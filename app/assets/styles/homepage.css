@@ -67,6 +67,7 @@
     padding-top: 370px;
     align-items: center;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 
 }
 .email_form input{
@@ -192,6 +193,18 @@
     font-size: 15px;
     border-radius: 7px;
 }
+.form_row input:focus{
+
+    outline-color: #ffea9b;
+    background-color: #feffdf;
+}
+/*.form_row input:active{*/
+
+/*    outline-color: #feffdf;*/
+
+/*    background-color: #4f805d;*/
+
+/*}*/
 .login_error{
     font-size: 18px;
     color: #fd4242;
@@ -355,11 +368,6 @@
     color: #7a7a7a;
     font-size: 16px;
 }
-
-
-
-
-
 .register_form button{
     border: none;
     background-color: #e97f44;
@@ -442,6 +450,12 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+/*------NAV BAR-------*/
+
+
+
+
 
 
 

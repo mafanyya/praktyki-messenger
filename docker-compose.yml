@@ -35,7 +35,7 @@ services:
       - database
     environment:
       PMA_HOST: database
-      PMA_PASSWORD: symfony
+      PMA_PASSWORD: secret
       PMA_USER: symfony
       PMA_PORT: 3310
       PMA_ARBITRARY: 1

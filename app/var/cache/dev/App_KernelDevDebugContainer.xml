@@ -323,6 +323,16 @@
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\AdminController"/>
       </call>
     </service>
+    <service id="App\Controller\FeedController" class="App\Controller\FeedController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\UserRepository"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\FeedController"/>
+      </call>
+    </service>
     <service id="App\Controller\FriendsController" class="App\Controller\FriendsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -363,6 +373,9 @@
     <service id="App\Controller\RootController" class="App\Controller\RootController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\UserRepository"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\RootController"/>
       </call>
@@ -4363,6 +4376,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FeedController" class="App\Controller\FeedController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FeedController" class="App\Controller\FeedController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FeedController" class="App\Controller\FeedController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FriendsController" class="App\Controller\FriendsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4749,6 +4765,13 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.4u5os03" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
+      </argument>
+    </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4762,19 +4785,13 @@
         <argument key="slugger" type="service_closure" id="slugger"/>
       </argument>
     </service>
-    <service id=".service_locator.4u5os03" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
-      </argument>
-    </service>
-    <service id=".service_locator.T_o9dEY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ON7_fol" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::addCountry" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController::addHobby" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController::addUser" type="service_closure" id=".service_locator.caPcYPd"/>
+        <argument key="App\Controller\FeedController::index" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController::change" type="service_closure" id=".service_locator.SRtF.2R"/>
         <argument key="App\Controller\PageController::countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -4790,6 +4807,7 @@
         <argument key="App\Controller\AdminController:addCountry" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController:addHobby" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\AdminController:addUser" type="service_closure" id=".service_locator.caPcYPd"/>
+        <argument key="App\Controller\FeedController:index" type="service_closure" id=".service_locator.4u5os03"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\PageController:change" type="service_closure" id=".service_locator.SRtF.2R"/>
         <argument key="App\Controller\PageController:countryForm" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -5069,6 +5087,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\FeedController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\FeedController"/>
+      <argument>App\Controller\FeedController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
     <service id=".service_locator.l1ae.Qz.App\Controller\FriendsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\FriendsController"/>
       <argument>App\Controller\FriendsController</argument>
@@ -5226,12 +5250,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.T_o9dEY"/>
+      <argument type="service" id=".service_locator.ON7_fol"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.T_o9dEY"/>
+      <argument type="service" id=".service_locator.ON7_fol"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5981,7 +6005,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.T_o9dEY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ON7_fol"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -5998,7 +6022,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.zr1We.." alias=".service_locator.caPcYPd"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.NfE74Z7" alias=".service_locator.T_o9dEY"/>
+    <service id=".service_locator.s6VLPjE" alias=".service_locator.ON7_fol"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.04p2G4d" alias=".service_locator.vxh7p5N"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
@@ -6024,9 +6048,9 @@
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
     <service id=".service_locator.a4qZoOq" alias=".service_locator.caPcYPd"/>
     <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
+    <service id=".service_locator.LzwvCJx" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
     <service id=".service_locator.GPhDY4d" alias=".service_locator.SRtF.2R"/>
-    <service id=".service_locator.LzwvCJx" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.ADknlmN" alias=".service_locator.l1ae.Qz"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.aa1PbBb" alias=".service_locator.nLgZj7R"/>

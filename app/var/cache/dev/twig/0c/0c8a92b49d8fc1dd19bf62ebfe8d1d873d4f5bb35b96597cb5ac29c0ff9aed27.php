@@ -54,23 +54,13 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 ";
         // line 20
         $this->displayBlock('header', $context, $blocks);
-        // line 46
-        echo "
-";
-        // line 47
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 49
-        echo "
-";
-        // line 50
+        // line 55
         $this->displayBlock('footer', $context, $blocks);
-        // line 59
-        echo "    ";
+        // line 64
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 62
-        echo "
-    ";
-        // line 63
+        // line 67
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -98,7 +88,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
               content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
 
-
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css\">
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
         <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap\" rel=\"stylesheet\">
@@ -140,11 +130,21 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         echo "\" alt=\"\">
            </a>
 
-           <div class=\"nav_bar\">
-               ";
+";
         // line 28
+        echo "
+";
+        // line 30
+        echo "
+";
+        // line 32
+        echo "
+
+
+               ";
+        // line 35
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 29
+            // line 36
             echo "                   <a  id = \"login-show\" href=\"/logout\">
                        <div class=\"login_btn\">
                            <p>Logout</p>
@@ -152,7 +152,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
                    </a>
                ";
         } elseif ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 35
+            // line 42
             echo "                   <a id = \"login_button\">
                        <div class=\"login_btn\">
                            <p>Login</p>
@@ -160,7 +160,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
                    </a>
                ";
         }
-        // line 41
+        // line 48
         echo "
            </div>
        </header>
@@ -174,7 +174,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 47
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,7 +192,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 50
+    // line 55
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,7 +202,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 51
+        // line 56
         echo "    <footer>
         <div class=\"container\">
             <div class=\"footer_content\">
@@ -219,7 +219,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 59
+    // line 64
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -229,11 +229,11 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 60
+        // line 65
         echo "        ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("root");
         echo "
-    ";
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -242,7 +242,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     }
 
-    // line 63
+    // line 67
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -252,13 +252,13 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 64
-        echo "
-        ";
-        // line 65
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("root");
+        // line 68
         echo "
     ";
+        // line 69
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("root");
+        echo "
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -274,7 +274,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
 
     public function getDebugInfo()
     {
-        return array (  259 => 65,  256 => 64,  246 => 63,  233 => 60,  223 => 59,  206 => 51,  196 => 50,  178 => 47,  164 => 41,  156 => 35,  148 => 29,  146 => 28,  139 => 24,  135 => 23,  131 => 21,  121 => 20,  108 => 14,  94 => 2,  84 => 1,  74 => 63,  71 => 62,  68 => 59,  66 => 50,  63 => 49,  61 => 47,  58 => 46,  56 => 20,  51 => 17,  49 => 1,);
+        return array (  259 => 69,  256 => 68,  246 => 67,  233 => 65,  223 => 64,  206 => 56,  196 => 55,  178 => 53,  164 => 48,  156 => 42,  148 => 36,  146 => 35,  141 => 32,  138 => 30,  135 => 28,  129 => 24,  125 => 23,  121 => 21,  111 => 20,  98 => 14,  84 => 2,  74 => 1,  64 => 67,  62 => 64,  60 => 55,  58 => 53,  56 => 20,  51 => 17,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -287,7 +287,7 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
               content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
 
-
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css\">
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
         <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap\" rel=\"stylesheet\">
@@ -305,7 +305,14 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
                <img class = \"logo\" src=\"{{ asset('build/images/Logo1.svg') }}\" alt=\"\">
            </a>
 
-           <div class=\"nav_bar\">
+{#           {% if isAuth is defined %}#}
+
+{#           <div  id = \"isAuth\" data-isAuth = \"{{ isAuth }}\" class=\"header_bar\">#}
+
+{#               {% endif %}#}
+
+
+
                {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
                    <a  id = \"login-show\" href=\"/logout\">
                        <div class=\"login_btn\">
@@ -324,10 +331,8 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
        </header>
     </div>
 {% endblock %}
-
 {% block body %}
 {% endblock %}
-
 {% block footer %}
     <footer>
         <div class=\"container\">
@@ -337,14 +342,13 @@ class __TwigTemplate_d9dc3149e94c5f388fc122e43d63669ec790f574e46790bc27f5d94aa04
         </div>
     </footer>
 {% endblock %}
-    {% block stylesheets%}
+{% block stylesheets%}
         {{ encore_entry_link_tags('root') }}
-    {% endblock%}
+{% endblock%}
+{% block javascripts%}
 
-    {% block javascripts%}
-
-        {{ encore_entry_script_tags('root') }}
-    {% endblock%}
+    {{ encore_entry_script_tags('root') }}
+{% endblock%}
 ", "/base.html.twig", "/var/www/sunflower/templates/base.html.twig");
     }
 }

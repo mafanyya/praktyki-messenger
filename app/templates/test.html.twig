@@ -1,41 +1,83 @@
+{% extends 'root/index.html.twig' %}
 {% block header %}
-    <link href="{{ asset('css/homepage.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/root.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/page.css') }}" rel="stylesheet"/>
+    {{ parent() }}
+{% endblock %}
+
+{%  block body %}
+    <body>
     <div class="container">
-        <div class="header">
-            <div class="logo">
-
-                <a class = "logo_name" href="/"><i class="bi bi-flower1"style = "font-size: 1.2em"></i> Sunflower</a>
+        <div class="main_inf">
+            <div class="avatar_inf">
+                <div class="avatar_page">
+                    <img class = "avatar_content_page" src="{{ asset('uploads/avatars/' ~  avatar ) }}">
+                </div>
             </div>
-            <a class="user_credentials" href="/users">users</a>
-            <a class="user_credentials" href="/admin">admin panel</a>
-
-            <div class="panel">
-                <div class="user_credentials">
-                    <div class="avatar">
-                        <img class = "avatar_content" src="{{ asset('uploads/avatars/' ~  currentAvatar ) }}">
-                    </div>
-                    <div class="username">
-                        <a class = "panel_link" href="/page/{{ currentId }}">{{ currentUsername }}</a>
-                    </div>
+            <div class="user_inf">
+                <div class="username_page">
+                    <p>{{ username }}</p>
                 </div>
-                <div class="login_panel">
-                    {% if is_granted('IS_AUTHENTICATED_FULLY')%}
-                        <div class="panel_block">
-
-                            <a class = "panel_link" href="/logout"><i class="bi bi-door-open-fill"></i></a>
-                        </div>
-                    {% else %}
-                        <div class="panel_block">
-
-                            <a class = "panel_link" href="/register">Sign Up</a>
-                        </div>
-                        <div class="panel_block">
-                            <a class = "panel_link" href="/login">Sign In</a>
-                        </div>
-                    {% endif %}
+                {% if (isShowCredentials  == true) or (id == currentId) %}
+                <div class="email">
+                    <p><i class="bi bi-envelope"></i> {{ email}}</p>
                 </div>
+                {% if country %}
+                    <div class="country">
+                        <p class="fi fi-{{ country.img }} fis"></p>
+                        <p class = "name">{{ country.name }}</p>
+                    </div>
+                {% endif %}
+                {% if hobbies %}
+                    <div class="hobbies">
+                        {% for hobby in hobbies %}
+                            <p><i class="{{ hobby.img }}"></i> {{ hobby.name }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+
+                <div class="change_credentials">
+                    <a href="/page/change/{{ id }}">Change account information</a>
+                </div>
+
+                <a href="/friends/{id}">Friends</a>
             </div>
         </div>
+
+
+
+        <div class="users_by_hobby">
+
+            {% if usersByHobby %}
+                {% if id == currentId %}
+                    <p>Are you intersted in {{ findByHobby.name }}? These are other users who are interested in {{ findByHobby.name }}:</p>
+                {% else %}
+                    <div class="header_hobby">
+                        <p class = "hobby_username">{{ username }} </p><p>is interested in {{ findByHobby.name }}. These are other users who are interested in {{ findByHobby.name }}:</p>
+                    </div>
+                {% endif %}
+                <div class="users">
+                    {% for user in usersByHobby %}
+                        <div class="user">
+                            <a href="/page/{{ user.id }}" ><img  src="{{ asset('uploads/avatars/' ~  user.avatar ) }}"></a>
+                            <p>{{ user.username }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% else %}
+            <p>This is a private profile.</p>
+
+        {% endif %}
+
+
+
+
+
     </div>
+    </body>
+
 {% endblock %}
 

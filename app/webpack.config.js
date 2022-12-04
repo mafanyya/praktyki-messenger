@@ -34,6 +34,13 @@ Encore
     .addEntry('root', './assets/js/root.js')
     .addEntry('homepage', './assets/js/homepage.js')
     .addEntry('login', './assets/js/login.js')
+    .addEntry('feed', './assets/js/feed.js')
+    .addEntry('messenger', './assets/js/messenger.js')
+    .addEntry('friends', './assets/js/friends.js')
+    .addEntry('community', './assets/js/community.js')
+    .addEntry('settings', './assets/js/settings.js')
+
+
 
 
 

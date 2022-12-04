@@ -25,8 +25,6 @@ class RootController extends AbstractController
     $requestStack) {
         $this->userRepository = $userRepository;
         $this->requestStack = $requestStack;
-
-
     }
 
     #[Route('/', name: 'root')]
@@ -37,7 +35,9 @@ class RootController extends AbstractController
         $currentLoggedUserId = null;
         $currentLoggedUserUsername = null;
         $currentLoggedUserAvatar = null;
-        $isValid = "true";
+        $isValid = true;
+        $isAuth = "false";
+        $regErrors = null;
 
         if($user)
         {
@@ -46,50 +46,39 @@ class RootController extends AbstractController
             $currentLoggedUserId = $currentLoggedUser->getId();
             $currentLoggedUserUsername = $currentLoggedUser->getUsername();
             $currentLoggedUserAvatar = $currentLoggedUser->getAvatar();
+            $isAuth = "true";
         }
-
-
         $form = $this->createForm(RegistrationFormType::class, $newUser);
         $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                // encode the plain password
 
-        if($form->isSubmitted()){
-            if($form->isValid()){
-                $isValid = "true";
+                $newUser->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $newUser,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+                $newUser->setRoles(['ROLE_USER']);
+
+                $entityManager->persist($newUser);
+                $entityManager->flush();
+
+
+                return $this->redirectToRoute('root');
             }else{
-                $isValid = "false";
+                $isValid = false;
             }
-
-
         }
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $newUser->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $newUser,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-            $newUser->setRoles(['ROLE_USER']);
-
-            $entityManager->persist($newUser);
-            $entityManager->flush();
-
-
-            return $this->redirectToRoute('root');
-        }
-
-
-
-
-
-
         return $this->render('root/index.html.twig', [
             'name' => 'Home',
             'currentId' => $currentLoggedUserId,
             'currentUsername' => $currentLoggedUserUsername,
             'currentAvatar' => $currentLoggedUserAvatar,
             'registrationForm' => $form->createView(),
+            'regErrors' => $regErrors,
+            'isAuth' => $isAuth,
             'isValid' => $isValid
 
 
@@ -104,7 +93,7 @@ class RootController extends AbstractController
         $session = $this->requestStack->getSession();
         $session->set('filter', array('loggedUserId' => $userId));
 
-        return $this->redirectToRoute('root');
+        return $this->redirectToRoute('feed');
     }
     
 

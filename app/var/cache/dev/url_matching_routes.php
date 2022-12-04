@@ -21,6 +21,7 @@ return [
         '/remove_hobby' => [[['_route' => 'remove_hobby', '_controller' => 'App\\Controller\\AdminController::removeHobby'], null, null, null, false, false, null]],
         '/add_country' => [[['_route' => 'add_country', '_controller' => 'App\\Controller\\AdminController::addCountry'], null, null, null, false, false, null]],
         '/remove_country' => [[['_route' => 'remove_country', '_controller' => 'App\\Controller\\AdminController::removeCountry'], null, null, null, false, false, null]],
+        '/feed' => [[['_route' => 'feed', '_controller' => 'App\\Controller\\FeedController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'root', '_controller' => 'App\\Controller\\RootController::index'], null, null, null, false, false, null]],

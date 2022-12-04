@@ -1,0 +1,3 @@
+<?php //NewsController%2523index
+
+return [PHP_INT_MAX, []];
